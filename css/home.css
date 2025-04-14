@@ -27,7 +27,7 @@ body{
 }
 
 #wall i{
-    transform: scale(30);
+    font-size: 720px;
     color: black;
     background-color: transparent;
     display: flex;
@@ -184,7 +184,7 @@ body{
     }
 
     #wall i{
-        transform: scale(15);
+        font-size: 360px;
     }
 
 
