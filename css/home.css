@@ -39,9 +39,6 @@ body{
     transition: transform 0.5s;
 }
 
-.rotaricono{
-    transform: rotateY(180deg) scale(30) !important;
-}
 
 #secciones{
     display: grid;
@@ -188,10 +185,6 @@ body{
 
     #wall i{
         transform: scale(15);
-    }
-
-    .rotaricono{
-        transform: rotateY(180deg) scale(15) !important;
     }
 
 

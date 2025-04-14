@@ -72,19 +72,6 @@ function iconoFondo(){
             icon.style.backgroundColor='gray';
         }
 
-        let scrollOriginal=window.scrollY;
-        window.addEventListener('scroll',function(){
-        const scrollActual=window.scrollY;
-        const iconofondo=wall.querySelector('i');
-        if(scrollActual>scrollOriginal){
-            iconofondo.classList.remove('rotaricono');
-            console.log('trggered')
-        }else{
-            iconofondo.classList.add('rotaricono');
-        }
-        scrollOriginal=scrollActual;
-        })
-
     })
 }
 iconoFondo();
