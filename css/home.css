@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+    background-attachment: fixed;
+}
+
+#wall{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+
+}
+
+#wall i{
+    transform: scale(30);
+    color: black;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.1;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.5s;
+}
+
+.rotaricono{
+    transform: rotateY(180deg) scale(30) !important;
+}
+
+#secciones{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.seccion{
+    width: 90%;
+    border: 10px solid white;
+    border-radius: 30px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+
+
+#titular{
+    font-family: 'Open Sans', serif;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    height: 100vh;
+}
+
+#nombre, #apellido{
+    font-size: 150px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+
+.distinto{
+    color: white;
+}
+
+#intro{
+    font-size: 40px;
+}
+
+#sobremi-boton{
+    color: black;
+    font-family: 'Open Sans', serif;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/*FONDO NUEVO*/
+
+#temas{
+    width: 100%;
+    justify-content: center;
+    display: none;
+}
+
+.escogetema{
+    width: 500px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+.escogetema p{
+    width: 100%;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: 'Open Sans',serif;
+    color: white;
+}
+
+.color {
+    width: 100%; 
+    height: 100px;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    position: relative;
+    border-radius: 10px;
+}
+
+#icons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 150px;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: lightgray;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 30px;
+}
+
+#no-icon{
+    color: red;
+    border: 1px inset red;
+}
+
+
+
+
+
+
+
+@media (max-width: 800px){
+
+    #menu{
+        grid-template-columns: repeat(1,auto);
+    }
+
+    .boton{
+        flex-direction: column;
+    }
+
+    #wall i{
+        transform: scale(15);
+    }
+
+    .rotaricono{
+        transform: rotateY(180deg) scale(15) !important;
+    }
+
+
+}
+
+
