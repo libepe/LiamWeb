@@ -36,9 +36,14 @@ function colorFondo(){
     const colors=document.querySelectorAll('.color');
     colors.forEach((color) => {
         color.addEventListener('click',function(){
-            const value = color.getAttribute('data-color');
-            body.style.backgroundColor = `${value}`;
+            const value=color.getAttribute('data-color');
+            body.style.backgroundColor=`${value}`;
+
+            colors.forEach(c => c.style.opacity='1');
+
+            color.style.opacity='0.5';
         })
+        body.style.backgroundColor='#e6be50';
     });
 }
 colorFondo();
@@ -75,8 +80,23 @@ function iconoFondo(){
             icon.style.backgroundColor='gray';
         }
 
+        let posActual=window.scrollY;
+        window.addEventListener('scroll',function(){
+            const posOriginal=window.scrollY;
+            const iconfondo=wall.querySelector('i');
+            if(posActual>window.scrollY){
+                iconfondo.classList.remove('rotate-icon');
+            }else{
+                iconfondo.classList.add('rotate-icon');
+            }
+            posActual=posOriginal;
+    
+        })
+
     })
 }
+
+
 iconoFondo();
 
 
