@@ -31,15 +31,20 @@ function showFooter(){
 //HOME/
 
 //COLORES FONDO//
-function coloresFondo() {
+function colorFondo(){
     const body=document.body;
-    const color1=document.getElementById('color1').value;
-    const color2=document.getElementById('color2').value;
-    body.style.backgroundImage=`linear-gradient(to bottom, ${color1}, ${color2})`;
+    const colors=document.querySelectorAll('.color');
+    colors.forEach((color) => {
+        color.addEventListener('click',function(){
+            const value = color.getAttribute('data-color');
+            body.style.backgroundColor = `${value}`;
+        })
+    });
 }
-coloresFondo();
-color1.addEventListener('input', coloresFondo);
-color2.addEventListener('input', coloresFondo);
+colorFondo();
+
+
+
 
 
 //ICONO FONDO//
@@ -59,11 +64,9 @@ function iconoFondo(){
             })
 
             const value=this.dataset.value;
-            if(value!=='eye-slash'){
-                const iconfondo=document.createElement('i');
-                iconfondo.className=`fa-solid fa-${value} icon`;
-                wall.appendChild(iconfondo);
-            }
+            const iconfondo=document.createElement('i');
+            iconfondo.className=`fa-solid fa-${value} icon`;
+            wall.appendChild(iconfondo);
             icon.style.backgroundColor='gray';
         })
 

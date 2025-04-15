@@ -132,6 +132,14 @@ body{
     color: white;
 }
 
+#fondos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow-y: auto;
+    height: 200px;
+    gap: 20px;
+}
+
 .color {
     width: 100%; 
     height: 100px;
@@ -139,16 +147,6 @@ body{
     padding: 0;
     background: none;
     position: relative;
-    border-radius: 10px;
-}
-
-#icons{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 150px;
-    gap: 10px;
-    overflow-y: auto;
 }
 
 .icon{
@@ -161,16 +159,6 @@ body{
     font-size: 30px;
     padding: 30px;
 }
-
-#no-icon{
-    color: red;
-    border: 1px inset red;
-}
-
-
-
-
-
 
 
 @media (max-width: 800px){
