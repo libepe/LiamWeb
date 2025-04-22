@@ -110,7 +110,7 @@ body{
 #temas{
     width: 100%;
     justify-content: center;
-    display: flex;
+    display: none;
 }
 
 .escogetema{
