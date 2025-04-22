@@ -22,12 +22,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 1000px;
-
 }
 
+
 #wall i{
-    font-size: 720px;
+    font-size: 800px;
     color: black;
     background-color: transparent;
     display: flex;
@@ -55,7 +54,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin: 0 auto;
 }
 
@@ -124,17 +122,9 @@ body{
     background-color: black;
 }
 
-.escogetema p{
-    width: 100%;
-    font-weight: bold;
-    font-size: 50px;
-    font-family: 'Open Sans',serif;
-    color: white;
-}
-
 #fondos{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     overflow-y: auto;
     height: 200px;
     gap: 15px;
@@ -159,23 +149,17 @@ body{
     border-radius: 20px;
 }
 
-.rotate-icon{
-    transform: rotateY(180deg);
+.seleccionado{
+    box-shadow: 0 0 0 3px white;
+    opacity: 0.5;
 }
+
 
 
 @media (max-width: 800px){
 
-    #menu{
-        grid-template-columns: repeat(1,auto);
-    }
-
-    .boton{
-        flex-direction: column;
-    }
-
     #wall i{
-        font-size: 360px;
+        font-size: 400px;
     }
 
 

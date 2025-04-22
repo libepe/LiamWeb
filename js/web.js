@@ -39,11 +39,14 @@ function colorFondo(){
             const value=color.getAttribute('data-color');
             body.style.backgroundColor=`${value}`;
 
-            colors.forEach(c => c.style.opacity='1');
+            colors.forEach(c => c.classList.remove('seleccionado'));
 
-            color.style.opacity='0.5';
+            color.classList.add('seleccionado');
         })
-        body.style.backgroundColor='#e6be50';
+        if(color.getAttribute('data-color')=='#CCCC00') {
+            color.classList.add('seleccionado');
+            body.style.backgroundColor='#CCCC00';
+        }
     });
 }
 colorFondo();
@@ -54,50 +57,35 @@ colorFondo();
 
 //ICONO FONDO//
 function iconoFondo(){
-    const wall=document.getElementById('wall');
     const icons=document.querySelectorAll('.icon');
+    const wallI=document.querySelectorAll('#wall i');
 
     icons.forEach((icon) => {
         icon.addEventListener('click', function() {
-            const activeicon=wall.querySelector('i');
-            if(activeicon){
-                activeicon.remove();
-            }
+            const valueIcon=this.dataset.value;
+            wallI.forEach((w) => {
+                w.className=`fa-solid fa-${valueIcon} icon`;
+            });
 
-            icons.forEach((icon) => {
-                icon.style.backgroundColor='';
-            })
-
-            const value=this.dataset.value;
-            const iconfondo=document.createElement('i');
-            iconfondo.className=`fa-solid fa-${value} icon`;
-            wall.appendChild(iconfondo);
-            icon.style.backgroundColor='gray';
+            icons.forEach((i) => i.classList.remove('seleccionado'));
+            
+            icon.classList.add('seleccionado');
         })
 
         if(icon.dataset.value=='star'){
-            wall.appendChild(icon.cloneNode(true));
-            icon.style.backgroundColor='gray';
+            wallI.forEach((w) => {
+                w.className=`fa-solid fa-star icon`;
+            });
+            icon.classList.add('seleccionado');
         }
-
-        let posActual=window.scrollY;
-        window.addEventListener('scroll',function(){
-            const posOriginal=window.scrollY;
-            const iconfondo=wall.querySelector('i');
-            if(posActual>window.scrollY){
-                iconfondo.classList.remove('rotate-icon');
-            }else{
-                iconfondo.classList.add('rotate-icon');
-            }
-            posActual=posOriginal;
-    
-        })
-
     })
+
+
 }
-
-
 iconoFondo();
+
+
+
 
 
 
