@@ -150,7 +150,6 @@ body{
 }
 
 .seleccionado{
-    box-shadow: 0 0 0 3px white;
     opacity: 0.5;
 }
 
