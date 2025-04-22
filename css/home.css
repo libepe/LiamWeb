@@ -19,20 +19,20 @@ body{
     height: 100%;
     width: 100%;
     z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    row-gap: 10px;
 }
 
 
 #wall i{
-    font-size: 800px;
+    font-size: 100px;
     color: black;
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.1;
+    opacity: 0.05;
     transform-style: preserve-3d;
     will-change: transform;
     transition: transform 0.5s;
@@ -157,9 +157,8 @@ body{
 
 @media (max-width: 800px){
 
-    #wall i{
-        font-size: 300px;
-    }
+
+
 
 
 }

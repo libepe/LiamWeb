@@ -58,24 +58,30 @@ colorFondo();
 //ICONO FONDO//
 function iconoFondo(){
     const icons=document.querySelectorAll('.icon');
-    const wallI=document.querySelectorAll('#wall i');
+    const wall=document.getElementById('wall');
 
     icons.forEach((icon) => {
         icon.addEventListener('click', function() {
             const valueIcon=this.dataset.value;
-            wallI.forEach((w) => {
-                w.className=`fa-solid fa-${valueIcon} icon`;
-            });
 
+            wall.innerHTML='';
+
+            for (let i=0;i<100;i++) {
+                const iconActivo=document.createElement('i');
+                iconActivo.className=`fa-solid fa-${valueIcon} icon`;
+                wall.appendChild(iconActivo);
+            }
             icons.forEach((i) => i.classList.remove('seleccionado'));
             
             icon.classList.add('seleccionado');
         })
 
         if(icon.dataset.value=='star'){
-            wallI.forEach((w) => {
-                w.className=`fa-solid fa-star icon`;
-            });
+            for (let i=0;i<100;i++) {
+            const star=document.createElement('i');
+            star.className=`fa-solid fa-star icon`;
+            wall.appendChild(star);
+            }
             icon.classList.add('seleccionado');
         }
     })
