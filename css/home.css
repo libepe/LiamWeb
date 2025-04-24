@@ -9,29 +9,16 @@ html, body {
     padding: 0;
 }
 
-#wall{
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-    row-gap: 10px;
-}
-
 
 #secciones{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
 }
 
 .seccion{
-    width: 90%;
-    border: 10px solid black;
-    border-radius: 30px;
+    width: 80%;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -69,7 +56,7 @@ html, body {
 }
 
 #sobremi-boton{
-    color: black;
+    color: white;
     font-family: 'Open Sans', serif;
     text-transform: capitalize;
     font-weight: bold;
