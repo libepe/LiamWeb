@@ -32,10 +32,6 @@ header p{
     transition: color 0.5s;
 }
 
-header p:hover{
-    color: white;
-}
-
 
 
 /*FOOTER*/

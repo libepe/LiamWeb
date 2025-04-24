@@ -12,6 +12,7 @@ function showHeader(){
     .then(response => response.text()) 
     .then(data => {
         header.innerHTML=data;
+        colorHF();
     })
 }
 
@@ -31,64 +32,58 @@ function showFooter(){
 //HOME/
 
 //COLORES FONDO//
-function colorFondo(){
-    const body=document.body;
+function colorMain(){
+    const bCs=document.querySelectorAll('.bc');
+    const Cs=document.querySelectorAll('.c');
     const colors=document.querySelectorAll('.color');
     colors.forEach((color) => {
+
+        const value=color.getAttribute('data-color');
+
+        function cambioColor(value){
+            bCs.forEach((bc => bc.style.backgroundColor=value));
+            Cs.forEach((c => c.style.color=value));
+        }
+
         color.addEventListener('click',function(){
-            const value=color.getAttribute('data-color');
-            body.style.backgroundColor=`${value}`;
-
+            cambioColor(value);
             colors.forEach(c => c.classList.remove('seleccionado'));
-
             color.classList.add('seleccionado');
         })
-        if(color.getAttribute('data-color')=='#CCCC00') {
+
+        if(value=='#CCCC00') {
+            cambioColor(value);
             color.classList.add('seleccionado');
-            body.style.backgroundColor='#CCCC00';
         }
     });
 }
-colorFondo();
+colorMain();
 
 
+function colorHF(){
+    const Hs=document.querySelectorAll('.h');
+    const colors=document.querySelectorAll('.color');
+    console.log('Found .h elements:', Hs);
+    let value='#CCCC00';
 
-
-
-//ICONO FONDO//
-function iconoFondo(){
-    const icons=document.querySelectorAll('.icon');
-    const wall=document.getElementById('wall');
-
-    icons.forEach((icon) => {
-        icon.addEventListener('click', function() {
-            const valueIcon=this.dataset.value;
-
-            wall.innerHTML='';
-
-            for (let i=0;i<100;i++) {
-                const iconActivo=document.createElement('i');
-                iconActivo.className=`fa-solid fa-${valueIcon} icon`;
-                wall.appendChild(iconActivo);
-            }
-            icons.forEach((i) => i.classList.remove('seleccionado'));
-            
-            icon.classList.add('seleccionado');
+    colors.forEach((color) => {
+        color.addEventListener('click',()=>{
+            value=color.getAttribute('data-color');
         })
-
-        if(icon.dataset.value=='star'){
-            for (let i=0;i<100;i++) {
-            const star=document.createElement('i');
-            star.className=`fa-solid fa-star icon`;
-            wall.appendChild(star);
-            }
-            icon.classList.add('seleccionado');
-        }
     })
 
+    Hs.forEach((h) => {
+        h.addEventListener('mouseover',()=>{
+            if(value){
+                h.style.color=value;
+            } 
+        });
 
+        h.addEventListener('mouseout',()=>{
+            h.style.color='';
+        });
+    })
 }
-iconoFondo();
 
 
 

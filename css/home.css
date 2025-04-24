@@ -9,11 +9,6 @@ html, body {
     padding: 0;
 }
 
-body{
-    height: 100%;
-    background-attachment: fixed;
-}
-
 #wall{
     position: fixed;
     height: 100%;
@@ -26,20 +21,6 @@ body{
 }
 
 
-#wall i{
-    font-size: 100px;
-    color: black;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.05;
-    transform-style: preserve-3d;
-    will-change: transform;
-    transition: transform 0.5s;
-}
-
-
 #secciones{
     display: grid;
     grid-template-columns: 1fr;
@@ -49,7 +30,7 @@ body{
 
 .seccion{
     width: 90%;
-    border: 10px solid white;
+    border: 10px solid black;
     border-radius: 30px;
     height: 400px;
     display: flex;
@@ -94,8 +75,8 @@ body{
     font-weight: bold;
     font-size: 30px;
     border-radius: 20px;
+    border: 5px solid;
     padding: 20px;
-    background-color: white;
     cursor: pointer;
 }
 
@@ -110,7 +91,7 @@ body{
 #temas{
     width: 100%;
     justify-content: center;
-    display: none;
+    display: flex;
 }
 
 .escogetema{
@@ -138,21 +119,12 @@ body{
     border-radius: 20px;
 }
 
-.icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: lightgray;
-    cursor: pointer;
-    font-size: 30px;
-    padding: 30px;
-    border-radius: 20px;
-}
-
 .seleccionado{
     opacity: 0.5;
 }
+
+
+
 
 
 
