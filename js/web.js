@@ -34,13 +34,19 @@ function showFooter(){
 
 function clickShow(){
     const fondo=document.getElementById('fondo');
+    const exit=document.getElementById('exit');
+    const header=document.querySelector('header'); 
 
     fondo.addEventListener('click', () => {
-        const header=document.querySelector('header'); 
         if (header) {
-            header.classList.toggle('header-activo'); 
+            header.classList.add('header-activo'); 
         }
     });
+
+    exit.addEventListener('click', () => {
+        console.log('Exit!')
+        header.classList.remove('header-activo');
+    })
     
 }
 

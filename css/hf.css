@@ -8,9 +8,9 @@
 
 header{
     width: 350px;
-    height: 350px;
+    height: 450px;
     left: 50%;
-    top: 10%;
+    top: -100%;
     transform: translateX(-50%);
     margin: 0 auto;
     z-index: 5;
@@ -28,7 +28,7 @@ header{
 }
 
 .header-activo{
-    top: -100%;
+    top: 10%;
     
 }
 
@@ -44,7 +44,11 @@ header{
     align-items: center;
     width: 100%;
     height: 100%;
+}
 
+#exit{
+    grid-column: span 2;
+    font-size: 60px;
 }
 
 
