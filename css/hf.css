@@ -7,26 +7,44 @@
 /*HEADER*/
 
 header{
-    width: 100%;
-    height: 60px;
+    width: 350px;
+    height: 350px;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    margin: 0 auto;
     z-index: 5;
     position: fixed;
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     overflow: hidden;
-    gap: 100px;
-    background-color: white;
+    background-color: black;
+    display: grid;
+    padding: 40px;
+    border-radius: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    transition: top 0.5s;
 }
 
-header p{
-    color: black;
+.header-activo{
+    top: -100%;
+    
+}
+
+.h{
+    color: white;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 20px;
     font-family: 'Open Sans', serif;
-    transition: color 0.5s;
+    transition: background-color 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
 }
 
 
@@ -42,6 +60,7 @@ footer{
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    z-index: 5;
 }
 
 footer #titulo-contacto{
