@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
+    colorMain();
 });
 
 
@@ -13,7 +14,8 @@ function showHeader(){
     .then(data => {
         header.innerHTML=data;
         colorHF();
-        clickShow();
+        menuColor();
+        colorMain();
     })
 }
 
@@ -27,50 +29,41 @@ function showFooter(){
 }
 
 
+function menuColor(){
+    const tema=document.getElementById('tema');
+    const colors=document.getElementById('colors');
+        document.addEventListener('click',(c) => {
+        if(c.target==tema){
+            colors.classList.toggle('opencolors');
+        }else if(colors.contains(c.target)){
+            colors.classList.add('opencolors');
+        }else{
+            colors.classList.remove('opencolors');
+        }
+    })
+}
+
 
 
 
 //HOME/
 
-function clickShow(){
-    const fondo=document.getElementById('fondo');
-    const exit=document.getElementById('exit');
-    const header=document.querySelector('header'); 
-
-    fondo.addEventListener('click', () => {
-        if (header) {
-            header.classList.add('header-activo'); 
-        }
-    });
-
-    exit.addEventListener('click', () => {
-        console.log('Exit!')
-        header.classList.remove('header-activo');
-    })
-    
-}
-
 
 
 //COLORES FONDO//
 
-function colorOscuro(color, oscuro=0.8) {
-    let r=parseInt(color.slice(1, 3), 16);
-    let g=parseInt(color.slice(3, 5), 16);
-    let b=parseInt(color.slice(5, 7), 16);
-
-    r=Math.floor(r*oscuro);
-    g=Math.floor(g*oscuro);
-    b=Math.floor(b*oscuro);
-
-    return `rgb(${r}, ${g}, ${b})`;
-}
-
 function colorMain(){
     const bCs=document.querySelectorAll('.bc');
     const bRs=document.querySelectorAll('.br');
+    const bWs=document.querySelectorAll('.bw');
     const Cs=document.querySelectorAll('.c');
+    const fondo=document.getElementById('fondo');
     const colors=document.querySelectorAll('.color');
+
+    const colorDefecto='#874f4f';
+
+    const colorGuardado='guardar';
+
     colors.forEach((color) => {
 
         const value=color.getAttribute('data-color');
@@ -78,28 +71,31 @@ function colorMain(){
         function cambioColor(value){
             bCs.forEach((bc => bc.style.backgroundColor=value));
             Cs.forEach((c => c.style.color=value));
-            bRs.forEach((br => br.style.borderColor=colorOscuro(value, 0.8)));
+            bWs.forEach((bw => bw.style.boxShadow=`inset 0px 0px 20px ${value}`));
+            bRs.forEach((br => br.style.borderColor=value));
+            if(fondo){
+                fondo.style.backgroundImage=`linear-gradient(black, ${value})`;
+            }
         }
 
         color.addEventListener('click',function(){
             cambioColor(value);
+            localStorage.setItem(colorGuardado,value);
             colors.forEach(c => c.classList.remove('seleccionado'));
             color.classList.add('seleccionado');
-
-            document.querySelectorAll('.bc').forEach(bc => {
-                bc.style.backgroundColor=value;
-            });
-
         })
 
-        if(value=='#4d1b1b') {
+        const colorEscogido=localStorage.getItem(colorGuardado) || colorDefecto;
+
+
+        if(value==colorEscogido) {
             cambioColor(value);
             color.classList.add('seleccionado');
         }
     });
 
 }
-colorMain();
+
 
 
 
@@ -107,26 +103,36 @@ colorMain();
 function colorHF(){
     const Hs=document.querySelectorAll('.h');
     const colors=document.querySelectorAll('.color');
-    let value='#4d1b1b';
+
+    const colorDefecto='#874f4f';
+    const colorGuardado='guardar';
+
+    let value=localStorage.getItem(colorGuardado) || colorDefecto;
 
     colors.forEach((color) => {
         color.addEventListener('click',()=>{
             value=color.getAttribute('data-color');
+            localStorage.setItem(colorGuardado,value);
         })
     })
 
     Hs.forEach((h) => {
         h.addEventListener('mouseover',()=>{
             if(value){
-                h.style.backgroundColor=value;
+                h.style.color=value;
             } 
         });
 
         h.addEventListener('mouseout',()=>{
-            h.style.backgroundColor='';
+            h.style.color='';
         });
     })
+
+    Hs.forEach((h) => {
+        h.style.color=value;
+    })
 }
+
 
 
 
@@ -139,6 +145,36 @@ function colorHF(){
 
 
 //GENERAL//
+
+let paginaActual=null;
+function cambioPagina(idApartado, idPagina){
+    const pagina=document.getElementById(idPagina);
+    const apartado=document.getElementById(idApartado);
+
+
+    apartado.addEventListener('pointerdown', () => {
+        if(paginaActual && paginaActual!==pagina){
+            paginaActual.classList.remove('activar');
+        }
+        
+        if(pagina!==paginaActual){
+            pagina.classList.add('activar');
+            paginaActual=pagina;
+        }
+            
+    });
+ };
+
+    
+
+cambioPagina('apartado1','pagina1');
+cambioPagina('apartado2','pagina2');
+cambioPagina('apartado3','pagina3');
+cambioPagina('apartado4','pagina4');
+
+
+
+
 
 function efectoMantenido(event) {
     if (event.button==0 || event.pointerType=="touch") {
@@ -153,7 +189,7 @@ function efectoNoMantenido(event) {
 }
 
 
-const divClicks=document.querySelectorAll('.sobremi');
+const divClicks=document.querySelectorAll('');
 
 
 divClicks.forEach((div) => {

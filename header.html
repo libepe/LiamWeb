@@ -1,9 +1,33 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link href="css/hf.css" rel="stylesheet">
+</head>
+<body>
     <header>
-        <div class="h">Inicio</div>
-        <div class="h">Mis proyectos</div>
-        <div class="h">Sobre mi</div>
-        <div class="h">Contacto</div>
-        <div class="h" id="exit"><i class="fa-solid fa-xmark"></i></div>
+        <div id="menu">
+            <p class="h" onclick="window.location.href='index.html'">Inicio</p>
+            <p class="h" onclick="window.location.href='portfolio.html'">Portfolio</p>
+            <p class="h">Sobre mi</p>
+            <p class="h">Contacto</p>
+            <div id="tema" class="bw c">Color</div>
+        </div>
+        <div id="colors">
+            <div class="color" data-color="#874f4f" style="background-color: #874f4f;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#956b52" style="background-color: #956b52;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#868035" style="background-color: #868035;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#4f884f" style="background-color: #4f884f;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#4f6999" style="background-color: #4f6999;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#4e927d" style="background-color: #4e927d;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#6e5b99" style="background-color: #6e5b99;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#8f866a" style="background-color: #8f866a;"><i class="fa-solid fa-check"></i></div>
+            <div class="color" data-color="#7f934c" style="background-color: #7f934c;"><i class="fa-solid fa-check"></i></div>
+        </div>
     </header>
 
+    <script src="js/web.js"></script>
+</body>
+</html>
