@@ -14,7 +14,7 @@ function showHeader(){
         header.innerHTML=data;
         colorTheme();
         menuColor();
-        oscuroClaro();
+        invertFondo();
     })
 }
 
@@ -66,6 +66,24 @@ function colorTheme(){
             color.classList.add('seleccionado');
             document.documentElement.style.setProperty('--colortheme',escogido);
         })
+    })
+}
+
+
+function invertFondo(){
+    const invertido=document.getElementById('invertido');
+    const fondos=document.getElementById('fondos');
+    const guardado=localStorage.getItem('gradiente');
+
+    if(guardado=='true'){
+        fondos.classList.add('fondo-invertido');
+    }
+
+    invertido.addEventListener('click',() => {
+        fondos.classList.toggle('fondo-invertido');
+
+        const estaInvertido=fondo.classList.contains('fondo-invertido');
+        localStorage.setItem('gradiente',estaInvertido);
     })
 }
 

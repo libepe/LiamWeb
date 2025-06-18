@@ -10,12 +10,38 @@ html, body {
     height: 300vh;
 }
 
-#fondo{
+#fondos{
     width: 100%;
     height: 100vh;
     position: fixed;
     background-image: linear-gradient(black, var(--colortheme));
 }
+
+.fondo{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fondo-colorabajo{
+    background-image: linear-gradient(black, var(--colortheme));
+    opacity: 1;
+}
+
+.fondo-colorarriba{
+    background-image: linear-gradient(var(--colortheme), black);
+    opacity: 0;
+}
+
+.fondo-invertido .fondo-colorabajo{
+    opacity: 0 !important;
+}
+
+.fondo-invertido .fondo-colorarriba{
+    opacity: 1 !important;
+}
+
 
 .pagina{
     transition: transform 0.5s, opacity 0.5s;
