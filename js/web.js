@@ -1,9 +1,8 @@
-//HEADER//
+//HEADER Y FOOTER LOADS//
 
 document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
-    colorMain();
 });
 
 
@@ -13,9 +12,9 @@ function showHeader(){
     .then(response => response.text()) 
     .then(data => {
         header.innerHTML=data;
-        colorHF();
+        colorTheme();
         menuColor();
-        colorMain();
+        oscuroClaro();
     })
 }
 
@@ -29,14 +28,15 @@ function showFooter(){
 }
 
 
+
+//PALETA DE COLORES//
+
 function menuColor(){
     const tema=document.getElementById('tema');
     const colors=document.getElementById('colors');
         document.addEventListener('click',(c) => {
         if(c.target==tema){
             colors.classList.toggle('opencolors');
-        }else if(colors.contains(c.target)){
-            colors.classList.add('opencolors');
         }else{
             colors.classList.remove('opencolors');
         }
@@ -45,93 +45,42 @@ function menuColor(){
 
 
 
-
-//HOME/
-
-
-
-//COLORES FONDO//
-
-function colorMain(){
-    const bCs=document.querySelectorAll('.bc');
-    const bRs=document.querySelectorAll('.br');
-    const bWs=document.querySelectorAll('.bw');
-    const Cs=document.querySelectorAll('.c');
-    const fondo=document.getElementById('fondo');
+function colorTheme(){
     const colors=document.querySelectorAll('.color');
-
-    const colorDefecto='#874f4f';
-
-    const colorGuardado='guardar';
+    const value=localStorage.getItem('colortheme') || '#874f4f';
+    document.documentElement.style.setProperty('--colortheme',value);
 
     colors.forEach((color) => {
-
-        const value=color.getAttribute('data-color');
-
-        function cambioColor(value){
-            bCs.forEach((bc => bc.style.backgroundColor=value));
-            Cs.forEach((c => c.style.color=value));
-            bWs.forEach((bw => bw.style.boxShadow=`inset 0px 0px 20px ${value}`));
-            bRs.forEach((br => br.style.borderColor=value));
-            if(fondo){
-                fondo.style.backgroundImage=`linear-gradient(black, ${value})`;
-            }
-        }
-
-        color.addEventListener('click',function(){
-            cambioColor(value);
-            localStorage.setItem(colorGuardado,value);
-            colors.forEach(c => c.classList.remove('seleccionado'));
+        if(color.getAttribute('data-color')==value){
             color.classList.add('seleccionado');
-        })
-
-        const colorEscogido=localStorage.getItem(colorGuardado) || colorDefecto;
-
-
-        if(value==colorEscogido) {
-            cambioColor(value);
-            color.classList.add('seleccionado');
+        }else{
+            color.classList.remove('seleccionado');
         }
-    });
-
-}
-
-
-
-
-
-function colorHF(){
-    const Hs=document.querySelectorAll('.h');
-    const colors=document.querySelectorAll('.color');
-
-    const colorDefecto='#874f4f';
-    const colorGuardado='guardar';
-
-    let value=localStorage.getItem(colorGuardado) || colorDefecto;
+    })
 
     colors.forEach((color) => {
         color.addEventListener('click',()=>{
-            value=color.getAttribute('data-color');
-            localStorage.setItem(colorGuardado,value);
+            const escogido=color.getAttribute('data-color');
+            localStorage.setItem('colortheme', escogido);
+            colors.forEach(c => c.classList.remove('seleccionado'));
+            color.classList.add('seleccionado');
+            document.documentElement.style.setProperty('--colortheme',escogido);
         })
     })
-
-    Hs.forEach((h) => {
-        h.addEventListener('mouseover',()=>{
-            if(value){
-                h.style.color=value;
-            } 
-        });
-
-        h.addEventListener('mouseout',()=>{
-            h.style.color='';
-        });
-    })
-
-    Hs.forEach((h) => {
-        h.style.color=value;
-    })
 }
+
+
+
+
+
+
+//MENU DEL MOVIL//
+
+
+
+
+
+
 
 
 
@@ -145,35 +94,6 @@ function colorHF(){
 
 
 //GENERAL//
-
-let paginaActual=null;
-function cambioPagina(idApartado, idPagina){
-    const pagina=document.getElementById(idPagina);
-    const apartado=document.getElementById(idApartado);
-
-
-    apartado.addEventListener('pointerdown', () => {
-        if(paginaActual && paginaActual!==pagina){
-            paginaActual.classList.remove('activar');
-        }
-        
-        if(pagina!==paginaActual){
-            pagina.classList.add('activar');
-            paginaActual=pagina;
-        }
-            
-    });
- };
-
-    
-
-cambioPagina('apartado1','pagina1');
-cambioPagina('apartado2','pagina2');
-cambioPagina('apartado3','pagina3');
-cambioPagina('apartado4','pagina4');
-
-
-
 
 
 function efectoMantenido(event) {

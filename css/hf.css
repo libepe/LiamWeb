@@ -1,8 +1,16 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
 
 header, #colors{
     position: fixed;
+}
+
+#movil{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 
@@ -11,7 +19,6 @@ header{
     z-index: 5;
     background-color: white;
     position: fixed;
-    gap: 50px;
 }
 
 #menu{
@@ -24,7 +31,7 @@ header{
     height: 50px;
 }
 
-#menu p{
+#menu a{
     font-size: 20px;
     text-transform: uppercase;
     font-family: 'Open Sans', serif;
@@ -32,47 +39,58 @@ header{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: black;
     transition: color 0.5s;
+}
+
+#logo{
+    margin-right: 300px;
+    font-size: 30px !important;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+    border-width: 15px 5px 15px 5px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(30deg);
+    transition: border-color 0.5s;
+}
+
+
+#menu .h:hover{
+    color: var(--colortheme);
 }
 
 #tema{
     display: flex;
+    background-color: white;
+    gap: 10px;
     height: 100%;
     width: 100px;
     justify-content: center;
     align-items: center;
-    background-color: white;
     cursor: pointer;
     font-family: 'Open Sans', serif;
     text-transform: uppercase;
     font-size: 20px;
+    position: relative;
+    transition: color 0.5s;
 }
 
-#escogido{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    margin: 0 auto;
-    height: 50px;
-    width: 100%;
-    border-radius: 10px;
-    font-weight: bold;
-    pointer-events: none;
+#tema:hover{
+    color: var(--colortheme);
 }
 
 #colors{
     background-color: black;
     height: 500px;
-    width: 500px;
+    width: 100%;
     left: 50%;
     top: -1000%;
     transform: translateX(-50%);
-    z-index: 5;
+    z-index: -1;
     position: absolute;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     transition: top 0.5s;
     border-radius: 30px;
     overflow: hidden;
@@ -80,7 +98,7 @@ header{
 }
 
 .opencolors {
-    top: 200% !important;
+    top: 120% !important;
 }
 
 
@@ -100,7 +118,7 @@ header{
 }
 
 .color i{
-    transform: scale(3);
+    transform: scale(1.5);
 }
 
 .seleccionado{
@@ -108,9 +126,29 @@ header{
     opacity: 0.5 !important;
 }
 
-#corredor{
-    height: 3px;
-    background-color: white;
+
+#oscuro-claro{
+    background-color: black;
+    width: 80px;
+    height: 20px;
+    border: 3px solid gray;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#oscuro-claro-cursor{
+    position: absolute;
+    background-color: var(--colortheme);
+    height: 100%;
+    width: 50%;
+    left: 0;
+    border-radius: 5px;
+    transition: left 0.5s, background-color 0.5s;
+}
+
+.slide{
+    left: 50% !important;
 }
 
 @media (max-width: 800px){
@@ -119,4 +157,17 @@ header{
         height: 300px;
         width: 300px;
     }
+
+    #menu .h{
+        display: none;
+    }
+
+    #movil{
+        display: block;
+    }
+
+}
+
+a{
+    all: unset;
 }

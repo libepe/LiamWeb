@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contacto{
+    color: var(--colortheme) !important;
+}
+
+
+#formulario{
+    width: 800px;
+    position: absolute;
+    height: 600px;
+    top: 100px;
+    left: 100px;
+    border: 10px double var(--c1);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--colortheme);
+}
+
+.input{
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 5px solid var(--c1);
+    background-color: var(--c2);
+    padding: 10px;
+    font-size: 20px;
+    color: var(--c1);
+    outline: none;
+}
+
+#email{
+    height: 50px;
+}
+
+#mensaje{
+    height: 100%;
+}
+
