@@ -9,12 +9,19 @@
 <body>
     <div id="header"></div>
     <main>
-        <div id="fondo"></div>
         <div id="formulario">
-            <input id="email" class="input" type="text" placeholder="Tu Email">
-            <textarea id="mensaje" class="input" placeholder="Tu vida, consejos, lo que te apetezca"></textarea>
+            <div id="mensaje">
+                <textarea id="mensaje-texto" class="input"></textarea>
+                <label for="mensaje-texto" id="mensaje-placeholder">Sugerencias, cuenta tu vida...¡Lo que quieras!</label>
+            </div>
+            <div id="envio">
+                <input id="email" class="input" type="text" placeholder="Tu Email">
+                <div id="enviar">Enviar</div>
+            </div>
         </div>
     </main>
+    <br>
+    <div id="footer"></div>
 
     <script src="js/web.js"></script>
 </body>

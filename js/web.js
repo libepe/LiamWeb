@@ -14,7 +14,6 @@ function showHeader(){
         header.innerHTML=data;
         colorTheme();
         menuColor();
-        invertFondo();
     })
 }
 
@@ -24,6 +23,9 @@ function showFooter(){
     .then(response => response.text()) 
     .then(data => {
         footer.innerHTML=data;
+        if(footer){
+            console.log('footer found');
+        }
     })
 }
 
@@ -70,29 +72,31 @@ function colorTheme(){
 }
 
 
-function invertFondo(){
-    const invertido=document.getElementById('invertido');
-    const fondos=document.getElementById('fondos');
-    const guardado=localStorage.getItem('gradiente');
 
-    if(guardado=='true'){
-        fondos.classList.add('fondo-invertido');
-    }
 
-    invertido.addEventListener('click',() => {
-        fondos.classList.toggle('fondo-invertido');
 
-        const estaInvertido=fondo.classList.contains('fondo-invertido');
-        localStorage.setItem('gradiente',estaInvertido);
+
+
+
+
+
+
+
+//PLACEHOLDERS//
+
+function placeholderInput(){
+    const placeholder=document.getElementById('mensaje-placeholder');
+    const input=document.getElementById('mensaje-texto');
+
+    input.addEventListener('input',() => {
+        if(input.value.trim()!==""){
+            placeholder.classList.add('ver');
+        }else{
+            placeholder.classList.remove('ver');
+        }
     })
 }
-
-
-
-
-
-
-//MENU DEL MOVIL//
+placeholderInput();
 
 
 
@@ -127,13 +131,6 @@ function efectoNoMantenido(event) {
 }
 
 
-const divClicks=document.querySelectorAll('');
 
 
-divClicks.forEach((div) => {
-    div.addEventListener('pointerdown', efectoMantenido);
-    div.addEventListener('pointerup', efectoNoMantenido);
-    div.addEventListener('pointerleave', efectoNoMantenido);
-    div.addEventListener('pointercancel', efectoNoMantenido);
-});
 
