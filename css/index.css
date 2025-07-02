@@ -26,6 +26,12 @@ html, body {
     z-index: 1;
     background-color: var(--colortheme);
     border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+#titular:hover{
+    transform: scale(1.2);
 }
 
 
