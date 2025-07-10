@@ -2,79 +2,122 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 
 
 
 #titular{
-    font-family: 'Open Sans', serif;
-    width: 100%;
-    text-align: center;
+    position: relative;
+    font-family: 'Open Sans', serif;    
     justify-content: center;
-    align-items: center;
     display: flex;
+    align-items: start;
     flex-direction: column;
     gap: 100px;
-    height: 700px;
+    width: 100%;
+    height: 100vh;
+    background-color: #333333;
+    box-shadow: 0 0 30px 10px black;
     z-index: 1;
-    background-color: var(--colortheme);
-    border-radius: 50px;
+    transition: background-color 0.5s;
+}
+
+#titulo{
+    font-size: 90px;
+    font-weight: bold;
+    color: white;
+    padding-left: 100px;
+    text-shadow: 1px 1px 10px black;
+}
+
+#titulo span{
+    font-size: 120px;
+    color: var(--colortheme);
+}
+
+#escogecolor{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
     cursor: pointer;
+    width: 700px;
+    height: 100px;
+    border-radius: 20px;
+    transition: box-shadow 0.5s;
+}
+
+
+#color-container{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    bottom: 0;
     transition: transform 0.5s;
 }
 
-#titular:hover{
-    transform: scale(1.2);
-}
-
-
-#nombre{
-    font-size: 70px;
-    font-weight: bold;
-    z-index: 1;
-    color: black;
-}
-
-#fondo{
+.color{
     width: 100%;
-    height: 100vh;
-    position: fixed;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    font-size: 40px;
+    cursor: pointer;
+    transition: opacity 0.5s;
+}
+
+.color:hover{
+    opacity: 0.5;
 }
 
 
+.seleccionado{
+    color: black;
+
+}
+
+
+#colores{
+    width: 100%;
+    height: 300px;
+    background-color: var(--colortheme);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
 
 
 
 @media (max-width: 800px){
 
-    #secciones{
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    #titular{
-        align-items: center;
+    #titulo{
+        text-align: center;
+        font-size: 50px;
         padding: 0;
     }
 
-    .seccion{
-        width: 100%;
-        height: 500px;
+    #titulo span{
+        font-size: 70px;
     }
 
-    .texto{
-        width: 100%;
-        height: 100%;
+    .mov{
+        display: none;
     }
 
-    #colors{
-        height: 300px;
-        width: 300px;
+    #colores{
+        font-size: 30px;
     }
+
 }

@@ -1,0 +1,99 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a{
+    all: unset;
+}
+
+
+/*PORTADA*/
+
+#portada{
+    background-color: #333333;
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 0;
+    gap: 50px;
+    transition: opacity 0.5s;
+}
+
+#titulo{
+    font-size: 50px;
+    color: white;
+    z-index: 2;
+}
+
+#icono{
+    font-size: 500px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    color: black;
+}
+
+#texto{
+    color: white;
+    z-index: 2;
+}
+
+#eleccion{
+    display: flex;
+    gap: 20px;
+    width: 200px;
+    z-index: 2;
+}
+
+.opcion{
+    height: 50px;
+    width: 50%;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: filter 0.5s;
+}
+
+.opcion:hover{
+    filter: brightness(80%);
+}
+
+.opcion-no{
+    background-color: red;
+}
+
+.opcion-si{
+    background-color: forestgreen;
+}
+
+.desaparecer{
+    pointer-events: none !important;
+    opacity: 0 !important;
+}
+
+
+
+/*PAGINA ALTERNA*/
+
+#pagina{
+    width: 100%;
+    background-color: blue;
+    position: absolute;
+    z-index: -1;
+    height: 100px;
+}

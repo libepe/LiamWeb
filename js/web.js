@@ -1,4 +1,4 @@
-//HEADER Y FOOTER LOADS//
+//HEADER Y FOOTER//
 
 document.addEventListener('DOMContentLoaded',function(){
     showHeader();
@@ -13,7 +13,7 @@ function showHeader(){
     .then(data => {
         header.innerHTML=data;
         colorTheme();
-        menuColor();
+        openHeader();
     })
 }
 
@@ -29,21 +29,38 @@ function showFooter(){
     })
 }
 
+function openHeader(){
+    const bars=document.getElementById('bars');
+    const menu=document.getElementById('menu');
+    const exit=document.getElementById('exitmenu');
 
-
-//PALETA DE COLORES//
-
-function menuColor(){
-    const tema=document.getElementById('tema');
-    const colors=document.getElementById('colors');
-        document.addEventListener('click',(c) => {
-        if(c.target==tema){
-            colors.classList.toggle('opencolors');
+    document.addEventListener('click',(m) => {
+        if(bars.contains(m.target) || menu.contains(m.target) && m.target!=exit){
+            menu.classList.add('abremenu');
         }else{
-            colors.classList.remove('opencolors');
+            menu.classList.remove('abremenu');
         }
     })
 }
+
+
+
+//ALTERNA//
+
+function pagAlterna(){
+    const opcionNO=document.getElementById('opcionNO');
+    const portada=document.getElementById('portada');
+
+    opcionNO.addEventListener('click',()=>{
+        console.log('clicked')
+        portada.classList.add('desaparecer');
+    })
+}
+
+
+
+
+//COLORES//
 
 
 
@@ -74,14 +91,6 @@ function colorTheme(){
 
 
 
-
-
-
-
-
-
-
-
 //PLACEHOLDERS//
 
 function placeholderInput(){
@@ -104,18 +113,7 @@ placeholderInput();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//GENERAL//
+//TAPS//
 
 
 function efectoMantenido(event) {

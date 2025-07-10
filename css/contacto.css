@@ -13,6 +13,14 @@ html,body{
     flex-direction: column;
 }
 
+#contacto{
+    color: var(--colortheme) !important;
+    transition: color 0.5s;
+}
+
+input, textarea, select {
+  border: none;
+}
 
 #formulario{
     width: 700px;
@@ -24,7 +32,6 @@ html,body{
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    gap: 20px;
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 10px black;
@@ -37,10 +44,8 @@ html,body{
 
 #mensaje{
     width: 100%;
-    height: 90%;
+    height: 85%;
     margin: 0 auto;
-    border-radius: 10px;
-    border: 5px solid var(--colortheme);
     position: relative;
 }
 
@@ -78,19 +83,16 @@ html,body{
 
 #envio{
     width: 100%;
-    height: 10%;
+    height: 15%;
     margin: 0 auto;
     display: flex;
-    border-radius: 30px;
     overflow: hidden;
 }
 
 #email{
     width: 80%;
-    border-radius: 30px 0 0 30px;
     padding: 10px;
     font-size: 20px;
-    border: 5px solid var(--colortheme);
     font-family: 'Open Sans', serif;
 }
 
@@ -99,15 +101,25 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     text-transform: uppercase;
     font-weight: bold;
     background-color: var(--colortheme);
     font-size: 20px;
     cursor: pointer;
-    transition: opacity 0.5s;
+    border-radius: 20px;
+    transition: opacity 0.5s, background-color 0.5s;
 }
 
 #enviar:hover{
     opacity: 0.9;
+}
+
+.separador{
+    width: 90%;
+    height: 5px;
+    border: none;
+    background-color: black;
+    border-radius: 5px;
+    margin: 0 auto;
 }

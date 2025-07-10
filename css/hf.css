@@ -3,17 +3,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 body{
-    padding: 30px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    height: 200vh;
 }
 
-main{
-    flex: 1;
-    margin-top: 100px;
+
+
+#fondo img{
+    width: 100%;
+    filter: grayscale(100%);
 }
 
-:root{
-    --back: #3b3b3b;
+*{
+    font-family: 'Open Sans', serif;
 }
+
 
 
 /*HEADER*/
@@ -22,117 +28,34 @@ a{
     all: unset;
 }
 
-header, #colors{
-    position: fixed;
-}
-
-#movil{
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-
-header{
-    width: 100%;
-    z-index: 5;
-    position: fixed;
-    background-color: white;
-    border-radius: 30px;
-    overflow: hidden;
-}
 
 #menu{
+    height: 50px; 
     width: 100%;
+    position: fixed;
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    height: 50px;
-}
-
-#menu a{
-    font-size: 20px;
-    text-transform: uppercase;
-    font-family: 'Open Sans', serif;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: color 0.5s;
-    color: black;
+    background-color: black;
+    transition: right 0.5s;
+    z-index: 5;
+    gap: 100px;
+    box-shadow: 0 0 10px 0 white;
 }
 
 #menu .h{
-    height: 100%;
-    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.5s;
 }
 
 #menu .h:hover{
-    background-color: aquamarine;
-}
-
-#tema{
-    display: flex;
-    gap: 10px;
-    height: 100%;
-    width: 100px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-family: 'Open Sans', serif;
-    text-transform: uppercase;
-    font-size: 20px;
-    position: relative;
-    background-color: white;
-    transition: color 0.5s, background-color 0.5s;
-}
-
-#colors{
-    background-color: black;
-    height: 300px;
-    width: 100%;
-    left: 50%;
-    top: -1000%;
-    transform: translateX(-50%);
-    z-index: -1;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    transition: top 0.5s;
-    border-radius: 30px;
-    overflow: hidden;
-    border: 3px solid white;
-}
-
-.opencolors {
-    top: 120% !important;
+    color: var(--colortheme);
 }
 
 
-.color {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: transparent;
-    transition: opacity 0.5s;
-}
-
-.color:hover{
-    opacity: 0.5;
-}
-
-.color i{
-    transform: scale(1.5);
-}
-
-.seleccionado{
-    color: white !important;
-    opacity: 0.5 !important;
-}
 
 
 @media (max-width: 800px){
@@ -142,17 +65,15 @@ header{
         width: 300px;
     }
 
-    #menu .h{
-        display: none;
+    #fondo img{
+        height: 100%;
     }
 
-    #movil{
-        display: block;
-    }
+    
+    
 
-    #logo{
-        margin-right: 0;
-    }
+
+
 
 }
 
@@ -164,10 +85,11 @@ footer{
     height: 60px;
     position: relative;
     z-index: 5;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     gap: 100px;
+    background-color: blue;
 }
 
 .footer-icon{
@@ -184,28 +106,19 @@ footer{
 
 /*GENERAL*/
 
-.grad {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  z-index: -1;
-  transition: opacity 0.5s;
-}
 
-#grad1{
-    background-image: linear-gradient(to bottom right,transparent 0%, white 130%);
-    opacity: 1;
-}
-
-#grad2{
-    background-image: linear-gradient(to bottom right,transparent 0%, black 80%);
-    opacity: 0;
-}
-
-#grad1.fondo-invertido{
-    opacity: 0 !important;
-}
-
-#grad2.fondo-invertido{
-    opacity: 1 !important;
+#bars{
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 100px;
+    top: 50px;
 }
