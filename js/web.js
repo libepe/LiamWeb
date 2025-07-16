@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
+    setInterval(rotaTitular, 800);
 });
 
 
@@ -13,7 +14,6 @@ function showHeader(){
     .then(data => {
         header.innerHTML=data;
         colorTheme();
-        openHeader();
     })
 }
 
@@ -25,20 +25,6 @@ function showFooter(){
         footer.innerHTML=data;
         if(footer){
             console.log('footer found');
-        }
-    })
-}
-
-function openHeader(){
-    const bars=document.getElementById('bars');
-    const menu=document.getElementById('menu');
-    const exit=document.getElementById('exitmenu');
-
-    document.addEventListener('click',(m) => {
-        if(bars.contains(m.target) || menu.contains(m.target) && m.target!=exit){
-            menu.classList.add('abremenu');
-        }else{
-            menu.classList.remove('abremenu');
         }
     })
 }
@@ -60,13 +46,12 @@ function pagAlterna(){
 
 
 
-//COLORES//
-
-
+//TECLADO DE COLORES//
 
 function colorTheme(){
+    const todo=document.querySelectorAll('*');
     const colors=document.querySelectorAll('.color');
-    const value=localStorage.getItem('colortheme') || '#874f4f';
+    const value=localStorage.getItem('colortheme') || '#b0c9db';
     document.documentElement.style.setProperty('--colortheme',value);
 
     colors.forEach((color) => {
@@ -79,15 +64,66 @@ function colorTheme(){
 
     colors.forEach((color) => {
         color.addEventListener('click',()=>{
+            todo.forEach(t=>t.classList.add('cambiocolor'));
+
             const escogido=color.getAttribute('data-color');
             localStorage.setItem('colortheme', escogido);
             colors.forEach(c => c.classList.remove('seleccionado'));
             color.classList.add('seleccionado');
             document.documentElement.style.setProperty('--colortheme',escogido);
+
+            setTimeout(()=>{
+                todo.forEach(t=>t.classList.remove('cambiocolor'));
+            }, 100)
+
         })
     })
 }
 
+
+
+//BOTON DE COLORES//
+
+function tocaColor(){
+    const colorchanger=document.getElementById('colorchanger');
+    const colors=document.querySelectorAll('.color');
+    const value=localStorage.getItem('colortheme') || '#b0c9db';
+    document.documentElement.style.setProperty('--colortheme',value);
+    let index=0;
+
+    colorchanger.addEventListener('pointerdown',()=>{
+        const color=colors[index];
+        const escogido=color.getAttribute('data-color');
+        localStorage.setItem('colortheme', escogido);
+        document.documentElement.style.setProperty('--colortheme',escogido);
+        index=(index+1) % colors.length;
+
+    })
+
+}
+tocaColor();
+
+function efectoCambioColor(){
+    const colorchanger=document.getElementById('colorchanger');
+    const rayos=document.getElementById('colorchanger-rayos');
+    colorchanger.addEventListener('click',()=>{
+        rayos.classList.add('on');
+    })
+}
+efectoCambioColor();
+
+//TITULAR BANK//
+
+function rotaTitular(){
+    const titulares=document.querySelectorAll('.titular');
+
+    titulares.forEach((titular)=>{
+        titular.classList.toggle('rota-titular');
+    })
+}
+
+
+   
 
 
 
@@ -113,20 +149,8 @@ placeholderInput();
 
 
 
-//TAPS//
 
 
-function efectoMantenido(event) {
-    if (event.button==0 || event.pointerType=="touch") {
-        event.currentTarget.classList.add('mantener');
-    }
-}
-
-function efectoNoMantenido(event) {
-    if (event.button==0 || event.pointerType=="touch") {
-        event.currentTarget.classList.remove('mantener');
-    }
-}
 
 
 
