@@ -63,28 +63,20 @@
     height: 200px;
     border-radius: 50%;
     background-color: #333333;
-    box-shadow: 1px 1px 10px black;
     cursor: pointer;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 5px dashed;
+    background-clip: padding-box;
+    transition: box-shadow 1s;
 }
+
+
 
 .on{
-    height: 800px !important;
-    width: 800px !important;
-}
-
-#colorchanger-rayos{
-    height: 250px;
-    width: 250px;
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    border: 20px solid var(--colortheme);
-    transition: height 1s, width 1s;
-    filter: brightness(120%);
+    box-shadow: inset 0 0 50px var(--colortheme);
 }
 
 

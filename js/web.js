@@ -105,9 +105,9 @@ tocaColor();
 
 function efectoCambioColor(){
     const colorchanger=document.getElementById('colorchanger');
-    const rayos=document.getElementById('colorchanger-rayos');
-    colorchanger.addEventListener('click',()=>{
-        rayos.classList.add('on');
+    const body=document.body;
+    colorchanger.addEventListener('pointerdown',()=>{
+        body.classList.add('on');
     })
 }
 efectoCambioColor();
