@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
-    setInterval(rotaTitular, 800);
+    efectoCambioColor();
 });
 
 
@@ -103,24 +103,23 @@ function tocaColor(){
 }
 tocaColor();
 
-function efectoCambioColor(){
+function efectoCambioColor() {
     const colorchanger=document.getElementById('colorchanger');
-    const body=document.body;
-    colorchanger.addEventListener('pointerdown',()=>{
-        body.classList.add('on');
-    })
+    const rayo=document.getElementById('rayo');
+    const todo=document.documentElement;
+
+    function toggleOn(state) {
+        todo.classList.toggle('on', state);
+        rayo.classList.toggle('on', state);
+        colorchanger.classList.toggle('changer-on', state);
+    
+    }
+
+    colorchanger.addEventListener('pointerdown', () => toggleOn(true));
+    colorchanger.addEventListener('pointerup', () => toggleOn(false));
+    colorchanger.addEventListener('pointerleave', () => toggleOn(false));
 }
-efectoCambioColor();
 
-//TITULAR BANK//
-
-function rotaTitular(){
-    const titulares=document.querySelectorAll('.titular');
-
-    titulares.forEach((titular)=>{
-        titular.classList.toggle('rota-titular');
-    })
-}
 
 
    

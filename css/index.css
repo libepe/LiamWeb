@@ -2,21 +2,20 @@
 .titular{
     width: 100%;
     height: 80vh;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     background-size: cover;
-    transition: clip-path 1s;
 }
 
 #titular-fondo {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     background-image: url(../images/imagen.jpg);
     filter: brightness(30%);
+    background-attachment: fixed;
 }
 
 #titular-color{
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     background-color: var(--colortheme);
     opacity: 0.5;
 }
@@ -28,11 +27,9 @@
     align-items: center;
     text-align: center;
     z-index: 2;
+    box-shadow: 0 0 10px 5px black;
 }
 
-.rota-titular{
-    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 95%);
-}
 
 #titulo{
     font-size: 90px;
@@ -49,37 +46,65 @@
 /*BOTON COLORES*/
 
 #colores{
-    width: 100%;
+    width: 500px;
     height: 500px;
+    border-radius: 30px;
     display: flex;
+    gap: 40px;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    background-color: black;
+    border: 5px solid var(--colortheme);
 }
 
-
+#colores-titulo{
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+}
 
 #colorchanger{
+    background-image: linear-gradient(indianred, royalblue, MediumSeaGreen, Khaki);
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: #333333;
     cursor: pointer;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px dashed;
-    background-clip: padding-box;
-    transition: box-shadow 1s;
+    border: 5px solid white;
+    box-shadow: 0 0 0 20px var(--colortheme);
+    animation: rotachanger 5s linear infinite;
 }
 
-
+@keyframes rotachanger{
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 .on{
-    box-shadow: inset 0 0 50px var(--colortheme);
+    filter: invert(100%) !important;
+    visibility: visible !important;
 }
 
+#rayo{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 6;
+    pointer-events: none;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;    align-items: center;
+}
 
+#rayo i{
+    color: black;
+    text-shadow: 5px 5px 10px white;
+    font-size: 500px;
+}
 
 /*TECLADO DE COLORES*/
 
@@ -154,6 +179,10 @@
 
     .color{
         font-size: 25px;
+    }
+
+    #rayo i{
+        font-size: 400px;
     }
 
 }
