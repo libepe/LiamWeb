@@ -46,7 +46,7 @@
 /*BOTON COLORES*/
 
 #colores{
-    width: 500px;
+    width: 100%;
     height: 500px;
     border-radius: 30px;
     display: flex;
@@ -56,6 +56,7 @@
     align-items: center;
     background-color: black;
     border: 5px solid var(--colortheme);
+    margin: 0 auto;
 }
 
 #colores-titulo{
@@ -175,6 +176,13 @@
 
     #colores{
         font-size: 30px;
+        width: 70%;
+        height: 350px;
+    }
+
+    #colorchanger{
+        height: 150px;
+        width: 150px;
     }
 
     .color{
