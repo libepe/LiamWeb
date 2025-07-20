@@ -42,82 +42,22 @@
 }
 
 
-
-/*BOTON COLORES*/
-
-#colores{
-    width: 100%;
-    height: 500px;
-    border-radius: 30px;
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    border: 5px solid var(--colortheme);
-    margin: 0 auto;
-}
-
-#colores-titulo{
-    color: white;
-    font-weight: bold;
-    font-size: 50px;
-}
-
-#colorchanger{
-    background-image: linear-gradient(indianred, royalblue, MediumSeaGreen, Khaki);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid white;
-    box-shadow: 0 0 0 20px var(--colortheme);
-    animation: rotachanger 5s linear infinite;
-}
-
-@keyframes rotachanger{
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-.on{
-    filter: invert(100%) !important;
-    visibility: visible !important;
-}
-
-#rayo{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    z-index: 6;
-    pointer-events: none;
-    visibility: hidden;
-    display: flex;
-    justify-content: center;    align-items: center;
-}
-
-#rayo i{
-    color: black;
-    text-shadow: 5px 5px 10px white;
-    font-size: 500px;
-}
-
 /*TECLADO DE COLORES*/
+
+
+
+
 
 #color-container{
     position: absolute;
-    background-color: black;
+    background-color: white;
     width: 100%;
-    height: 100px;
+    height: 100%;
     display: none;
-    gap: 10px;
-    overflow: hidden;
-    bottom: 0;
+    gap: 5px;
+    border-radius: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    transition: transform 0.5s;
 }
 
 .color{
@@ -132,29 +72,20 @@
     transition: opacity 0.5s;
 }
 
+
+
 .color:hover{
     opacity: 0.5;
 }
 
 
 .seleccionado{
-    color: black;
+    color: white;
 
 }
 
-#portfolio-home{
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    color: var(--colortheme);
-    font-weight: bold;
-    position: relative;
-    
-    
-}
+
+
 
 
 
@@ -174,23 +105,9 @@
         display: none;
     }
 
-    #colores{
-        font-size: 30px;
-        width: 70%;
-        height: 350px;
-    }
-
-    #colorchanger{
-        height: 150px;
-        width: 150px;
-    }
-
     .color{
         font-size: 25px;
     }
 
-    #rayo i{
-        font-size: 400px;
-    }
 
 }

@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
-    efectoCambioColor();
+    loadColor();
 });
 
 
@@ -13,7 +13,6 @@ function showHeader(){
     .then(response => response.text()) 
     .then(data => {
         header.innerHTML=data;
-        colorTheme();
     })
 }
 
@@ -46,79 +45,23 @@ function pagAlterna(){
 
 
 
-//TECLADO DE COLORES//
-
-function colorTheme(){
-    const todo=document.querySelectorAll('*');
+function loadColor(){
     const colors=document.querySelectorAll('.color');
-    const value=localStorage.getItem('colortheme') || '#b0c9db';
+
+    const randomIndex=Math.floor(Math.random() * colors.length);
+    const selected=colors[randomIndex];
+
+    const value=selected.getAttribute('data-color');
+
     document.documentElement.style.setProperty('--colortheme',value);
 
-    colors.forEach((color) => {
-        if(color.getAttribute('data-color')==value){
-            color.classList.add('seleccionado');
-        }else{
-            color.classList.remove('seleccionado');
-        }
-    })
-
-    colors.forEach((color) => {
-        color.addEventListener('click',()=>{
-            todo.forEach(t=>t.classList.add('cambiocolor'));
-
-            const escogido=color.getAttribute('data-color');
-            localStorage.setItem('colortheme', escogido);
-            colors.forEach(c => c.classList.remove('seleccionado'));
-            color.classList.add('seleccionado');
-            document.documentElement.style.setProperty('--colortheme',escogido);
-
-            setTimeout(()=>{
-                todo.forEach(t=>t.classList.remove('cambiocolor'));
-            }, 100)
-
-        })
-    })
-}
-
-
-
-//BOTON DE COLORES//
-
-function tocaColor(){
-    const colorchanger=document.getElementById('colorchanger');
-    const colors=document.querySelectorAll('.color');
-    const value=localStorage.getItem('colortheme') || '#b0c9db';
-    document.documentElement.style.setProperty('--colortheme',value);
-    let index=0;
-
-    colorchanger.addEventListener('pointerdown',()=>{
-        const color=colors[index];
-        const escogido=color.getAttribute('data-color');
-        localStorage.setItem('colortheme', escogido);
-        document.documentElement.style.setProperty('--colortheme',escogido);
-        index=(index+1) % colors.length;
-
-    })
-
-}
-tocaColor();
-
-function efectoCambioColor() {
-    const colorchanger=document.getElementById('colorchanger');
-    const rayo=document.getElementById('rayo');
-    const todo=document.documentElement;
-
-    function toggleOn(state) {
-        todo.classList.toggle('on', state);
-        rayo.classList.toggle('on', state);
-        colorchanger.classList.toggle('changer-on', state);
     
-    }
-
-    colorchanger.addEventListener('pointerdown', () => toggleOn(true));
-    colorchanger.addEventListener('pointerup', () => toggleOn(false));
-    colorchanger.addEventListener('pointerleave', () => toggleOn(false));
 }
+
+
+
+
+
 
 
 
