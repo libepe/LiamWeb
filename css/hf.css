@@ -6,8 +6,7 @@ body,html{
     padding: 0;
     margin: 0;
     position: relative;
-    overflow-x: hidden;
-    overflow-y:auto;
+    height: 200vh;
 }
 
 *{
@@ -18,11 +17,15 @@ body,html{
 }
 
 
-
 /*HEADER*/
 
 a{
     all: unset;
+}
+
+.esconde{
+    height: 0 !important;
+    opacity: 0;
 }
 
 #menu{
@@ -33,16 +36,16 @@ a{
     align-items: center;
     justify-content: center;
     background-color: white;
-    transition: right 0.5s;
     z-index: 5;
     gap: 100px;
     box-shadow: 0 0 10px 0 black;
+    transition: height 0.5s, opacity 0.5s;
 }
 
 #menu .h{
     text-transform: uppercase;
     cursor: pointer;
-    font-size: 20px;
+    transform: scale(1.2);
     transition: color 0.5s;
 }
 

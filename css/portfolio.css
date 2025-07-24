@@ -16,6 +16,7 @@ html, body {
 
 #portfolio{
     color: var(--colortheme) !important;
+    filter: brightness(150%);
     transition: color 0.5s;
 }
 

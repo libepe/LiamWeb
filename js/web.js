@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
-    loadColor();
+    colorTheme();
 });
 
 
@@ -13,6 +13,7 @@ function showHeader(){
     .then(response => response.text()) 
     .then(data => {
         header.innerHTML=data;
+        headerOnScroll();
     })
 }
 
@@ -26,6 +27,24 @@ function showFooter(){
             console.log('footer found');
         }
     })
+}
+
+function headerOnScroll(){
+    const menu=document.getElementById('menu');
+
+    let scrollTimeout;
+
+    window.addEventListener('scroll',()=>{
+        menu.classList.add('esconde');
+
+        clearTimeout(scrollTimeout);
+            scrollTimeout=setTimeout(() => {
+            menu.classList.remove('esconde');
+        }, 100);
+    })
+
+    
+
 }
 
 
@@ -43,23 +62,34 @@ function pagAlterna(){
 }
 
 
+//COLORES//
 
-
-function loadColor(){
+function colorTheme(){
     const colors=document.querySelectorAll('.color');
-
-    const randomIndex=Math.floor(Math.random() * colors.length);
-    const selected=colors[randomIndex];
-
-    const value=selected.getAttribute('data-color');
-
+    const value=localStorage.getItem('colortheme') || '#b0c9db';
     document.documentElement.style.setProperty('--colortheme',value);
 
-    
+    colors.forEach((color) => {
+        if(color.getAttribute('data-color')==value){
+            color.classList.add('seleccionado');
+        }else{
+            color.classList.remove('seleccionado');
+        }
+    })
+
+    colors.forEach((color) => {
+        color.addEventListener('click',()=>{
+
+            const escogido=color.getAttribute('data-color');
+            localStorage.setItem('colortheme', escogido);
+            colors.forEach(c => c.classList.remove('seleccionado'));
+            color.classList.add('seleccionado');
+            document.documentElement.style.setProperty('--colortheme',escogido);
+
+
+        })
+    })
 }
-
-
-
 
 
 
@@ -84,6 +114,8 @@ function placeholderInput(){
     })
 }
 placeholderInput();
+
+
 
 
 
