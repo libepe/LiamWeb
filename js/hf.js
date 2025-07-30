@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
     colorTheme();
+    intoScroll();
 });
 
 
@@ -13,7 +14,6 @@ function showHeader(){
     .then(response => response.text()) 
     .then(data => {
         header.innerHTML=data;
-        headerOnScroll();
     })
 }
 
@@ -29,23 +29,6 @@ function showFooter(){
     })
 }
 
-function headerOnScroll(){
-    const menu=document.getElementById('menu');
-
-    let scrollTimeout;
-
-    window.addEventListener('scroll',()=>{
-        menu.classList.add('esconde');
-
-        clearTimeout(scrollTimeout);
-            scrollTimeout=setTimeout(() => {
-            menu.classList.remove('esconde');
-        }, 100);
-    })
-
-    
-
-}
 
 
 
@@ -65,6 +48,7 @@ function pagAlterna(){
 //COLORES//
 
 function colorTheme(){
+    const todo=document.querySelectorAll('*');
     const colors=document.querySelectorAll('.color');
     const value=localStorage.getItem('colortheme') || '#b0c9db';
     document.documentElement.style.setProperty('--colortheme',value);
@@ -78,7 +62,8 @@ function colorTheme(){
     })
 
     colors.forEach((color) => {
-        color.addEventListener('click',()=>{
+        color.addEventListener('pointerdown',()=>{
+            todo.forEach(t=>t.classList.add('cambiocolor'));
 
             const escogido=color.getAttribute('data-color');
             localStorage.setItem('colortheme', escogido);
@@ -86,16 +71,32 @@ function colorTheme(){
             color.classList.add('seleccionado');
             document.documentElement.style.setProperty('--colortheme',escogido);
 
-
+            setTimeout(()=>{
+                todo.forEach(t=>t.classList.remove('cambiocolor'));
+            }, 100)
         })
     })
 }
 
 
 
+function intoScroll(){
+    const colors=document.getElementById('colors');
+    const texto=document.getElementById('colors-texto');
 
+    new IntersectionObserver(function(list) {
+    if (list[0].isIntersecting) {
+      texto.classList.add('entra');
+    }else{
+        texto.classList.remove('entra');
+    }
+  }, {
+    threshold: 0.5
+  }).observe(colors);
 
-   
+    observer.observe(colors);
+}
+
 
 
 
@@ -114,7 +115,6 @@ function placeholderInput(){
     })
 }
 placeholderInput();
-
 
 
 
