@@ -80,22 +80,32 @@ function colorTheme(){
 
 
 
-function intoScroll(){
-    const colors=document.getElementById('colors');
-    const texto=document.getElementById('colors-texto');
+function intoScroll() {
+  const Ps = document.querySelectorAll('.pagina');
+  let lastScrollY = window.scrollY;
 
-    new IntersectionObserver(function(list) {
-    if (list[0].isIntersecting) {
-      texto.classList.add('entra');
-    }else{
-        texto.classList.remove('entra');
-    }
+  const observer = new IntersectionObserver(function(entries) {
+    const scrollingDown = window.scrollY > lastScrollY;
+    lastScrollY = window.scrollY;
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('entra');
+      } else if (!scrollingDown) {
+        // Only remove 'entra' when scrolling up
+        entry.target.classList.remove('entra');
+      }
+    });
   }, {
-    threshold: 0.5
-  }).observe(colors);
+    threshold: 0
+  });
 
-    observer.observe(colors);
+  Ps.forEach(p => observer.observe(p));
 }
+
+
+
+
 
 
 
