@@ -5,8 +5,13 @@
 body,html{
     padding: 0;
     margin: 0;
+    background-color: #1e1e1e;
+    transition: background-color 0.5s;
 }
 
+.boom{
+    background-color: red !important;
+}
 
 *{
     font-family: 'Open Sans', serif;
@@ -47,7 +52,7 @@ a{
 }
 
 #menu .h:hover{
-    color: dimgray;
+    color: var(--colortheme);
 }
 
 
