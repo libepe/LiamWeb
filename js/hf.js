@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
     colorTheme();
-    intoScroll();
-    fondoPagina();
 });
 
 
@@ -81,41 +79,6 @@ function colorTheme(){
 
 
 
-function intoScroll() {
-  const Ps = document.querySelectorAll('.pagina');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-
-      if (entry.isIntersecting) {
-        if (entry.boundingClientRect.top > 0) {
-          el.classList.add('entra');
-          fondoFlash();
-        }
-      } else {
-        if (entry.boundingClientRect.top > 0) {
-          el.classList.remove('entra');
-        }
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  Ps.forEach(p => observer.observe(p));
-}
-
-
-function fondoFlash(){
-    const body=document.body;
-
-    body.style.backgroundColor='white';
-
-    setTimeout(() => {
-        body.style.backgroundColor = '';
-    }, 200);
-}
 
 
 
