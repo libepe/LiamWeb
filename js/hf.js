@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
     colorTheme();
+    scrollDeploy();
 });
 
 
@@ -79,7 +80,32 @@ function colorTheme(){
 
 
 
+//SCROLL DEPLOY//
 
+function scrollDeploy(){
+    const paginaPortfolio=document.getElementById('pagina-portfolio');
+    const paginaContacto=document.getElementById('pagina-contacto');
+
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+        paginaPortfolio.classList.add('deploy');
+        } else {
+        paginaPortfolio.classList.remove('deploy');
+        }
+    });
+
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 800) {
+        paginaContacto.classList.add('deploy');
+        } else {
+        paginaContacto.classList.remove('deploy');
+        }
+    });
+
+
+}
 
 
 

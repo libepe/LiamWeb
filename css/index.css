@@ -6,98 +6,81 @@
 main{
     display: flex;
     flex-direction: column;
-    gap: 40px;
 }
 
 /*TITULAR*/
 
+
 #titular{
-    position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    background-color: blue;
-    border-radius: 60px;
+    align-items: start;
+    padding: 200px;
+    z-index: 2;
     cursor: pointer;
-    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.5);
-    background-image: url('../images/forest.jpg');
-    background-size: cover;
-    border: 5px solid var(--colortheme);
-}
-
-#brillo{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-radial-gradient( transparent, white 10%, transparent 20%);
-    opacity: 0.2;
-    border-radius: 60px;
+    background-color: #333333;
+    box-shadow: 0 0 20px 10px black;
 }
 
 
 #titulo {
-    position: absolute;
-    font-size: 80px;
+    font-size: 90px;
     font-weight: bold;
     color: white;
-    text-shadow: 4px 4px 8px rgba(0,0,0,1);
     z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#titulo span{
-    font-size: 100px;
-}
 
 /*PAGINAS*/
 
+.seccion{
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
 #pagina-portfolio{
-    width: 50%;
-    height: 60vh;
-    background-color: var(--colortheme);
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border: 5px solid black;
-    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.5);
-    border-radius: 60px;
-    cursor: pointer;
-    transition: transform 0.8s;
+    overflow: hidden;
+    background-color: var(--colortheme);
+    font-weight: bold;
+    font-size: 70px;
+    top: -110%;
+    transition: top 0.5s;
+    z-index: 1;
+    box-shadow: 0 0 20px 10px;
 }
 
-#pagina-portfolio:hover{
-    transform: scale(1.01);
+.deploy{
+    top: 0 !important;
 }
 
-#div1{
-    background-color: green;
-    height: 50px;
-    width: 200px;
-    border-radius: 20px;
-    cursor: pointer;
-}
 
-#div2{
-    background-color: green;
-    height: 200px;
-    width: 50px;
-    border-radius: 0 0 20px 20px;
-    cursor: pointer;
-}
 
 #pagina-contacto{
+    position: absolute;
     width: 100%;
-    height: 90vh;
-    background-color: #333333;
+    height: 600px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    top: -220%;
+    transition: top 0.5s;
+    z-index: 0;
 }
 
 
@@ -163,8 +146,11 @@ main{
         font-size: 25px;
     }
 
-    #titular-texto{
-        padding-left: 0;
+    #titular{
+        display: flex;
+        padding: 0;
+        align-items: center;
+        text-align: center;
     }
 
 
