@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
     colorTheme();
-    scrollChange();
+    scrollDeploy();
 });
 
 
@@ -106,14 +106,7 @@ function scrollDeploy(){
 }
 
 
-function scrollChange(){
-    const titular=document.getElementById('titular');
 
-    window.addEventListener('scroll',()=>{
-        titular.style.height = 0 + window.scrollY + 'px';
-        console.log('go')
-    })
-}
 
 
 
