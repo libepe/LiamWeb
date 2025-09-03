@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded',function(){
     showHeader();
     showFooter();
     colorTheme();
-    scrollDeploy();
+    scrollChange();
 });
 
 
@@ -103,8 +103,16 @@ function scrollDeploy(){
         paginaContacto.classList.remove('deploy');
         }
     });
+}
 
 
+function scrollChange(){
+    const titular=document.getElementById('titular');
+
+    window.addEventListener('scroll',()=>{
+        titular.style.height = 0 + window.scrollY + 'px';
+        console.log('go')
+    })
 }
 
 
