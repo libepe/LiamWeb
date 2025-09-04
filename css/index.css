@@ -13,12 +13,13 @@ main{
 
 #titular{
     width: 100%;
-    height: 100vh;
+    height: 500px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     align-items: start;
     z-index: 2;
+    border: 5px solid red;
 }
 
 
@@ -29,28 +30,46 @@ main{
     z-index: 1;
 }
 
+#fotoportada img{
+    filter: drop-shadow(0 0 20px white);
+}
+
 
 /*PAGINAS*/
 
+/*PRUEBA*/
 
-#pagina-portfolio{
-    width: 100%;
-    height: 600px;
-    background-color: white;
-    margin: 0 auto;
-    border-radius: 30px;
-    transform: scale(0);
+#pagina-portfolio, #pagina-contacto{
+    box-shadow: 0 0 20px 10px black;
+    cursor: pointer;
     transition: transform 0.5s;
 }
 
+#pagina-portfolio{
+    width: 800px;
+    height: 400px;
+    background: linear-gradient(to right, red, orange) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    border-radius:27% 73% 69% 31% / 48% 64% 36% 52% ;
+    box-shadow: 0 0 20px 10px black;
+}
+
 #pagina-contacto{
-    width: 100%;
-    height: 600px;
-    background-color: white;
-    margin: 0 auto;
-    border-radius: 30px;
-    transform: scale(0);
-    transition: transform 0.5s;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(lime, cyan);
+    box-shadow: 0 0 20px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    border-radius: 50% 50% 57% 43% / 32% 65% 35% 68% ;
+    
 }
 
 

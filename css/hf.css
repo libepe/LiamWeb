@@ -6,11 +6,14 @@ body{
     padding: 0;
     margin: 0;
     transition: background-color 0.5s;
-    background-color: var(--colortheme);
+    background: linear-gradient(to bottom right, #333333, black);
+
+
 }
 
 main{
     padding: 200px;
+    position: relative;
 }
 
 *{
@@ -40,7 +43,7 @@ a{
     gap: 100px;
     z-index: 30;
     position: fixed;
-    background-color: var(--colortheme);
+    background-color: black;
 }
 
 #menu .h{
@@ -67,6 +70,10 @@ a{
 
     #fondo img{
         height: 100%;
+    }
+
+    mAIN{
+        padding: 100px;
     }
 
     
