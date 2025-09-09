@@ -14,8 +14,7 @@ html,body{
 }
 
 #contacto{
-    color: var(--colortheme) !important;
-    filter: brightness(150%);
+    color: greenyellow !important;
     transition: color 0.5s;
 }
 

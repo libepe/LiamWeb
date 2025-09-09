@@ -1,23 +1,31 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
 
 body{
     padding: 0;
     margin: 0;
     transition: background-color 0.5s;
     background: linear-gradient(to right, #333333, black);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
 
-
+#inicio{
+    margin-right: 400px;
+    font-family: 'Asimovian', serif;
 }
 
 main{
-    padding: 200px;
+    flex: 1;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 *{
@@ -50,6 +58,10 @@ a{
     background: linear-gradient(to right, #333333, black);
 }
 
+#menu.desaparece{
+    opacity: 0 !important;
+}
+
 #menu .h{
     text-transform: uppercase;
     cursor: pointer;
@@ -59,13 +71,24 @@ a{
 }
 
 #menu .h:hover{
-    color: var(--colortheme);
+    color: greenyellow;
 }
 
 
 
 
 @media (max-width: 800px){
+
+    #menu{
+        height: 250px;
+        flex-direction: column;
+        gap: 35px;
+        background: black;
+    }
+
+    #inicio{
+        margin-right: 0;
+    }
 
     #colors{
         height: 300px;
@@ -76,11 +99,11 @@ a{
         height: 100%;
     }
 
-    mAIN{
-        padding: 100px;
+    main{
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
-    
 
     
     
@@ -98,15 +121,14 @@ footer{
     height: 100px;
     position: relative;
     z-index: 5;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
-    background-color: #333333;
+    background-color: white;
 }
 
 .footer-icon{
-    color: white;
     font-size: 30px;
     cursor: pointer;
     transition: color 0.5s, transform 0.5s;

@@ -14,6 +14,7 @@ function showHeader(){
     .then(response => response.text()) 
     .then(data => {
         header.innerHTML=data;
+        antiHeaderScroll();
     })
 }
 
@@ -30,7 +31,21 @@ function showFooter(){
 }
 
 
+//HEADER SHOWING SCROLL//
 
+function antiHeaderScroll(){
+    let scrolled=false;
+    const menu=document.getElementById('menu');
+
+    window.addEventListener('scroll',()=>{
+        if(!scrolled && window.scrollY > 0){
+            scrolled=true;
+            menu.classList.add('desaparece');
+        }else{
+            menu.classList.remove('desaparece');
+        }
+    })
+}
 
 //ALTERNA//
 
