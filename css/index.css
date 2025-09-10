@@ -97,18 +97,19 @@ main{
     align-items: center;
     width: 500px;
     height: 500px;
-    outline: 5px solid greenyellow;
     cursor: pointer;
     background-color: black;
     border-radius: 30% 70% 32% 68% / 63% 30% 70% 37% ;
     transform: rotate(-10deg);
-    overflow: hidden;
     transition: transform 0.5s;
+    overflow: hidden;
+    box-shadow: 0 0 5px 10px greenyellow;
 }
 
 .proyecto:hover{
     transform: scale(1.05) rotate(-10deg);
 }
+
 
 .proyecto-contenido{
     width: 100%;

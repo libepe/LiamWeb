@@ -6,7 +6,7 @@ body{
     padding: 0;
     margin: 0;
     transition: background-color 0.5s;
-    background: linear-gradient(to right, #333333, black);
+    background: linear-gradient(to right, #333333, #111111);
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -55,10 +55,12 @@ a{
     gap: 100px;
     z-index: 30;
     position: fixed;
-    background: linear-gradient(to right, #333333, black);
+    background-color: black;
+    transition: height 0.3s, opacity 0.3s;
 }
 
 #menu.desaparece{
+    height: 0 !important;
     opacity: 0 !important;
 }
 
@@ -74,17 +76,16 @@ a{
     color: greenyellow;
 }
 
+#bars-movil{
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: none;
+}
 
 
 
 @media (max-width: 800px){
-
-    #menu{
-        height: 250px;
-        flex-direction: column;
-        gap: 35px;
-        background: black;
-    }
 
     #inicio{
         margin-right: 0;
@@ -105,10 +106,28 @@ a{
     }
 
 
-    
-    
 
+    #menu .h{
+        display: none;
+    }
 
+    #bars-movil{
+        display: block;
+    }
+
+    #menu.abremenu{
+        height: 300px;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    #menu.abremenu .h{
+        display: block;
+    }
+
+    #menu.abremenu #bars-movil{
+        display: none;
+    }
 
 
 }
@@ -125,13 +144,14 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 100px;
-    background-color: white;
+    background-color: black;
 }
 
 .footer-icon{
     font-size: 30px;
     cursor: pointer;
     transition: color 0.5s, transform 0.5s;
+    color: white;
 }
 
 .footer-icon:hover{
@@ -139,21 +159,3 @@ footer{
 }
 
 
-/*GENERAL*/
-
-
-#bars{
-    font-size: 30px;
-    cursor: pointer;
-    color: black;
-    display: flex;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 100px;
-    top: 50px;
-}

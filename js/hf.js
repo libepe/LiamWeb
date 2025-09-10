@@ -15,6 +15,7 @@ function showHeader(){
     .then(data => {
         header.innerHTML=data;
         antiHeaderScroll();
+        menuMovil();
     })
 }
 
@@ -33,19 +34,21 @@ function showFooter(){
 
 //HEADER SHOWING SCROLL//
 
-function antiHeaderScroll(){
-    let scrolled=false;
-    const menu=document.getElementById('menu');
+function antiHeaderScroll() {
+      let scrollTimeout;
+      const menu = document.getElementById('menu');
 
-    window.addEventListener('scroll',()=>{
-        if(!scrolled && window.scrollY > 0){
-            scrolled=true;
-            menu.classList.add('desaparece');
-        }else{
-            menu.classList.remove('desaparece');
-        }
+      window.addEventListener('scroll', () => {
+        menu.classList.add('desaparece');
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+
+          menu.classList.remove('desaparece');
+        }, 50);
     })
-}
+    }
+
 
 //ALTERNA//
 
@@ -58,6 +61,28 @@ function pagAlterna(){
         portada.classList.add('desaparecer');
     })
 }
+
+
+
+
+//MENU MOVIL//
+
+function menuMovil(){
+    const bars=document.getElementById('bars-movil');
+    const menu=document.getElementById('menu');
+
+    bars.addEventListener('click',()=>{
+        menu.classList.add('abremenu');
+    })
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && event.target !== bars) {
+            menu.classList.remove('abremenu');
+        }
+    })
+}
+
+
 
 
 //COLORES//
