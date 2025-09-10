@@ -95,15 +95,15 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     cursor: pointer;
     background-color: black;
     border-radius: 30% 70% 32% 68% / 63% 30% 70% 37% ;
     transform: rotate(-10deg);
     transition: transform 0.5s;
     overflow: hidden;
-    box-shadow: 0 0 5px 10px greenyellow;
+    box-shadow: 0 0 5px 10px white;
 }
 
 .proyecto:hover{
