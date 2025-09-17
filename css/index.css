@@ -10,12 +10,25 @@ main{
 
 /*TITULAR*/
 
+#titular-fondo{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
 
 #titular{
-    width: 80vw;
-    height: 800px;
+    position: relative;
+    width: 100%;
+    padding: 200px;
+    height: 100vh;
     display: flex;
-    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: black;
 }
 
 #titular-texto{
@@ -30,8 +43,8 @@ main{
 #titulo {
     font-size: 90px;
     font-weight: bold;
-    color: white;
     z-index: 1;
+    color: white;
 }
 
 #intro{
@@ -41,7 +54,7 @@ main{
 
 #vermas{
     font-size: 30px;
-    background: linear-gradient(to right, lime, yellow);
+    background-color: gold;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,14 +69,6 @@ main{
 
 #vermas:hover{
     transform: scale(1.03);
-}
-
-#avatar{
-    position: absolute;
-    filter: drop-shadow(0 0 20px white);
-    transform: scaleX(-1);
-    width: 30%;
-    left: 50%;
 }
 
 
@@ -82,7 +87,9 @@ main{
     flex-direction: column;
     font-size: 60px;
     font-weight: bold;
+    z-index: 3;
     gap: 100px;
+    background-color: black;
 }
 
 #proyectos-intro{
@@ -96,31 +103,21 @@ main{
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 400px;
+    height: 500px;
     cursor: pointer;
-    background-color: black;
-    border-radius: 30% 70% 32% 68% / 63% 30% 70% 37% ;
-    transform: rotate(-10deg);
+    background-color: white;
+    border-radius: 20px;
     transition: transform 0.5s;
     overflow: hidden;
-    box-shadow: 0 0 5px 10px white;
+    box-shadow: 0 0 20px 5px black;
+    text-align: center;
 }
 
 .proyecto:hover{
-    transform: scale(1.05) rotate(-10deg);
+    transform: scale(1.05);
 }
 
 
-.proyecto-contenido{
-    width: 100%;
-    height: 100%;
-    transform: rotate(10deg);
-    border-radius: inherit;
-    overflow: hidden;  
-    text-align: center;
-    background-image: url('../images/neutra.jpg');
-    background-size: cover;
-}
 
 
 #pagina-contacto{
@@ -156,7 +153,7 @@ main{
     font-size: 30px;
     color: white;
     font-weight: bold;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
