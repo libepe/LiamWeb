@@ -11,25 +11,21 @@
 </head>
 <body>
     <div id="header"></div>
-    <main>
+    <main id="home">
 
-        <div id="titular">
-          <div id="titular-fondo"></div>
+        <div id="titular" class="seccion">
           <div id="titular-texto">
             <p id="titulo">No sé si soy tu aspirante,<br> sólo sé que soy Picasso</p>
             <p id="intro">Soy Liam Beus, diseño y desarrollo sitios webs</p>
-            <div id="vermas" onclick="window.location.href='contacto.html'">Hablemos pero mañana no, ¡Hoy!</div>
           </div>
         </div>
 
 
-      <div id="pagina-portfolio">
-        Proyectos
-        <div id="proyectos-intro">
-          <div class="proyecto"></div>
-          <div class="proyecto"></div>
-          <div class="proyecto"></div>
-        </div>
+
+      <div id="proyectos" class="seccion">
+        <div id="proyecto1" class="proyecto"></div>
+        <div class="proyecto"></div>
+        <div class="proyecto"></div>
       </div>
 
       <div id="pagina-contacto" class="pagina">Contacto</div>
@@ -37,25 +33,26 @@
 
         <div id="colores">
 
-          <div class="color" data-color="#00bfff" style="background-color: #00bfff;">
+          <div class="color" data-color="#00e5ff" style="background-color: #00e5ff;">
   <i class="fa-solid fa-check"></i>
 </div>
 
-<div class="color" data-color="#dc143c" style="background-color: #dc143c;">
+<div class="color" data-color="#ff0044" style="background-color: #ff0044;">
   <i class="fa-solid fa-check"></i>
 </div>
 
-<div class="color" data-color="#ffea00" style="background-color: #ffea00;">
+<div class="color" data-color="#ffff00" style="background-color: #ffff00;">
   <i class="fa-solid fa-check"></i>
 </div>
 
-<div class="color" data-color="#00ff7f" style="background-color: #00ff7f;">
+<div class="color" data-color="#00ff99" style="background-color: #00ff99;">
   <i class="fa-solid fa-check"></i>
 </div>
 
-<div class="color" data-color="#e6e6fa" style="background-color: #e6e6fa;">
+<div class="color" data-color="#d6b4ff" style="background-color: #d6b4ff;">
   <i class="fa-solid fa-check"></i>
 </div>
+
 
 
 
@@ -66,7 +63,23 @@
 
 
         </div>
-    </main>
+</main>
+
+<main id="contacto">
+  <div id="formulario">
+            <div id="mensaje">
+                <textarea id="mensaje-texto" class="input"></textarea>
+                <label for="mensaje-texto" id="mensaje-placeholder">Sugerencias, cuenta tu vida...¡Lo que quieras!</label>
+            </div>
+            <br>
+            <hr class="separador">
+            <br>
+            <div id="envio">
+                <input id="email" class="input" type="text" placeholder="Tu Email">
+                <div id="enviar">Enviar</div>
+            </div>
+        </div>
+</main>
     <div id="footer"></div>
 
     <script src="js/hf.js"></script>

@@ -16,6 +16,7 @@ function showHeader(){
         header.innerHTML=data;
         antiHeaderScroll();
         menuMovil();
+        cambioColorHeader();
     })
 }
 
@@ -47,7 +48,18 @@ function antiHeaderScroll() {
           menu.classList.remove('desaparece');
         }, 50);
     })
-    }
+}
+
+function cambioColorHeader(){
+    const menu=document.getElementById('menu');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50){
+            menu.classList.add('colorscroll');
+        }else{
+            menu.classList.remove('colorscroll');
+        }
+    })
+}
 
 
 //ALTERNA//

@@ -1,34 +1,35 @@
-#inicio{
-    color: greenyellow !important;
-    transition: color 0.5s;
-}
+
 
 main{
     display: flex;
     flex-direction: column;
 }
 
-/*TITULAR*/
 
-#titular-fondo{
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-}
+
+/*TITULAR*/
 
 
 #titular{
     position: relative;
     width: 100%;
     padding: 200px;
-    height: 100vh;
+    height: 110vh;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    background-color: black;
+    background-color: #292929;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+
+#contactame{
+    height: 400px;
+    width: 200px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
 }
 
 #titular-texto{
@@ -38,101 +39,68 @@ main{
     align-items: start;
     flex-direction: column;
     gap: 70px;
+    color: white;
 }
 
 #titulo {
     font-size: 90px;
     font-weight: bold;
     z-index: 1;
-    color: white;
 }
 
 #intro{
     font-size: 30px;
-    color: white;
-}
-
-#vermas{
-    font-size: 30px;
-    background-color: gold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 0 10px 5px black;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: transform 0.5s;
-}
-
-#vermas:hover{
-    transform: scale(1.03);
 }
 
 
-/*PAGINAS*/
-
-/*PRUEBA*/
 
 
-#pagina-portfolio{
+
+
+/*PROYECTOS*/
+
+
+#proyectos{
     width: 100%;
-    height: 900px;
+    height: 50vh;
     display: flex;
-    justify-content: center;
     color: white;
+    font-size: 70px;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-size: 60px;
+    gap: 20px;
     font-weight: bold;
-    z-index: 3;
-    gap: 100px;
-    background-color: black;
+    z-index: 0;
+    clip-path: polygon(0% 18%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translateY(-90px);
+    background-color: blue;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#proyectos-intro{
-    display: flex;
-    gap: 100px;
-    padding: 60px;
-}
 
 .proyecto{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
-    background-color: white;
-    border-radius: 20px;
-    transition: transform 0.5s;
+    transition: background-color 0.5s;
     overflow: hidden;
-    box-shadow: 0 0 20px 5px black;
-    text-align: center;
+    background-color: #292929;
+    text-align: center; 
+    background-size: cover;
+    background-position: center;
 }
 
 .proyecto:hover{
-    transform: scale(1.05);
+    background-color: dimgray;
 }
 
+#proyecto1{
+    background-image: url('../images/proyecto1.png');
 
-
-
-#pagina-contacto{
-    width: 100%;
-    height: 500px;
-    box-shadow: 0 0 20px 10px black;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    font-weight: bold;
-    border-radius: 9% 91% 53% 47% / 65% 72% 28% 35%  ;
-    border: 5px solid lime;
-    outline: 5px solid cyan;
-    color: white;
 }
 
 
@@ -152,13 +120,13 @@ main{
     gap: 5px;
     font-size: 30px;
     color: white;
+    background-color: black;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    clip-path: ellipse(100% 100% at 50% 0%);
-    border-top: 5px solid white;
+    border: 5px solid black;
 }
 
 .color{
