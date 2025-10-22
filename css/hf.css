@@ -9,7 +9,7 @@ body{
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    background-color: darkslategray;
+    background-color: #333333;
 }
 
 
@@ -63,7 +63,11 @@ a{
 }
 
 #menu.colorscroll{
-    background-color: black !important;
+    background-color: white !important;
+}
+
+#menu.colorscroll .h{
+    color: black;
 }
 
 #menu .h{
@@ -74,9 +78,6 @@ a{
     color: white;
 }
 
-#menu .h:hover{
-    color: greenyellow;
-}
 
 #bars-movil{
     font-size: 30px;
