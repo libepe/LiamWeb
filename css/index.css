@@ -59,6 +59,10 @@ main{
 
 /*PROYECTOS*/
 
+body.cambiabody{
+    background-color: green !important;
+}
+
 
 #proyectos{
     width: 100%;

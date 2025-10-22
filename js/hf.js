@@ -135,28 +135,25 @@ function colorTheme(){
 //SCROLL DEPLOY//
 
 function scrollDeploy(){
-    const paginaPortfolio=document.getElementById('pagina-portfolio');
-    const paginaContacto=document.getElementById('pagina-contacto');
+    const proyectos=document.getElementById('proyectos');
+    const body=document.body;
 
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-        paginaPortfolio.classList.add('deploy');
-        } else {
-        paginaPortfolio.classList.remove('deploy');
-        }
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        body.classList.add('cambiabody');
+      }else{
+        body.classList.remove('cambiabody')
+      }
     });
+  },
+  { threshold: 0.1 } // Trigger when 50% of the div is visible
+);
 
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 800) {
-        paginaContacto.classList.add('deploy');
-        } else {
-        paginaContacto.classList.remove('deploy');
-        }
-    });
+observer.observe(proyectos);
 }
-
+scrollDeploy();
 
 
 
