@@ -136,19 +136,19 @@ function colorTheme(){
 
 function scrollDeploy(){
     const proyectos=document.getElementById('proyectos');
-    const body=document.body;
+    const titulo=document.getElementById('titular-texto');
 
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        body.classList.add('cambiabody');
+        titulo.classList.add('disminuye');
       }else{
-        body.classList.remove('cambiabody')
+        titulo.classList.remove('disminuye');
       }
     });
   },
-  { threshold: 0.1 } // Trigger when 50% of the div is visible
+  { threshold: 0 }
 );
 
 observer.observe(proyectos);

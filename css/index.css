@@ -33,13 +33,14 @@ main{
 #titular-texto{
     width: 100%;
     display: flex;
+    position: fixed;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
     gap: 70px;
     color: white;
-    position: fixed;
+    transition: transform 0.5s, filter 0.5s;
 }
 
 #titulo {
@@ -59,9 +60,11 @@ main{
 
 /*PROYECTOS*/
 
-body.cambiabody{
-    background-color: green !important;
+.disminuye{
+    transform: scale(0.9);
+    filter: blur(10px);
 }
+
 
 
 #proyectos{
@@ -76,7 +79,8 @@ body.cambiabody{
     gap: 60px;
     font-weight: bold;
     z-index: 0;
-    padding: 40px;
+    padding: 100px;
+    transition: transform 0.5s;
     
 }
 
@@ -182,6 +186,10 @@ body.cambiabody{
         padding: 0;
         align-items: center;
         text-align: center;
+    }
+
+    #proyectos{
+        grid-template-columns: 1fr;
     }
 
 

@@ -70,6 +70,10 @@ a{
     color: black;
 }
 
+#menu.colorscroll #bars-movil{
+    color: black;
+}
+
 #menu .h{
     text-transform: uppercase;
     cursor: pointer;
@@ -82,8 +86,8 @@ a{
 #bars-movil{
     font-size: 30px;
     cursor: pointer;
-    color: white;
     display: none;
+    color: white;
 }
 
 
