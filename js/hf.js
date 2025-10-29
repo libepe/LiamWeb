@@ -135,25 +135,26 @@ function colorTheme(){
 //SCROLL DEPLOY//
 
 function scrollDeploy(){
-    const proyectos=document.getElementById('proyectos');
     const titulo=document.getElementById('titular-texto');
+    const contacto=document.getElementById('contactopag');
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        titulo.classList.add('disminuye');
-      }else{
-        titulo.classList.remove('disminuye');
-      }
+window.addEventListener("scroll", () => {
+      const scrollTop=window.scrollY;
+      const docHeight=document.body.scrollHeight-window.innerHeight;
+      const scrollPercent=scrollTop / docHeight;
+
+      const estiloTitulo=1-scrollPercent * 1;
+      const estiloContacto=scrollPercent * 1;
+      const maxBlur= 20;
+      titulo.style.transform=`scale(${estiloTitulo})`;
+      contacto.style.transform=`scale(${estiloContacto})`;
+      titulo.style.opacity=Math.max(estiloTitulo,0);
+      contacto.style.opacity=Math.max(estiloContacto,0);
+      titulo.style.filter=`blur(${estiloContacto * maxBlur}px)`;
+      contacto.style.filter=`blur(${estiloTitulo * maxBlur}px)`;
     });
-  },
-  { threshold: 0 }
-);
-
-observer.observe(proyectos);
 }
-scrollDeploy();
+
 
 
 

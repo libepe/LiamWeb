@@ -7,7 +7,7 @@ main{
 
 
 
-/*TITULAR*/
+/*HOME-TITULAR*/
 
 
 #titular{
@@ -22,16 +22,20 @@ main{
 }
 
 
-#contactame{
-    height: 400px;
-    width: 200px;
-    background-color: red;
-    position: absolute;
-    bottom: 0;
+#contactopag{
+    position: fixed;
+    z-index: -1;
+    font-size: 100px;
+    color: greenyellow;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+
 }
 
 #titular-texto{
-    width: 100%;
     display: flex;
     position: fixed;
     justify-content: center;
@@ -40,8 +44,8 @@ main{
     text-align: center;
     gap: 70px;
     color: white;
-    transition: transform 0.5s, filter 0.5s;
 }
+
 
 #titulo {
     font-size: 90px;
@@ -58,12 +62,8 @@ main{
 
 
 
-/*PROYECTOS*/
+/*HOME-PROYECTOS*/
 
-.disminuye{
-    transform: scale(0.9);
-    filter: blur(10px);
-}
 
 
 
@@ -100,7 +100,6 @@ main{
     background-position: center;
     border-radius: 30px;
     outline: 10px solid orangered;
-    box-shadow: 0 0 20px 5px white;
 }
 
 .proyecto:hover{
@@ -114,6 +113,45 @@ main{
 
 
 
+
+
+
+
+
+
+@media (max-width: 800px){
+
+    #titulo{
+        text-align: center;
+        font-size: 50px;
+        padding: 0;
+    }
+
+    #titulo span{
+        font-size: 70px;
+    }
+
+    .mov{
+        display: none;
+    }
+
+    .color{
+        font-size: 25px;
+    }
+
+    #titular{
+        display: flex;
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    #proyectos{
+        grid-template-columns: 1fr;
+    }
+
+
+}
 
 
 
@@ -159,38 +197,3 @@ main{
     color: white;
 }
 
-
-
-@media (max-width: 800px){
-
-    #titulo{
-        text-align: center;
-        font-size: 50px;
-        padding: 0;
-    }
-
-    #titulo span{
-        font-size: 70px;
-    }
-
-    .mov{
-        display: none;
-    }
-
-    .color{
-        font-size: 25px;
-    }
-
-    #titular{
-        display: flex;
-        padding: 0;
-        align-items: center;
-        text-align: center;
-    }
-
-    #proyectos{
-        grid-template-columns: 1fr;
-    }
-
-
-}
