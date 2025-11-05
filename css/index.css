@@ -7,37 +7,30 @@ main{
 
 
 
-/*HOME-TITULAR*/
+/*FIXED*/
 
 
 #titular{
     position: relative;
     width: 100%;
-    padding: 200px;
-    height: 110vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 0;
-}
-
-
-#contactopag{
-    position: fixed;
     z-index: -1;
-    font-size: 100px;
-    color: greenyellow;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0);
+    background-color: red;
+}
+
+#titular img{
+    position: absolute;
+    bottom: 0;
 
 }
+
+
 
 #titular-texto{
     display: flex;
-    position: fixed;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -60,14 +53,8 @@ main{
 
 
 
-
-
-/*HOME-PROYECTOS*/
-
-
-
-
 #proyectos{
+    position: relative;
     width: 100%;
     height: 100vh;
     display: grid;
@@ -81,6 +68,7 @@ main{
     z-index: 0;
     padding: 100px;
     transition: transform 0.5s;
+    background-color: blue;
     
 }
 
@@ -111,7 +99,11 @@ main{
 
 }
 
-
+#formulario{
+    width: 100%;
+    height: 100vh;
+    background-color: blueviolet;
+}
 
 
 
