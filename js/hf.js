@@ -136,22 +136,16 @@ function colorTheme(){
 
 function scrollDeploy(){
     const titulo=document.getElementById('titular-texto');
-    const contacto=document.getElementById('contactopag');
 
 window.addEventListener("scroll", () => {
       const scrollTop=window.scrollY;
       const docHeight=document.body.scrollHeight-window.innerHeight;
       const scrollPercent=scrollTop / docHeight;
 
-      const estiloTitulo=1-scrollPercent * 1;
-      const estiloContacto=scrollPercent * 1;
-      const maxBlur= 20;
-      titulo.style.transform=`scale(${estiloTitulo})`;
-      contacto.style.transform=`scale(${estiloContacto})`;
-      titulo.style.opacity=Math.max(estiloTitulo,0);
-      contacto.style.opacity=Math.max(estiloContacto,0);
-      titulo.style.filter=`blur(${estiloContacto * maxBlur}px)`;
-      contacto.style.filter=`blur(${estiloTitulo * maxBlur}px)`;
+      const estiloReducido=1-scrollPercent * 1;
+      const estiloAumentado=scrollPercent * 100;
+      titulo.style.transform=`scale(${estiloReducido})`;
+      titulo.style.filter=`blur(${estiloAumentado}px)`;
     });
 }
 
