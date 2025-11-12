@@ -135,17 +135,19 @@ function colorTheme(){
 //SCROLL DEPLOY//
 
 function scrollDeploy(){
-    const titulo=document.getElementById('titular-texto');
+    const titulo=document.getElementById('titular');
+    const proyectos=document.getElementById('proyectos');
 
 window.addEventListener("scroll", () => {
       const scrollTop=window.scrollY;
       const docHeight=document.body.scrollHeight-window.innerHeight;
       const scrollPercent=scrollTop / docHeight;
 
-      const estiloReducido=1-scrollPercent * 1;
-      const estiloAumentado=scrollPercent * 100;
-      titulo.style.transform=`scale(${estiloReducido})`;
-      titulo.style.filter=`blur(${estiloAumentado}px)`;
+      const estiloReducido=1 - scrollPercent * 2;  // 1 → 0.5
+      const estiloAumentado=scrollPercent * 2;
+      titulo.style.opacity=`${estiloReducido}`;
+      proyectos.style.opacity=`${estiloAumentado}`;
+      
     });
 }
 
