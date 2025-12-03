@@ -16,7 +16,7 @@ html, body {
 }
 
 #portfolio{
-    color: yellow !important;
+    color: orange !important;
     transition: color 0.5s;
 }
 

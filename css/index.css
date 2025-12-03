@@ -19,8 +19,12 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 300px;
     z-index: 0;
-    background: linear-gradient(to bottom right, #333333, #292929);
+    background-image: url('../images/imagen.jpg');
+    background-size: cover;
+    
 
 }
 
@@ -49,6 +53,30 @@ main{
     z-index: 1;
 }
 
+#hablemos{
+    border: 5px solid white;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: springgreen;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+}
+
+#hablemos i{
+    font-size: 30px;
+}
+
+#hablemos:hover{
+    transform: scale(1.02);
+}
+
+
+
 
 
 /*PROYECTOS*/
@@ -56,7 +84,7 @@ main{
 #proyectos{
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     gap: 100px;
     display: flex;
     flex-direction: column;
@@ -67,7 +95,8 @@ main{
     transition: height 0.5s;
     z-index: 2;
     padding: 200px;
-    background-color: gold;
+    background: radial-gradient( orange, #292929);
+    color: white;
 }
 
 
@@ -95,9 +124,8 @@ main{
     text-align: center; 
     background-size: cover;
     background-position: center;
-    border-radius: 30px;
     z-index: 2;
-    border: 10px solid goldenrod;
+    box-shadow: 0 0 10px 5px white;
     transition: transform 0.5s;
 }
 
@@ -116,15 +144,16 @@ main{
 
 #formulario{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: 90px;
     gap: 90px;
-    background-color: springgreen;
+    background: radial-gradient( springgreen, #292929);
     padding: 200px;
     font-weight: bold;
+    color: white;
 }
 
 #contactar{
@@ -144,7 +173,7 @@ textarea{
     padding: 30px;
     border-radius: 20px;
     background-color: white;
-    border: 10px solid mediumseagreen;
+    border: 10px solid white;
 }
 
 
