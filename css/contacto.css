@@ -11,10 +11,11 @@ html,body{
     display: flex;
     height: 100%;
     flex-direction: column;
+    background-color: #292929;
 }
 
 #contacto{
-    color: greenyellow !important;
+    color: springgreen !important;
     transition: color 0.5s;
 }
 

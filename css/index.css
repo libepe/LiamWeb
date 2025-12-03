@@ -1,31 +1,27 @@
-
+/*MAIN*/
 
 main{
     display: flex;
     flex-direction: column;
     position: relative;
-}
-
-#fondo{
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    background-color: green;
-    z-index:-1;
+    gap: 10px;
 }
 
 
-/*FIXED*/
+/*SECCIONES*/
 
+/*TITULAR*/
 
 #titular{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 0;
+    background: linear-gradient(to bottom right, #333333, #292929);
+
 }
 
 #titular img{
@@ -38,7 +34,6 @@ main{
 
 #titular-texto{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -54,67 +49,110 @@ main{
     z-index: 1;
 }
 
-#intro{
-    font-size: 30px;
-}
 
 
-
+/*PROYECTOS*/
 
 #proyectos{
     position: relative;
     width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    color: white;
-    font-size: 70px;
+    height: 90vh;
+    gap: 100px;
+    display: flex;
+    flex-direction: column;
+    font-size: 90px;
+    justify-content: center;
+    align-items: start;
+    font-weight: bold;
+    transition: height 0.5s;
+    z-index: 2;
+    padding: 200px;
+    background-color: gold;
+}
+
+
+.near{
+    height: 130vh !important;
+}
+
+#lista-proyectos{
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    font-weight: bold;
-    z-index: 0;
-    padding: 100px;
-    transition: transform 0.5s;
-    
 }
-
 
 .proyecto{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 500px;
     cursor: pointer;
-    transition: transform 0.5s;
     overflow: hidden;
     background-color: #292929;
     text-align: center; 
     background-size: cover;
     background-position: center;
     border-radius: 30px;
-    outline: 10px solid orangered;
+    z-index: 2;
+    border: 10px solid goldenrod;
+    transition: transform 0.5s;
 }
 
 .proyecto:hover{
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
+
+
 
 #proyecto1{
     background-image: url('../images/proyecto1.png');
-
 }
+
+
+/*CONTACTO*/
 
 #formulario{
     width: 100%;
-    height: 100vh;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 90px;
+    gap: 90px;
+    background-color: springgreen;
+    padding: 200px;
+    font-weight: bold;
+}
+
+#contactar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea{
+    all: unset;
+}
+
+#mensaje{
+    width: 100%;
+    height: 500px;
+    overflow-y: hidden;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+    border: 10px solid mediumseagreen;
 }
 
 
 
 
 
+
+/*MOVIL*/
 
 
 @media (max-width: 800px){

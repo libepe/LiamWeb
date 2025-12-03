@@ -12,10 +12,11 @@ html, body {
     display: flex;
     height: 100%;
     flex-direction: column;
+    background-color: #292929;
 }
 
 #portfolio{
-    color: greenyellow !important;
+    color: yellow !important;
     transition: color 0.5s;
 }
 

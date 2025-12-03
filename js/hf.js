@@ -14,7 +14,7 @@ function showHeader(){
     .then(response => response.text()) 
     .then(data => {
         header.innerHTML=data;
-        antiHeaderScroll();
+        //antiHeaderScroll();//
         menuMovil();
         cambioColorHeader();
     })
@@ -135,20 +135,24 @@ function colorTheme(){
 //SCROLL DEPLOY//
 
 function scrollDeploy(){
-    const titulo=document.getElementById('titular');
-    const proyectos=document.getElementById('proyectos');
+const proyectos = document.getElementById("proyectos-grow");
 
-window.addEventListener("scroll", () => {
-      const scrollTop=window.scrollY;
-      const docHeight=document.body.scrollHeight-window.innerHeight;
-      const scrollPercent=scrollTop / docHeight;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          proyectos.classList.add("near");
+        } else {
+          proyectos.classList.remove("near");
+        }
+      });
+    },
+    {
+      threshold: 0.10  // 25% visible triggers the red color; adjust if needed
+    }
+  );
 
-      const estiloReducido=1 - scrollPercent * 2;  // 1 → 0.5
-      const estiloAumentado=scrollPercent * 2;
-      titulo.style.opacity=`${estiloReducido}`;
-      proyectos.style.opacity=`${estiloAumentado}`;
-      
-    });
+  observer.observe(proyectos);
 }
 
 

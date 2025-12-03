@@ -9,7 +9,6 @@ body{
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #333333;
 }
 
 
@@ -63,16 +62,9 @@ a{
 }
 
 #menu.colorscroll{
-    background-color: white !important;
+    background-color: black !important;
 }
 
-#menu.colorscroll .h{
-    color: black;
-}
-
-#menu.colorscroll #bars-movil{
-    color: black;
-}
 
 #menu .h{
     text-transform: uppercase;
@@ -82,6 +74,13 @@ a{
     color: white;
 }
 
+#portfolio:hover{
+    color: yellow;
+}
+
+#contacto:hover{
+    color: #00ff40;
+}
 
 #bars-movil{
     font-size: 30px;
