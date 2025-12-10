@@ -62,6 +62,18 @@ main{
     font-size: 30px;
 }
 
+#sobremi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px black;
+    cursor: pointer;
+}
 
 /*PAGINAS*/
 
@@ -75,14 +87,23 @@ main{
 
 .pagina{
     position: relative;
-    width: 500px;
+    width: 600px;
     height: 500px;
     cursor: pointer;
-    padding: 100px;
-    box-shadow: 0 0 10px 5px white;
     border-radius: 50px;
+    transition: transform 0.5s;
 }
 
+.pagina:hover{
+    transform: scale(1.01);
+}
+
+.titulopagina{
+    width: 100%;
+    font-size: 50px;
+    padding: 40px;
+    border-radius: 40px 40px 0 0;
+}
 
 
 /*PROYECTOS*/
@@ -92,19 +113,12 @@ main{
     display: flex;
     flex-direction: column;
     font-size: 90px;
-    justify-content: center;
-    align-items: start;
     font-weight: bold;
-    transition: height 0.5s;
     z-index: 2;
-    background: radial-gradient(orange, orangered);
-    background-size: cover;
+    background: linear-gradient(to bottom right, white, lightsalmon);
+    box-shadow: 0 0 10px 5px black;
 }
 
-
-.near{
-    height: 130vh !important;
-}
 
 #lista-proyectos{
     width: 100%;
@@ -145,44 +159,21 @@ main{
 
 /*CONTACTO*/
 
-#formulario{
+#hablemos{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     font-size: 90px;
     gap: 90px;
     font-weight: bold;
-    background: radial-gradient( yellow, limegreen);
-}
-
-#contactar{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-textarea{
-    all: unset;
-}
-
-#mensaje{
-    width: 100%;
-    height: 100%;
-    overflow-y: hidden;
-    padding: 30px;
-    border-radius: 20px;
-    background-color: black;
-    border: 10px solid white;
+    box-shadow: 0 0 10px 5px black;
+    background: linear-gradient(to bottom right, white, palegreen);
 }
 
 
-/*CREATIVIDAD*/
 
-#creatividad{
-    background: radial-gradient(  mediumpurple, rebeccapurple);
-}
+
+
+
 
 
 
