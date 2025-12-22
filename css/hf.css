@@ -2,29 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
 
-body{
-    padding: 0;
-    margin: 0;
-    transition: background-color 0.5s;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-}
 
-
-
-#inicio{
-    margin-right: 400px;
-    font-family: 'Asimovian', serif;
-}
-
-main{
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 *{
     font-family: 'Open Sans', serif;
@@ -33,9 +11,7 @@ main{
     box-sizing: border-box;
 }
 
-html.cambiocolor{
-    filter: invert(100%);
-}
+
 
 /*HEADER*/
 

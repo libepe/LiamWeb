@@ -1,25 +1,44 @@
-/*MAIN*/
-
-main{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
+/*PARA TODAS LAS PAG*/
 
 #fondo{
     position: fixed;
-    z-index: -2;
+    z-index: -5;
     height: 100vh;
     width: 100%;
     background-image: linear-gradient(to bottom right, #333333, black);
 }
 
+input, textarea, select {
+  border: none;
+}
 
-/*SECCIONES*/
+body, html{
+    overflow-x: hidden;
+}
 
-/*TITULAR*/
 
-#titular{
+
+/*PAG-INICIO*/
+
+#pag-inicio{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+#pag-inicio.zoom{
+    transform: scale(5);
+    pointer-events: none;
+    opacity: 0;
+}
+
+
+
+/*PAG-INICIO TITULAR*/
+
+#pag-inicio #titular{
     position: relative;
     width: 100%;
     height: 100vh;
@@ -29,19 +48,16 @@ main{
     flex-direction: column;
     gap: 300px;
     z-index: 0;
-    
-
 }
 
-#titular img{
+#pag-inicio #titular img{
     position: absolute;
     bottom: 0;
-
 }
 
 
 
-#titular-texto{
+#pag-inicio #titular-texto{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -52,23 +68,23 @@ main{
 }
 
 
-#titulo {
+#pag-inicio #titulo {
     font-size: 90px;
     font-weight: bold;
     z-index: 1;
 }
 
-#subtitulo{
+#pag-inicio #subtitulo{
     font-size: 30px;
 }
 
 
 
 
-/*PROYECTOS*/
+/*PAG-INICIO PROYECTOS*/
 
 
-#proyectos{
+#pag-inicio #proyectos{
     position: relative;
     width: 100%;
     height: 50vh;
@@ -83,7 +99,7 @@ main{
 }
 
 
-#listado{
+#pag-inicio #listado{
     width: 100%;
     height: 100%;
     display: flex;
@@ -93,7 +109,7 @@ main{
     padding: 20px;
 }
 
-.proyecto{
+#pag-inicio .proyecto{
     display: flex;
     width: 100%;
     height: 100%;
@@ -108,110 +124,159 @@ main{
 }
 
 
-#obras{
+#pag-inicio #obras{
     background: linear-gradient(to bottom right, lightsalmon, white);
 }
 
-#obras:hover{
+#pag-inicio #obras:hover{
     transform-origin: top left;
     transition: transform 450ms cubic-bezier(.4,0,.2,1);
     inset: 0;
 }
 
-#hablemos{
+#pag-inicio #hablemos{
     background: linear-gradient(to bottom right, palegreen, white);
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*MOVIL*/
+/*PAG-INICIO MOVIL*/
 
 
 @media (max-width: 800px){
 
-    #titulo{
+    #pag-inicio #titulo{
         text-align: center;
         font-size: 50px;
         padding: 0;
     }
 
-    #titulo span{
+    #pag-inicio #titulo span{
         font-size: 70px;
     }
 
-    .mov{
-        display: none;
-    }
-
-    .color{
-        font-size: 25px;
-    }
-
-    #titular{
-        display: flex;
-        padding: 0;
-        align-items: center;
-        text-align: center;
-    }
-
-    #proyectos{
-        grid-template-columns: 1fr;
-    }
-
 
 }
 
 
+/*PAG-CONTACTO*/
 
-
-
-/*COLORES*/
-
-
-#colores{
+#pag-contacto{
+    display: flex;
+    flex-direction: column;
+    position: relative;
     width: 100%;
-    height: 150px;
-    bottom: 0;
-    gap: 5px;
-    font-size: 30px;
-    color: white;
-    background-color: black;
-    font-weight: bold;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border: 5px solid black;
+    transform: scale(5);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s;
 }
 
-.color{
+#pag-contacto.zoom{
+    transform: scale(1);
+    pointer-events: all;
+    opacity: 1;
+
+}
+
+#pag-contacto #formulario{
+    width: 100%;
+    height: 100vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    font-family: 'Open Sans', serif;
+}
+
+#pag-contacto .input{
+    outline: none;
+}
+
+#pag-contacto #mensaje{
+    width: 100%;
+    height: 85%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#pag-contacto #mensaje-texto{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    z-index: 0;
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    resize: none;
+    overflow-y: auto;
+    font-family: 'Open Sans', serif;
+}
+
+#pag-contacto #mensaje-placeholder{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: transparent;
-    font-size: 40px;
+    text-align: center;
+    font-size: 50px;
+    padding: 30px;
+    color: gray;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+#pag-contacto .ver{
+    display: none !important;
+}
+
+#pag-contacto #envio{
+    width: 100%;
+    height: 15%;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+}
+
+#pag-contacto #email{
+    width: 80%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Open Sans', serif;
+}
+
+#pag-contacto #enviar{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--colortheme);
+    font-size: 20px;
     cursor: pointer;
-    transition: opacity 0.5s;
+    border-radius: 20px;
+    transition: opacity 0.5s, background-color 0.5s;
 }
 
-.color:hover{
-    opacity: 0.5;
+#pag-contacto #enviar:hover{
+    opacity: 0.9;
+}
+
+#pag-contacto.separador{
+    width: 90%;
+    height: 5px;
+    border: none;
+    background-color: black;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 
 
-.color.seleccionado{
-    color: white;
-}
+
 
