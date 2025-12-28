@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/hf.css">
 </head>
 <body>
-    <div id="header"></div>
+    <header id="menu">
+        <a class='h' id="inicio" href='index.html'>Liam Beus</a>
+        <a class='h' id="portfolio" href='portfolio.html'>Portfolio</a>
+        <a id="contacto" class="h tocontacto">Contacto</a>
+        <i id="bars-movil" class="fa-solid fa-bars"></i>
+    </header>
     <div id="fondo"></div>
 
-
-    <main id="pag-inicio">
+    <div id="pag-wrap">
+      <main id="pag-inicio">
 
         <div id="titular">
           <div id="titular-texto">
@@ -27,14 +33,12 @@
           <div id="fondoproyectos"></div>
           <div id="listado">
             <div class="proyecto" id="obras">Mis obras y estilo</div>
-            <div class="proyecto" id="hablemos">¡Hablemos de arte!</div>
+            <div class="proyecto tocontacto" id="hablemos">¡Hablemos de arte!</div>
           </div>
         </div>
-</main>
+      </main>
 
-<br>
-
-<main id="pag-contacto">
+      <main id="pag-contacto">
 
         <div id="formulario">
             <div id="mensaje">
@@ -50,10 +54,15 @@
             </div>
         </div>
 
-    </main>
+      </main>
+    </div>
+
     <br>
 
-    <div id="footer"></div>
+    <footer>
+        <a href="mailto:liam.beus@gmail.com"><i class="fa-regular fa-envelope footer-icon"></i></a>
+        <a href="tel:+34644874049"><i class="fa-solid fa-phone footer-icon"></i></a>
+    </footer>
 
     <script src="js/hf.js"></script>
     <script src="js/contacto.js"></script>

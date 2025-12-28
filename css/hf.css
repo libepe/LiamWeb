@@ -32,10 +32,6 @@ a{
     transition: height 0.3s, opacity 0.3s, background-color 0.3s;
 }
 
-#menu.desaparece{
-    height: 0 !important;
-    opacity: 0 !important;
-}
 
 #menu.colorscroll{
     background-color: black !important;

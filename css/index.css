@@ -8,32 +8,46 @@
     background-image: linear-gradient(to bottom right, #333333, black);
 }
 
+
+
 input, textarea, select {
   border: none;
 }
 
-body, html{
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%; 
     overflow-x: hidden;
+    position: relative;
+    font-family: 'Open Sans', serif;
 }
+
 
 
 
 /*PAG-INICIO*/
 
-#pag-inicio{
+#pag-inicio {
     display: flex;
     flex-direction: column;
-    position: relative;
     width: 100%;
-    transition: transform 0.5s;
+    gap: 50px;
+    position: relative;
+    z-index: 1;           /* on top when visible */
+    opacity: 1;
+    background-color: lime;            /* visible by default */
+    pointer-events: all;
+    transition: opacity 1s ease;
 }
 
-#pag-inicio.zoom{
-    transform: scale(5);
-    pointer-events: none;
+#pag-inicio.cambio {
     opacity: 0;
+    pointer-events: none;
+    z-index: 0;            /* behind the other page while fading out */
 }
-
 
 
 /*PAG-INICIO TITULAR*/
@@ -41,7 +55,6 @@ body, html{
 #pag-inicio #titular{
     position: relative;
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +100,7 @@ body, html{
 #pag-inicio #proyectos{
     position: relative;
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -161,27 +174,30 @@ body, html{
 
 /*PAG-CONTACTO*/
 
-#pag-contacto{
+#pag-contacto {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    position: relative;
     width: 100%;
-    transform: scale(5);
-    opacity: 0;
+    height: 100vh;
+    position: relative;
+    z-index: 0;           /* behind by default */
+    opacity: 0;           /* hidden by default */
     pointer-events: none;
-    transition: transform 0.5s;
+    background-color: red;
+    transition: opacity 1s ease;
 }
 
-#pag-contacto.zoom{
-    transform: scale(1);
-    pointer-events: all;
+#pag-contacto.cambio {
     opacity: 1;
-
+    pointer-events: all;
+    z-index: 1;           /* on top while fading in */
 }
 
 #pag-contacto #formulario{
-    width: 100%;
-    height: 100vh;
+    height: 200px;
+    width: 500px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
