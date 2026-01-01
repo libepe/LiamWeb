@@ -13,45 +13,53 @@
 <body>
     <header id="menu">
         <a class='h' id="inicio" href='index.html'>Liam Beus</a>
-        <a class='h' id="portfolio" href='portfolio.html'>Portfolio</a>
-        <a id="contacto" class="h tocontacto">Contacto</a>
+        <a id="toportfolio-menu" class="h toportfolio" href='portfolio.html'>Portfolio</a>
+        <a id="tocontacto-menu" class="h tocontacto">Contacto</a>
         <i id="bars-movil" class="fa-solid fa-bars"></i>
     </header>
     <div id="fondo"></div>
+    <div id="alturapag"></div>
 
     <div id="pag-wrap">
       <main id="pag-inicio">
-
-        <div id="titular">
-          <div id="titular-texto">
-            <p id="titulo">No sé si soy tu aspirante,<br> sólo sé que soy Picasso</p>
-            <p id="subtitulo">Diseñador y desarrollador de webs</p>
+        <div class="contenidopag">
+          <div id="titular">
+            <div id="titular-texto">
+              <p id="titulo">No sé si soy tu aspirante,<br> sólo sé que soy Picasso</p>
+              <p id="subtitulo">Diseñador y desarrollador de webs</p>
+            </div>
           </div>
-        </div>
 
-        <div id="proyectos">
-          <div id="fondoproyectos"></div>
-          <div id="listado">
-            <div class="proyecto" id="obras">Mis obras y estilo</div>
-            <div class="proyecto tocontacto" id="hablemos">¡Hablemos de arte!</div>
+          <div id="proyectos">
+            <div id="fondoproyectos"></div>
+            <div id="listado">
+              <div class="topag toportfolio" id="toportfolio-div">Mis obras y estilo</div>
+              <div class="topag tocontacto" id="tocontacto-div">¡Hablemos de arte!</div>
+            </div>
           </div>
         </div>
       </main>
 
+      <main id="pag-portfolio">
+
+        <div class="contenidopag">
+          <div id="misproyectos">
+            <div id="misproyectos-titulo">Mis Proyectos</div>
+          </div>
+
+        </div>
+
+      </main>
+
       <main id="pag-contacto">
 
-        <div id="formulario">
-            <div id="mensaje">
-                <textarea id="mensaje-texto" class="input"></textarea>
-                <label for="mensaje-texto" id="mensaje-placeholder">Sugerencias, cuenta tu vida...¡Lo que quieras!</label>
-            </div>
-            <br>
-            <hr class="separador">
-            <br>
-            <div id="envio">
-                <input id="email" class="input" type="text" placeholder="Tu Email">
-                <div id="enviar">Enviar</div>
-            </div>
+        <div class="contenidopag">
+          <div id="formulario">
+            <div id="formulario-titulo">¿Quieres ser artista? ¡Escríbeme! </div>
+            
+            <div id="mensaje"></div>
+          </div>
+
         </div>
 
       </main>
@@ -66,5 +74,7 @@
 
     <script src="js/hf.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/general.js"></script>
 </body>
 </html>

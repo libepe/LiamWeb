@@ -46,12 +46,20 @@ a{
     color: white;
 }
 
-#portfolio:hover{
-    color: orange;
+#menu #toportfolio-menu:hover{
+    color: lightsalmon;
 }
 
-#contacto:hover{
-    color: lime;
+#menu #tocontacto-menu:hover{
+    color: palegreen;
+}
+
+#menu #toportfolio-menu.colorear{
+    color: lightsalmon;
+}
+
+#menu #tocontacto-menu.colorear{
+    color: palegreen;
 }
 
 #bars-movil{

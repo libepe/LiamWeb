@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     cambioColorHeader();
     menuMovil();
+    navegacionPaginas();
 });
 
 
@@ -44,26 +45,16 @@ function menuMovil() {
 
 
 
-//PLACEHOLDERS//
 
-function placeholderInput() {
-    const placeholder = document.getElementById('mensaje-placeholder');
-    const input = document.getElementById('mensaje-texto');
 
-    input.addEventListener('input', () => {
-        if (input.value.trim() !== "") {
-            placeholder.classList.add('ver');
-        } else {
-            placeholder.classList.remove('ver');
-        }
-    })
+
+function navegacionPaginas(){
+    const contenidos = document.querySelectorAll('.contenidopag');
+
+    window.addEventListener('scroll', () => {
+        contenidos.forEach(contenido => contenido.style.transform = `translateY(${-window.scrollY}px)`);
+    });
 }
-placeholderInput();
-
-
-
-
-
 
 
 

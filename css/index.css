@@ -1,11 +1,18 @@
 /*PARA TODAS LAS PAG*/
 
 #fondo{
-    position: fixed;
-    z-index: -5;
+    z-index: 0;
     height: 100vh;
     width: 100%;
+    position: fixed;
     background-image: linear-gradient(to bottom right, #333333, black);
+}
+
+#alturapag{
+    z-index: -5;
+    height: 200vh;
+    width: 100%;
+    transition: height 0s;
 }
 
 
@@ -21,11 +28,30 @@ html, body {
     width: 100%;
     min-height: 100%; 
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
     font-family: 'Open Sans', serif;
 }
 
+.contenidopag{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
 
+/* ANIMACION PAGINAS*/
+
+@keyframes efectoaparece {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 
 
 /*PAG-INICIO*/
@@ -33,20 +59,21 @@ html, body {
 #pag-inicio {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    gap: 50px;
-    position: relative;
-    z-index: 1;           /* on top when visible */
-    opacity: 1;
-    background-color: lime;            /* visible by default */
-    pointer-events: all;
-    transition: opacity 1s ease;
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    width: 100%;         /* on top when visible */
 }
 
-#pag-inicio.cambio {
+#pag-inicio.desaparece {
     opacity: 0;
-    pointer-events: none;
-    z-index: 0;            /* behind the other page while fading out */
+    pointer-events: none;          /* behind the other page while fading out */
+}
+
+#pag-inicio.aparece{
+    animation: efectoaparece 0.5s ease-out;
+    transform-origin: center;
+    pointer-events: all;
 }
 
 
@@ -59,13 +86,9 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 300px;
+    height: 100vh;
     z-index: 0;
-}
-
-#pag-inicio #titular img{
-    position: absolute;
-    bottom: 0;
+   
 }
 
 
@@ -100,7 +123,7 @@ html, body {
 #pag-inicio #proyectos{
     position: relative;
     width: 100%;
-    min-height: 50vh;
+    height: 600px;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -118,11 +141,11 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 30px;
+    padding: 30px;
 }
 
-#pag-inicio .proyecto{
+#pag-inicio .topag{
     display: flex;
     width: 100%;
     height: 100%;
@@ -137,17 +160,12 @@ html, body {
 }
 
 
-#pag-inicio #obras{
+#pag-inicio #toportfolio-div{
     background: linear-gradient(to bottom right, lightsalmon, white);
 }
 
-#pag-inicio #obras:hover{
-    transform-origin: top left;
-    transition: transform 450ms cubic-bezier(.4,0,.2,1);
-    inset: 0;
-}
 
-#pag-inicio #hablemos{
+#pag-inicio #tocontacto-div{
     background: linear-gradient(to bottom right, palegreen, white);
 }
 
@@ -172,127 +190,76 @@ html, body {
 }
 
 
+/*PAG-PORTFOLIO*/
+
+#pag-portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+}
+
+#pag-portfolio #misproyectos{
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pag-portfolio #misproyectos-titulo{
+    font-size: 40px;
+}
+
+
 /*PAG-CONTACTO*/
 
 #pag-contacto {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    z-index: 0;           /* behind by default */
-    opacity: 0;           /* hidden by default */
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    opacity: 0;
     pointer-events: none;
-    background-color: red;
-    transition: opacity 1s ease;
+    width: 100%;
 }
 
-#pag-contacto.cambio {
-    opacity: 1;
+
+#pag-contacto.aparece {
+    animation: efectoaparece 0.5s ease-out;
+    transform-origin: center;
     pointer-events: all;
-    z-index: 1;           /* on top while fading in */
+    opacity: 1;        /* on top while fading in */
 }
 
 #pag-contacto #formulario{
-    height: 200px;
-    width: 500px;
-    border-radius: 30px;
+    width: 100%;
+    height: 600px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px black;
-    font-family: 'Open Sans', serif;
+    padding: 200px;
 }
 
-#pag-contacto .input{
-    outline: none;
+#pag-contacto #formulario-titulo{
+    color: palegreen;
+    font-size: 50px;
 }
+
 
 #pag-contacto #mensaje{
-    width: 100%;
-    height: 85%;
-    margin: 0 auto;
-    position: relative;
+    background-color: white;
+    width: 100px;
+    height: 100px;
 }
-
-#pag-contacto #mensaje-texto{
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-    z-index: 0;
-    position: absolute;
-    padding: 10px;
-    border-radius: 5px;
-    resize: none;
-    overflow-y: auto;
-    font-family: 'Open Sans', serif;
-}
-
-#pag-contacto #mensaje-placeholder{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 50px;
-    padding: 30px;
-    color: gray;
-    pointer-events: none;
-    position: absolute;
-    z-index: 1;
-}
-
-#pag-contacto .ver{
-    display: none !important;
-}
-
-#pag-contacto #envio{
-    width: 100%;
-    height: 15%;
-    margin: 0 auto;
-    display: flex;
-    overflow: hidden;
-}
-
-#pag-contacto #email{
-    width: 80%;
-    padding: 10px;
-    font-size: 20px;
-    font-family: 'Open Sans', serif;
-}
-
-#pag-contacto #enviar{
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: var(--colortheme);
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: opacity 0.5s, background-color 0.5s;
-}
-
-#pag-contacto #enviar:hover{
-    opacity: 0.9;
-}
-
-#pag-contacto.separador{
-    width: 90%;
-    height: 5px;
-    border: none;
-    background-color: black;
-    border-radius: 5px;
-    margin: 0 auto;
-}
-
 
 
 
