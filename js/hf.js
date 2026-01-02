@@ -31,9 +31,17 @@ function cambioColorHeader() {
 function menuMovil() {
     const bars = document.getElementById('bars-movil');
     const menu = document.getElementById('menu');
+    const menuHs=document.querySelectorAll('.h');
 
     bars.addEventListener('click', () => {
         menu.classList.add('abremenu');
+    })
+
+    menuHs.forEach(menuH => { 
+        menuH.addEventListener('click',function(){
+            menu.classList.remove('abremenu');
+
+        })
     })
 
     document.addEventListener('click', (event) => {

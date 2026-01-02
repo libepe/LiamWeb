@@ -91,6 +91,9 @@ a{
         padding-bottom: 100px;
     }
 
+    #menu{
+        background-color: black;
+    }
 
 
     #menu .h{
