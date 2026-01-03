@@ -15,9 +15,6 @@ function toPagPortfolio(){
     toPortfolios.forEach(toPortfolio => {
         toPortfolio.addEventListener('click', e => {
             e.preventDefault();
-            fondo.classList.remove('abrefondo');
-
-            fondo.classList.add('cierrafondo');
 
             [paginicio, pagportfolio, pagcontacto].forEach(p => {
             p.classList.remove('aparece', 'desaparece');
@@ -27,11 +24,9 @@ function toPagPortfolio(){
             pagcontacto.classList.add('desaparece');
             void pagportfolio.offsetWidth;
 
-            fondo.classList.add('abrefondo');
             pagportfolio.classList.add('aparece');
             cambiosDisenoPagPortfolio();
             cambiosDisenoPagContacto();
-            window.scrollTo(0, 0);
         });
     });
 

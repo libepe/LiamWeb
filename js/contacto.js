@@ -19,9 +19,6 @@ function toPagContacto(){
         toContacto.addEventListener('click', e => {
             e.preventDefault();
 
-            fondo.classList.remove('abrefondo');
-            fondo.classList.add('cierrafondo');
-
             [paginicio, pagportfolio, pagcontacto].forEach(p => {
             p.classList.remove('aparece', 'desaparece');
             });
@@ -30,7 +27,6 @@ function toPagContacto(){
             paginicio.classList.add('desaparece');
             void pagportfolio.offsetWidth;
 
-            fondo.classList.add('abrefondo');
             pagcontacto.classList.add('aparece');
             cambiosDisenoPagContacto();
             cambiosDisenoPagPortfolio();

@@ -5,11 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function navegacionPaginas(){
-    const contenidos=document.querySelectorAll('.contenidopag');
+function navegacionPaginas() {
+    const contenidos = document.querySelectorAll('.contenidopag');
 
     window.addEventListener('scroll', () => {
-        contenidos.forEach(contenido => contenido.style.transform =`translateY(${-window.scrollY}px)`);
+        contenidos.forEach(contenido => {
+            if (contenido.classList.contains('active')) {
+                contenido.style.transform = `translateY(${-window.scrollY}px)`;
+            } else {
+                contenido.style.transform = 'translateY(0px)'; // fixed / frozen
+            }
+        });
     });
 }
 
@@ -24,9 +30,6 @@ function toPagInicio(){
 
     toInicio.addEventListener('click', e => {
         e.preventDefault();
-        fondo.classList.remove('abrefondo');
-
-        fondo.classList.add('cierrafondo');
 
         [ paginicio, pagportfolio, pagcontacto].forEach(p => {
             p.classList.remove('aparece', 'desaparece');
@@ -36,7 +39,6 @@ function toPagInicio(){
         pagcontacto.classList.add('desaparece');
         void pagportfolio.offsetWidth;
 
-        fondo.classList.add('abrefondo');
         paginicio.classList.add('aparece');
         cambiosDisenoPagPortfolio();
         cambiosDisenoPagContacto();
