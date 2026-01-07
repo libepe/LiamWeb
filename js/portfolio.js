@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function toPagPortfolio(){
-    const fondo=document.getElementById('fondo');
 
     const paginicio = document.getElementById('pag-inicio');
     const pagportfolio = document.getElementById('pag-portfolio');
@@ -25,8 +24,10 @@ function toPagPortfolio(){
             void pagportfolio.offsetWidth;
 
             pagportfolio.classList.add('aparece');
+            
             cambiosDisenoPagPortfolio();
             cambiosDisenoPagContacto();
+            window.scrollTo(0,0);
         });
     });
 

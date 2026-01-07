@@ -13,7 +13,6 @@
     z-index: -5;
     height: 200vh;
     width: 100%;
-    transition: height 0s;
 }
 
 
@@ -67,6 +66,22 @@ html, body {
 }
 
 
+/*TODAS LAS PAG MOVIL*/
+
+@media (max-width: 800px){
+
+    #alturapag{
+        z-index: -5;
+        height: 300vh;
+        width: 100%;
+    }
+
+    
+
+
+}
+
+
 /*PAG-INICIO*/
 
 #pag-inicio {
@@ -99,20 +114,22 @@ html, body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    gap: 100px;
+    gap: 250px;
     z-index: 1;
-    color: white;
 }
 
 
 #pag-inicio #titulo {
     font-size: 90px;
-    font-weight: bold;
     z-index: 1;
+    color: white;
 }
 
 #pag-inicio #subtitulo{
     font-size: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 
@@ -147,6 +164,7 @@ html, body {
     border-radius: 40px;
     background-size: cover;
     background-position: top;
+    box-shadow: 0 0 10px 5px black;
 }
 
 
@@ -159,6 +177,7 @@ html, body {
 #pag-inicio #tocontacto-div{
 
     background-image: linear-gradient(rgba(152, 251, 152, 1),rgba(255, 255, 255, 0.0)), url('/images/hombresentado.jpg');
+    transform: scale(0.95);
 }
 
 

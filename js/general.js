@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     navegacionPaginas();
+
     toPagInicio();
 });
 
 
 function navegacionPaginas() {
-    const contenidos = document.querySelectorAll('.contenidopag');
+  const contenidos = document.querySelectorAll('.contenidopag');
 
-    window.addEventListener('scroll', () => {
-        contenidos.forEach(contenido => {
-            if (contenido.classList.contains('active')) {
-                contenido.style.transform = `translateY(${-window.scrollY}px)`;
-            } else {
-                contenido.style.transform = 'translateY(0px)'; // fixed / frozen
-            }
-        });
+  window.addEventListener('scroll', () => {
+    contenidos.forEach(contenido => {
+        contenido.style.transform = `translateY(${-window.scrollY}px)`;
+
     });
+  });
 }
 
 
+window.addEventListener('scroll', navegacionPaginas);
+
+
 function toPagInicio(){
-    const fondo=document.getElementById('fondo');
 
     const toInicio = document.getElementById('inicio');
     const paginicio = document.getElementById('pag-inicio');
@@ -40,10 +40,11 @@ function toPagInicio(){
         void pagportfolio.offsetWidth;
 
         paginicio.classList.add('aparece');
+
         cambiosDisenoPagPortfolio();
         cambiosDisenoPagContacto();
+        window.scrollTo(0,0);
 
-        window.scrollTo(0, 0);
     });
 
 }

@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function toPagContacto(){
-    const fondo=document.getElementById('fondo');
 
     const paginicio = document.getElementById('pag-inicio');
     const pagcontacto = document.getElementById('pag-contacto');
@@ -28,9 +27,10 @@ function toPagContacto(){
             void pagportfolio.offsetWidth;
 
             pagcontacto.classList.add('aparece');
+
             cambiosDisenoPagContacto();
             cambiosDisenoPagPortfolio();
-            window.scrollTo(0, 0);
+            window.scrollTo(0,0);
         });
     });
 
@@ -41,7 +41,6 @@ function cambiosDisenoPagContacto(){
     const pagcontacto = document.getElementById('pag-contacto');
 
     if(pagcontacto.classList.contains('aparece')){
-        console.log('detected')
         contactomenu.classList.add('colorear');
     }else{
         contactomenu.classList.remove('colorear');
