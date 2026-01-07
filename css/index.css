@@ -102,7 +102,7 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 120vh;
     z-index: 0;
    
 }
