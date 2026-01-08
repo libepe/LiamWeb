@@ -21,13 +21,14 @@ function toPagPortfolio(){
 
             paginicio.classList.add('desaparece');
             pagcontacto.classList.add('desaparece');
-            void pagportfolio.offsetWidth;
 
-            pagportfolio.classList.add('aparece');
-            
-            cambiosDisenoPagPortfolio();
-            cambiosDisenoPagContacto();
-            window.scrollTo(0,0);
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'auto' });
+                pagportfolio.classList.add('aparece');
+                cambiosDisenoPagPortfolio();
+                cambiosDisenoPagContacto();
+            }, 200);
+
         });
     });
 

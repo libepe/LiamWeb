@@ -24,13 +24,14 @@ function toPagContacto(){
 
             pagportfolio.classList.add('desaparece');
             paginicio.classList.add('desaparece');
-            void pagportfolio.offsetWidth;
 
-            pagcontacto.classList.add('aparece');
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'auto' });
+                pagcontacto.classList.add('aparece');
+                cambiosDisenoPagPortfolio();
+                cambiosDisenoPagContacto();
+            }, 200);
 
-            cambiosDisenoPagContacto();
-            cambiosDisenoPagPortfolio();
-            window.scrollTo(0,0);
         });
     });
 
