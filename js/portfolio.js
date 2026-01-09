@@ -27,7 +27,7 @@ function toPagPortfolio(){
                 pagportfolio.classList.add('aparece');
                 cambiosDisenoPagPortfolio();
                 cambiosDisenoPagContacto();
-            }, 200);
+            }, 300);
 
         });
     });

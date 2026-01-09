@@ -30,7 +30,7 @@ function toPagContacto(){
                 pagcontacto.classList.add('aparece');
                 cambiosDisenoPagPortfolio();
                 cambiosDisenoPagContacto();
-            }, 200);
+            }, 300);
 
         });
     });

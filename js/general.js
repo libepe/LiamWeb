@@ -43,7 +43,7 @@ function toPagInicio(){
                 paginicio.classList.add('aparece');
                 cambiosDisenoPagPortfolio();
                 cambiosDisenoPagContacto();
-        }, 200);
+        }, 300);
 
     });
 

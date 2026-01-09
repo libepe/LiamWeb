@@ -1,5 +1,20 @@
 /*PARA TODAS LAS PAG*/
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE/old Edge */
+* {
+  -ms-overflow-style: none;
+}
+
 #fondo{
     z-index: 0;
     height: 100vh;
@@ -44,23 +59,24 @@ html, body {
 
 /* ANIMACION PAGINAS*/
 
+.paginas{
+    will-change: transform, opacity;
+    transition: opacity 0.3s;
+}
+
 .aparece{
-    animation: efectoaparece 0.2s ease-out !important;
     opacity: 1 !important;
-    transform-origin: center !important;
     pointer-events: all !important;
 }
 
 .desaparece {
-    opacity: 0 !important;
-    animation: efectodesaparece 0.2s ease-out !important;
     pointer-events: none !important;
-    transform-origin: center !important;
+    opacity: 0 !important;
 }
 
 @keyframes efectoaparece {
   from {
-    transform: scale(0);
+    transform: scale(0.99);
   }
   to {
     transform: scale(1);
@@ -72,7 +88,7 @@ html, body {
     transform: scale(1);
   }
   to {
-    transform: scale(0);
+    transform: scale(0.99);
   }
 }
 
@@ -101,8 +117,7 @@ html, body {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    width: 100%; 
-    transition: opacity 0.2s;        
+    width: 100%;      
 }
 
 
@@ -240,7 +255,6 @@ html, body {
     opacity: 0;
     pointer-events: none;
     width: 100%;
-    transition: opacity 0.2s;
 }
 
 #pag-portfolio #misproyectos{
@@ -269,7 +283,6 @@ html, body {
     opacity: 0;
     pointer-events: none;
     width: 100%;
-    transition: opacity 0.2s;
 }
 
 
