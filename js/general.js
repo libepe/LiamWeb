@@ -38,13 +38,10 @@ function toPagInicio(){
         pagportfolio.classList.add('desaparece');      
         pagcontacto.classList.add('desaparece');
         
-        setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'auto' });
-                paginicio.classList.add('aparece');
-                cambiosDisenoPagPortfolio();
-                cambiosDisenoPagContacto();
-        }, 300);
-
-    });
+        paginicio.classList.add('aparece');
+            cambiosDisenoPagPortfolio();
+            cambiosDisenoPagContacto();
+            window.scrollTo(0,0);
+        });
 
 }

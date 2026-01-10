@@ -25,12 +25,10 @@ function toPagContacto(){
             pagportfolio.classList.add('desaparece');
             paginicio.classList.add('desaparece');
 
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'auto' });
-                pagcontacto.classList.add('aparece');
-                cambiosDisenoPagPortfolio();
-                cambiosDisenoPagContacto();
-            }, 300);
+            pagcontacto.classList.add('aparece');
+            cambiosDisenoPagPortfolio();
+            cambiosDisenoPagContacto();
+            window.scrollTo(0,0);
 
         });
     });
