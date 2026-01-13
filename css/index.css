@@ -67,16 +67,18 @@ html, body {
     animation: efectoaparece 0.5s ease-in-out;
     opacity: 1 !important;
     pointer-events: all !important;
+    transition: opacity 1s;
 }
 
 .desaparece {
     pointer-events: none !important;
     opacity: 0 !important;
+    transition: opacity 1s;
 }
 
 @keyframes efectoaparece {
   from {
-    transform: scale(0);
+    transform: scale(0.95);
   }
   to {
     transform: scale(1);
@@ -120,43 +122,29 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 120vh;
     z-index: 0;
    
 }
 
 
 
-#pag-inicio #titular-texto{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    gap: 250px;
-    z-index: 1;
-}
 
 
 #pag-inicio #titulo {
     font-size: 90px;
     z-index: 1;
     color: white;
+    width: 100%;
+    height: 1000px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #pag-inicio #titulo #titulo-destacado{
     font-size: 100px;
-}
-
-#pag-inicio #subtitulo{
-    font-size: 30px;
-    gap: 20px;
-    padding: 20px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    flex-direction: column;
 }
 
 
@@ -189,6 +177,7 @@ html, body {
     font-size: 50px;
     border-radius: 40px;
     background-size: cover;
+    box-shadow: 0 0 10px 5px black;
 }
 
 
@@ -205,7 +194,7 @@ html, body {
 
 
 #pag-inicio #tocontacto-div{
-    background-image: linear-gradient(rgba(152, 251, 152, 1),rgba(152, 251, 152, 0.3)), url('/images/handshake.jpg');
+    background-image: linear-gradient( rgba(152, 251, 152, 1),rgba(152, 251, 152, 0.3)), url('/images/handshake.jpg');
     background-position: center;
 }
 
@@ -258,15 +247,36 @@ html, body {
 
 #pag-portfolio #misproyectos{
     width: 100%;
-    height: 500px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #pag-portfolio #misproyectos-titulo{
-    font-size: 50px;
-    color: lightsalmon;
+    width: 100%;
+    font-size: 60px;
+    color: white;
+    height: 700px;
+    display: flex;
+    justify-content: start;
+    padding-left: 200px;
+    align-items: center;
+}
+
+#pag-portfolio #misproyectos-webs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+#pag-portfolio .proyectoweb{
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 30px;
+    background-color: lightsalmon;
+    
 }
 
 
@@ -291,7 +301,7 @@ html, body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 200px;
+    padding-left: 200px;
 }
 
 #pag-contacto #formulario-titulo{

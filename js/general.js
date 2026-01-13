@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    navegacionPaginas();
-
     toPagInicio();
 });
 
 
 function navegacionPaginas() {
-  const contenidos = document.querySelectorAll('.contenidopag');
+  const contenidos = document.querySelectorAll('.paginas.aparece .contenidopag');
+  if (contenidos.length === 0) return;
 
   window.addEventListener('scroll', () => {
     contenidos.forEach(contenido => {
-        contenido.style.transform = `translateY(${-window.scrollY}px)`;
-
+      contenido.style.transform = `translateY(${-window.scrollY}px)`;
     });
   });
 }
@@ -41,7 +39,7 @@ function toPagInicio(){
         paginicio.classList.add('aparece');
             cambiosDisenoPagPortfolio();
             cambiosDisenoPagContacto();
-            window.scrollTo(0,0);
+            navegacionPaginas();
         });
 
 }
