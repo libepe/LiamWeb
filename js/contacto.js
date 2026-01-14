@@ -25,10 +25,14 @@ function toPagContacto(){
             pagportfolio.classList.add('desaparece');
             paginicio.classList.add('desaparece');
 
-            pagcontacto.classList.add('aparece');
-            cambiosDisenoPagPortfolio();
-            cambiosDisenoPagContacto();
-            navegacionPaginas();
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                pagcontacto.classList.add('aparece');
+
+                cambiosDisenoPagPortfolio();
+                cambiosDisenoPagContacto();
+                navegacionPaginas();
+            }, 500);
 
         });
     });

@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function navegacionPaginas() {
-  const contenidos = document.querySelectorAll('.paginas.aparece .contenidopag');
-  if (contenidos.length === 0) return;
+  const contenidos = document.querySelectorAll('.contenidopag');
 
   window.addEventListener('scroll', () => {
     contenidos.forEach(contenido => {

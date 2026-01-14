@@ -67,13 +67,14 @@ html, body {
     animation: efectoaparece 0.5s ease-in-out;
     opacity: 1 !important;
     pointer-events: all !important;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
 }
 
 .desaparece {
+    background-color: red !important;
     pointer-events: none !important;
     opacity: 0 !important;
-    transition: opacity 1s;
+    transition: opacity 0.5s, background-color 0.5s;
 }
 
 @keyframes efectoaparece {
@@ -84,6 +85,9 @@ html, body {
     transform: scale(1);
   }
 }
+
+
+
 
 
 /*TODAS LAS PAG MOVIL*/
