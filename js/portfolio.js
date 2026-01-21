@@ -16,22 +16,26 @@ function toPagPortfolio(){
             e.preventDefault();
 
             [paginicio, pagportfolio, pagcontacto].forEach(p => {
-            p.classList.remove('aparece', 'desaparece');
+            p.classList.remove('aparece', 'desaparece', 'pordefecto');
             });
 
             paginicio.classList.add('desaparece');
             pagcontacto.classList.add('desaparece');
 
+            pagportfolio.classList.add('aparece', 'fixedpag');
 
-            pagportfolio.classList.add('aparece');
-            cambiosDisenoPagPortfolio();
-            cambiosDisenoPagContacto();
-            navegacionPaginas();
+
+          pagTransicion(() => {
+                    pagportfolio.classList.remove('fixedpag');
+                    cambiosDisenoPagPortfolio();
+                    cambiosDisenoPagContacto();
+                });
 
         });
     });
 
 }
+
 
 function cambiosDisenoPagPortfolio(){
     const portfoliomenu=document.getElementById('toportfolio-menu');

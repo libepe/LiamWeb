@@ -162,8 +162,9 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
     gap: 100px;
-    background-color: black;
+    background-color: cyan;
 }
 
 .footer-icon{

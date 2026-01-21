@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     cambioColorHeader();
     menuMovil();
-    navegacionPaginas();
 });
 
 
@@ -12,17 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function cambioColorHeader() {
     const menu = document.getElementById('menu');
-    console.log('menu is:', menu);
-    window.addEventListener('scroll', () => {
-        console.log('scroll event', window.scrollY);
+
+        window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
+            console.log('scrolled')
             menu.classList.add('colorscroll');
-            console.log('on')
         } else {
             menu.classList.remove('colorscroll');
         }
-    })
-}
+        })}
+
 
 
 
@@ -68,13 +66,6 @@ function menuMovil() {
 
 
 
-function navegacionPaginas(){
-    const contenidos = document.querySelectorAll('.contenidopag');
-
-    window.addEventListener('scroll', () => {
-        contenidos.forEach(contenido => contenido.style.transform = `translateY(${-window.scrollY}px)`);
-    });
-}
 
 
 

@@ -1,18 +1,19 @@
 /*PARA TODAS LAS PAG*/
 
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Open Sans', serif;
 }
 
-/* Hide scrollbar for Firefox */
-* {
-  scrollbar-width: none;
+html.noscrollbar::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
 }
 
-/* Hide scrollbar for IE/old Edge */
-* {
-  -ms-overflow-style: none;
+html.noscrollbar {
+    scrollbar-width: none !important; 
 }
 
 #fondo{
@@ -24,67 +25,44 @@
 }
 
 
-#alturapag{
-    z-index: -5;
-    height: 200vh;
-    width: 100%;
-}
-
-
-
-input, textarea, select {
-  border: none;
-}
-
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%; 
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    font-family: 'Open Sans', serif;
-}
-
-.contenidopag{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  will-change: transform;
-}
 
 /* ANIMACION PAGINAS*/
 
-.paginas{
-    will-change: transform, opacity;
+
+.paginas {
+    position: absolute;   /* or fixed */
+    inset: 0;             
+    overflow-y: auto;     /* enable internal scrolling */
+    display: flex;
+    flex-direction: column;
+    pointer-events: none; /* control active page via class */
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.3s;
+}
+
+.contenidopag {
+    flex: 1 1 auto;
+    overflow-y: auto;
 }
 
 .aparece{
-    animation: efectoaparece 0.5s ease-in-out;
-    opacity: 1 !important;
+    transform: scale(1) !important;
     pointer-events: all !important;
-    transition: opacity 0.5s;
+    opacity: 1 !important;
 }
 
 .desaparece {
-    background-color: red !important;
+    transform: scale(0.95) !important;
     pointer-events: none !important;
     opacity: 0 !important;
-    transition: opacity 0.5s, background-color 0.5s;
 }
 
-@keyframes efectoaparece {
-  from {
-    transform: scale(0.95);
-  }
-  to {
-    transform: scale(1);
-  }
+.fixedpag{
+    position: fixed !important;
 }
+
+
 
 
 
@@ -92,31 +70,20 @@ html, body {
 
 /*TODAS LAS PAG MOVIL*/
 
-@media (max-width: 800px){
-
-    #alturapag{
-        z-index: -5;
-        height: 300vh;
-        width: 100%;
-    }
-
-    
-
-
-}
-
 
 /*PAG-INICIO*/
 
 #pag-inicio {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    width: 100%;      
+    width: 100%;
 }
 
+#pag-inicio.pordefecto{
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
 
 /*PAG-INICIO TITULAR*/
 
@@ -239,14 +206,7 @@ html, body {
 
 #pag-portfolio {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-    width: 100%;
+    flex-direction: column;
 }
 
 #pag-portfolio #misproyectos{
@@ -263,8 +223,9 @@ html, body {
     height: 700px;
     display: flex;
     justify-content: start;
-    padding-left: 200px;
     align-items: center;
+    padding-left: 200px;
+    border: 4px solid yellow;
 }
 
 #pag-portfolio #misproyectos-webs{
@@ -290,11 +251,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
     width: 100%;
 }
 

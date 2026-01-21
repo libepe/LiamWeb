@@ -19,25 +19,27 @@ function toPagContacto(){
             e.preventDefault();
 
             [paginicio, pagportfolio, pagcontacto].forEach(p => {
-            p.classList.remove('aparece', 'desaparece');
+            p.classList.remove('aparece', 'desaparece', 'pordefecto');
             });
 
             pagportfolio.classList.add('desaparece');
             paginicio.classList.add('desaparece');
 
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-                pagcontacto.classList.add('aparece');
+            pagcontacto.classList.add('aparece', 'fixedpag');
 
-                cambiosDisenoPagPortfolio();
-                cambiosDisenoPagContacto();
-                navegacionPaginas();
-            }, 500);
 
-        });
+
+                pagTransicion(() => {
+                    pagcontacto.classList.remove('fixedpag');
+                    cambiosDisenoPagPortfolio();
+                    cambiosDisenoPagContacto();
+                });
+
+            })
     });
 
 }
+
 
 function cambiosDisenoPagContacto(){
     const contactomenu=document.getElementById('tocontacto-menu');

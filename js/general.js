@@ -4,21 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function navegacionPaginas() {
-  const contenidos = document.querySelectorAll('.contenidopag');
 
-  window.addEventListener('scroll', () => {
-    contenidos.forEach(contenido => {
-      contenido.style.transform = `translateY(${-window.scrollY}px)`;
+
+
+function pagTransicion(activado) {
+    const root = document.documentElement; // 👈 html
+
+    root.classList.add('noscrollbar');
+
+    requestAnimationFrame(() => {
+
+        requestAnimationFrame(() => {
+            root.classList.remove('noscrollbar');
+            activado();
+        });
     });
-  });
 }
 
 
-window.addEventListener('scroll', navegacionPaginas);
 
 
 function toPagInicio(){
+
 
     const toInicio = document.getElementById('inicio');
     const paginicio = document.getElementById('pag-inicio');
@@ -29,16 +36,21 @@ function toPagInicio(){
         e.preventDefault();
 
         [ paginicio, pagportfolio, pagcontacto].forEach(p => {
-            p.classList.remove('aparece', 'desaparece');
+            p.classList.remove('aparece', 'desaparece', 'pordefecto');
         });
 
         pagportfolio.classList.add('desaparece');      
         pagcontacto.classList.add('desaparece');
-        
-        paginicio.classList.add('aparece');
-            cambiosDisenoPagPortfolio();
-            cambiosDisenoPagContacto();
-            navegacionPaginas();
-        });
 
+        paginicio.classList.add('aparece', 'fixedpag');
+        
+
+          pagTransicion(() => {
+              paginicio.classList.remove('fixedpag');
+              cambiosDisenoPagPortfolio();
+              cambiosDisenoPagContacto();
+          });
+      })
 }
+  
+
