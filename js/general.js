@@ -7,21 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function pagTransicion(activado) {
-    const root = document.documentElement; // 👈 html
-
-    root.classList.add('noscrollbar');
-
-    requestAnimationFrame(() => {
-
-        requestAnimationFrame(() => {
-            root.classList.remove('noscrollbar');
-            activado();
-        });
-    });
-}
-
-
 
 
 function toPagInicio(){
@@ -42,14 +27,14 @@ function toPagInicio(){
         pagportfolio.classList.add('desaparece');      
         pagcontacto.classList.add('desaparece');
 
-        paginicio.classList.add('aparece', 'fixedpag');
+        paginicio.classList.add('aparece');
+
+       
         
 
-          pagTransicion(() => {
-              paginicio.classList.remove('fixedpag');
               cambiosDisenoPagPortfolio();
               cambiosDisenoPagContacto();
-          });
+
       })
 }
   
