@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function portfolioDeploy(){
 
-    const opener=document.getElementById('opener');
+    const pagportfolio=document.getElementById('pagportfolio');
     const startWidth = 0;
 
      window.addEventListener('scroll', () => {
-        opener.style.width = startWidth + window.scrollY + 'px';
+        pagportfolio.style.width = startWidth + window.scrollY + 'px';
   });
 }
 
