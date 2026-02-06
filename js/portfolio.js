@@ -1,38 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    toPagPortfolio();
+    portfolioDeploy();
 });
 
 
-function toPagPortfolio(){
-
-    const paginicio = document.getElementById('pag-inicio');
-    const pagportfolio = document.getElementById('pag-portfolio');
-    const pagcontacto = document.getElementById('pag-contacto');
-    const toPortfolios = document.querySelectorAll('.toportfolio');
-
-    toPortfolios.forEach(toPortfolio => {
-        toPortfolio.addEventListener('click', e => {
-            e.preventDefault();
-
-            [paginicio, pagportfolio, pagcontacto].forEach(p => {
-            p.classList.remove('aparece', 'desaparece', 'pordefecto');
-            });
-
-            paginicio.classList.add('desaparece');
-            pagcontacto.classList.add('desaparece');
-
-            pagportfolio.classList.add('aparece');
-
-            window.scrollTo(0,0);
+function portfolioDeploy() {
+  const opener = document.getElementById('opener');
+  const paginicio=document.getElementById('pag-inicio');
 
 
-                    cambiosDisenoPagPortfolio();
-                    cambiosDisenoPagContacto();
+  window.addEventListener('scroll', () => {
+    const scale = 1 + window.scrollY / 20;
+    const opacity= 1 - window.scrollY / 300;
 
-        });
-    });
-
+    opener.style.transform = `scale(${scale}) rotateZ(-135deg)`;
+    paginicio.style.opacity= `${opacity}`;
+  });
 }
 
 
