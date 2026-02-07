@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     centeredPage();
+    slowScrollTo();
 });
 
 
@@ -14,6 +15,26 @@ function centeredPage(){
 
     });
 }
+
+
+
+
+
+
+function slowScrollTo(){
+  const toportfolio=document.getElementById('toportfolio');
+  const pagportfolio=document.getElementById('pag-portfolio');
+
+  toportfolio.addEventListener('click', function(e){
+    e.preventDefault();
+    pagportfolio.scrollIntoView({
+    behavior: 'smooth', 
+    block: 'start'      
+  });
+  })
+
+}
+
 
 
 

@@ -3,12 +3,12 @@
 html, body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 
 body{
     font-family: 'Open Sans', serif;
-    height: 300vh;
 }
 
 #fondo{
@@ -21,13 +21,14 @@ body{
 
 #opener{
     position: fixed;
-    height: 100px;
-    width: 100px;
+    height: var(--tamanyo, 100px);
+    width: var(--tamanyo, 100px);
+    filter: brightness(var(--brillo, 100%));
     top: 50%;
     left: 50%;
-    background-color: palegreen;
+    background-color: lightsalmon;
     border-radius: 25% 75% 70% 30% / 25% 30% 70% 75% ;
-    transform: rotateZ(-135deg);
+    transform: translate(-50%, -50%) rotateZ(var(--rotacion, -135deg));
 }
 
 
@@ -37,19 +38,6 @@ main{
 }
 
 
-/* ANIMACION PAGINAS*/
-
-
-
-
-
-
-
-
-
-
-
-/*TODAS LAS PAG MOVIL*/
 
 
 /*PAG-INICIO*/
@@ -189,77 +177,52 @@ main{
 
 #pag-portfolio {
     width: 100%;
-    z-index: 3;
-    position: fixed;
-    top: 0;
     color: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#pag-portfolio #misproyectos{
+#pag-portfolio #miswebs{
     width: 100%;
+    padding: 180px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 70px;
 }
 
-#pag-portfolio #misproyectos-titulo{
+
+
+#pag-portfolio .web{
     width: 100%;
-    font-size: 60px;
-    height: 700px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding-left: 200px;
-}
-
-#pag-portfolio #misproyectos-webs{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    width: 100%;
-}
-
-#pag-portfolio .proyectoweb{
-    width: 800px;
-    height: 400px;
+    height: 500px;
     margin: 0 auto;
-    border-radius: 30px;
-    background-color: #202020;
+    cursor: pointer;
+    display: flex;
+    gap: 40px;
     
 }
 
 
-/*PAG-CONTACTO*/
+#pag-portfolio .web-img{
+    width: 50%;
+    background-image: url(../images/computer.jpeg);
+    border-radius: 30px;
+    box-shadow: 0 0 10px 5px lightsalmon;
+}
 
-#pag-contacto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
+#pag-portfolio .web-texto{
+    width: 50%;
+    background-color: black;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 5px lightsalmon;
 }
 
 
-#pag-contacto #formulario{
-    width: 100%;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-left: 200px;
-}
-
-#pag-contacto #formulario-titulo{
-    color: palegreen;
-    font-size: 50px;
-}
 
 
-#pag-contacto #mensaje{
-    background-color: white;
-    width: 100px;
-    height: 100px;
-}
+
 
 
 

@@ -4,29 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function portfolioDeploy() {
-  const opener = document.getElementById('opener');
-  const paginicio=document.getElementById('pag-inicio');
 
+  const opener = document.getElementById('opener');
+
+  const primerTamanyo=100;
+  const rapidezTamanyo=3;
+  const primerRotacion=-135;
+  const rapidezRotacion=0.1;
+  const primerBrillo=100;
+  const rapidezBrillo= 0.07;
 
   window.addEventListener('scroll', () => {
-    const scale = 1 + window.scrollY / 20;
-    const opacity= 1 - window.scrollY / 300;
+    const aumento=Math.min(primerTamanyo + window.scrollY * rapidezTamanyo);
+    const rotacion=Math.min(primerRotacion + window.scrollY * rapidezRotacion);
+    const brillo=Math.min(primerBrillo - window.scrollY * rapidezBrillo);
+    
 
-    opener.style.transform = `scale(${scale}) rotateZ(-135deg)`;
-    paginicio.style.opacity= `${opacity}`;
+    opener.style.setProperty('--tamanyo', `${aumento}px`);
+    opener.style.setProperty('--rotacion', `${rotacion}deg`);
+    opener.style.setProperty('--brillo', `${brillo}%`);
+
   });
 }
 
 
-function cambiosDisenoPagPortfolio(){
-    const portfoliomenu=document.getElementById('toportfolio-menu');
-    const pagportfolio = document.getElementById('pag-portfolio');
 
-    if(pagportfolio.classList.contains('aparece')){
-        portfoliomenu.classList.add('colorear');
-    }else{
-        portfoliomenu.classList.remove('colorear');
-
-    }
-
-}
