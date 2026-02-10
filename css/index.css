@@ -198,6 +198,7 @@ main{
 #scrollportfolio-titulo{
     position: relative;
     font-size: 30px;
+    font-variation-settings: "opsz" 72;
     font-weight: bold;
     display: flex;
     flex-direction: column;
