@@ -6,33 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
 function portfolioDeploy() {
 
   const scrollportfolio = document.getElementById('scrollportfolio');
-  const scrollportfolioFondo=document.getElementById('scrollportfolio-fondo');
+  const scrollportfolioTitulo=document.getElementById('scrollportfolio-titulo');
 
   const estiloParent=getComputedStyle(scrollportfolio);
-  const estiloFondo=getComputedStyle(scrollportfolioFondo);
+  const estiloTitulo=getComputedStyle(scrollportfolioTitulo);
 
   const principio={
-    alto: parseFloat(estiloFondo.getPropertyValue('--alto')),
-    ancho: parseFloat(estiloFondo.getPropertyValue('--ancho')),
-    opacidad: parseFloat(estiloFondo.getPropertyValue('--opacidad')),
     brillo: parseFloat(estiloParent.getPropertyValue('--brillo')),
+    rotacion: 0,
+    fontsize: parseFloat(estiloTitulo.getPropertyValue('--fontsize')),
   }
 
   const rapidez={
     tamanyo: 2.5,
-    opacidad: 0.2,
-    brillo: 0.03,
+    opacidad: 0.002,
+    rotacion: 0.1,
+    brillo: 0.05,
+    fontsize: 0.5,
   }
 
   window.addEventListener('scroll', () => {
 
-    scrollportfolioFondo.style.setProperty('--alto', principio.alto + window.scrollY * rapidez.tamanyo + 'px');
-    scrollportfolioFondo.style.setProperty('--ancho', principio.ancho + window.scrollY * rapidez.tamanyo + 'px');
-    scrollportfolioFondo.style.setProperty('--opacidad', Math.min(1,Math.max(0, principio.opacidad + window.scrollY * rapidez.opacidad)));
     scrollportfolio.style.setProperty('--brillo', principio.brillo - window.scrollY * rapidez.brillo + '%');
-
-
-
+    scrollportfolio.style.setProperty('--rotacion', principio.rotacion + window.scrollY * rapidez.rotacion + 'deg');
+    scrollportfolioTitulo.style.setProperty('--fontsize', principio.fontsize + window.scrollY * rapidez.fontsize + 'px');
 
   });
 }
