@@ -3,12 +3,16 @@
 html, body {
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
 }
 
+html.smoothed{
+    visibility: visible !important;
+    scroll-behavior: smooth !important;
+}
 
 body{
     font-family: 'Open Sans', serif;
+    overflow-x: hidden;
 }
 
 #fondo{
@@ -27,6 +31,23 @@ main{
 
 
 
+/*PAG-CONTACTO*/
+
+#pag-contacto{
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#formulario{
+    height: 400px;
+    width: 600px;
+    background-color: palegreen;
+}
+
 
 /*PAG-INICIO*/
 
@@ -36,12 +57,8 @@ main{
     width: 100%;
     height: 100vh;
     position: relative;
-    z-index: 5;
+    z-index: 0;
 }
-
-
-
-/*PAG-INICIO TITULAR*/
 
 #pag-inicio #titular{
     width: 100%;
@@ -65,69 +82,9 @@ main{
     font-size: 100px;
 }
 
-#pag-inicio #hablame{
-    position: fixed;
-    background-color: palegreen;
-    height: 400px;
-    width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 30px;
-    border-radius: 25% 75% 70% 30% / 25% 30% 70% 75% ;
-    transform: rotateZ(-135deg);
-
-}
 
 
 
-
-/*PAG-INICIO PROYECTOS*/
-
-
-#pag-inicio #enlaces-paginas{
-    position: relative;
-    width: 100%;
-    height: 800px;
-    gap: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    padding: 40px;
-}
-
-
-#pag-inicio .topag{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    padding: 80px;
-    font-size: 50px;
-    border-radius: 40px;
-    background-size: cover;
-    box-shadow: 0 0 10px 5px black;
-}
-
-
-#pag-inicio #toportfolio-div {
-    background-image: 
-        linear-gradient(
-            rgba(255, 160, 122, 1),
-            rgba(255, 160, 122, 0.3)
-        ),
-        url('/images/cabezaexplota.jpg');
-}
-
-
-
-
-#pag-inicio #tocontacto-div{
-    background-image: linear-gradient( rgba(152, 251, 152, 1),rgba(152, 251, 152, 0.3)), url('/images/handshake.jpg');
-    background-position: center;
-}
 
 
 
@@ -165,13 +122,13 @@ main{
 /*PAG-PORTFOLIO*/
 
 #scrollportfolio{
-    position: fixed;
+    position: absolute;
     filter: brightness(var(--brillo));
     --brillo: 100%;
     transform: translate(-50%, -50%) rotate(var(--rotate));
-    --rotate: -135deg;
+    --rotate: 0deg;
     top: 50%;
-    left: 60%;
+    left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,11 +136,15 @@ main{
     background-color: lightsalmon;
     width: var(--ancho);
     height: var(--alto);
-    --ancho: 300px;
-    --alto: 300px;
-    z-index: 0;
+    --ancho: 250px;
+    --alto: 250px;
+    z-index: 1;
     white-space: pre;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    border-radius: 20% 20% 80% 80% / 20% 20% 90% 90%;
+}
+
+#scrollportfolio.fixedscroll{
+    position: fixed !important;
 }
 
 #scrollportfolio-titulo{
@@ -198,14 +159,14 @@ main{
     justify-content: center;
     align-items: center;
     color: black;
-    z-index: 1;
-    transform: rotate(135deg);
+    z-index: 0;
     
 
 }
 
 
 #pag-portfolio {
+    position: relative;
     width: 100%;
     color: #202020;
     display: flex;
@@ -215,12 +176,15 @@ main{
 }
 
 #pag-portfolio #miswebs{
+    position: absolute;
+    top: 50%;
     width: 100%;
     padding: 180px;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 70px;
+    z-index: 30px;
 }
 
 

@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function portfolioDeploy() {
 
+  const paginicio=document.getElementById('pag-inicio');
   const scrollportfolio = document.getElementById('scrollportfolio');
   const scrollportfolioTitulo=document.getElementById('scrollportfolio-titulo');
 
@@ -21,26 +22,31 @@ function portfolioDeploy() {
   }
 
   const rapidez={
-    tamanyo: 2.5,
     opacidad: 0.002,
     rotacion: 0.07,
     brillo: 0.08,
-    rapidezTamanyo: 0.006,
+    rapidezTamanyo: 0.009,
   }
 
   window.addEventListener('scroll', () => {
 
-    const tamanyo = 1 + window.scrollY * rapidez.rapidezTamanyo;
+    const scrollMiddle=window.scrollY + window.innerHeight / 2;
+    const divMiddle= paginicio.offsetTop + paginicio.offsetHeight/2;
+
+    const progress=Math.max(0, scrollMiddle - divMiddle);
+
+      const tamanyo = 1 + progress * rapidez.rapidezTamanyo;
 
 
 
-    scrollportfolio.style.setProperty('--ancho', principio.ancho * tamanyo + 'px');
-    scrollportfolio.style.setProperty('--alto', principio.alto * tamanyo + 'px');
-    scrollportfolioTitulo.style.setProperty('--fontsize', principio.fontsize * tamanyo + 'px');
+      scrollportfolio.style.setProperty('--ancho', principio.ancho * tamanyo + 'px');
+      scrollportfolio.style.setProperty('--alto', principio.alto * tamanyo + 'px');
+      scrollportfolioTitulo.style.setProperty('--fontsize', principio.fontsize * tamanyo + 'px');
 
-    scrollportfolio.style.setProperty('--brillo', principio.brillo - window.scrollY * rapidez.brillo + '%');
-    scrollportfolio.style.setProperty('--rotate', principio.rotacion + window.scrollY * rapidez.rotacion + 'deg');
-    scrollportfolioTitulo.style.setProperty('--opacity', principio.opacidad - window.scrollY * rapidez.opacidad);
+      scrollportfolio.style.setProperty('--brillo', principio.brillo + progress * rapidez.brillo + '%');
+      scrollportfolio.style.setProperty('--rotate', principio.rotacion + progress * rapidez.rotacion + 'deg');
+      scrollportfolioTitulo.style.setProperty('--opacity', principio.opacidad - progress * rapidez.opacidad);
+
 
   });
 }
