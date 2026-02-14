@@ -5,12 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function portfolioDeploy() {
 
+  const toportfolio=document.getElementById('toportfolio');
+
   const paginicio=document.getElementById('pag-inicio');
   const scrollportfolio = document.getElementById('scrollportfolio');
   const scrollportfolioTitulo=document.getElementById('scrollportfolio-titulo');
 
   const estiloParent=getComputedStyle(scrollportfolio);
   const estiloTitulo=getComputedStyle(scrollportfolioTitulo);
+  const estiloToPortfolio=getComputedStyle(toportfolio);
 
   const principio={
     brillo: parseFloat(estiloParent.getPropertyValue('--brillo')),
@@ -19,6 +22,10 @@ function portfolioDeploy() {
     fontsize: parseFloat(estiloTitulo.getPropertyValue('--fontsize')),
     opacidad: parseFloat(estiloTitulo.getPropertyValue('--opacity')),
     rotacion: parseFloat(estiloParent.getPropertyValue('--rotate')),
+
+    colorMenuR: parseFloat(estiloToPortfolio.getPropertyValue('--colorMenu-r')),
+    colorMenuB: parseFloat(estiloToPortfolio.getPropertyValue('--colorMenu-b')),
+    colorMenuG: parseFloat(estiloToPortfolio.getPropertyValue('--colorMenu-g')),
   }
 
   const rapidez={
@@ -46,6 +53,10 @@ function portfolioDeploy() {
       scrollportfolio.style.setProperty('--brillo', principio.brillo + progress * rapidez.brillo + '%');
       scrollportfolio.style.setProperty('--rotate', principio.rotacion + progress * rapidez.rotacion + 'deg');
       scrollportfolioTitulo.style.setProperty('--opacity', principio.opacidad - progress * rapidez.opacidad);
+
+      toportfolio.style.setProperty('--colorMenu-r', principio.colorMenuR + progress * rapidez.brillo);
+      toportfolio.style.setProperty('--colorMenu-b', principio.colorMenuB + progress * rapidez.brillo);
+      toportfolio.style.setProperty('--colorMenu-g', principio.colorMenuG + progress * rapidez.brillo);
 
 
   });

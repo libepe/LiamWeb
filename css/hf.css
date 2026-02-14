@@ -59,8 +59,11 @@ button{
     font-weight: bold;
 }
 
-#menu #toportfolio-menu:hover{
-    color: lightsalmon;
+#menu #toportfolio{
+    --colorMenu-r: 255;
+    --colorMenu-g: 0;
+    --colorMenu-b: 0;
+    color: rgb(var(--colorMenu-r, --colorMenu-b, --colorMenu-g));
 }
 
 #menu #tocontacto-menu:hover{
