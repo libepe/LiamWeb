@@ -68,15 +68,17 @@ main{
 }
 
 
-#portfolio{
-    width: 100%;
-    background-color: palegreen;
-    padding: 50px;
+#toportfolio{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 50px;
+    font-size: 25px;
+    gap: 30px;
+    background-color: palegreen;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 7px rgba(152, 251, 152, 0.5);
     cursor: pointer;
 }
 
