@@ -19,7 +19,7 @@ function cambioColorHeader() {
         } else {
             menu.classList.remove('colorscroll');
         }
-        })}
+})}
 
 
 

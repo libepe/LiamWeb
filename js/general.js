@@ -1,40 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    centeredPage();
-    flechasFixed();
+    coverExplosion();
 
 });
 
 
 
 
-function centeredPage(){
-  const html=document.documentElement;
-  const paginicio=document.getElementById('pag-inicio');
-    window.addEventListener('load', () => {
-
-          paginicio.scrollIntoView({
-            block: 'center',
-            behavior: 'auto'
-          }) 
-       html.classList.add('smoothed');
-    });
-}
-
-
-
-function flechasFixed(){
-  const paginicio=document.getElementById('pag-inicio');
-  const scrollportfolio=document.getElementById('scrollportfolio');
-
-  window.addEventListener('scroll', () => {
-    const scrollTop=window.scrollY;
-    if(scrollTop>=paginicio.offsetTop){
-      scrollportfolio.classList.add('fixedscroll');
-    }else{
-      scrollportfolio.classList.remove('fixedscroll');
-    }
-  })
-}
 
 
 
@@ -51,8 +22,6 @@ function slowScrollTo(topag, pag) {
 slowScrollTo('toportfolio', 'pag-portfolio');
 slowScrollTo('toinicio', 'pag-inicio');
 slowScrollTo('tocontacto', 'pag-contacto');
-
-
 
 
 

@@ -59,24 +59,6 @@ button{
     font-weight: bold;
 }
 
-#menu #toportfolio{
-    --colorMenu-r: 255;
-    --colorMenu-g: 0;
-    --colorMenu-b: 0;
-    color: rgb(var(--colorMenu-r, --colorMenu-b, --colorMenu-g));
-}
-
-#menu #tocontacto-menu:hover{
-    color: palegreen;
-}
-
-#menu #toportfolio-menu.colorear{
-    color: lightsalmon;
-}
-
-#menu #tocontacto-menu.colorear{
-    color: palegreen;
-}
 
 #bars-movil{
     font-size: 30px;
@@ -162,7 +144,7 @@ footer{
     width: 100%;
     height: 100px;
     z-index: 40;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-top: auto;

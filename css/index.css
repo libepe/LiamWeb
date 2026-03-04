@@ -3,50 +3,33 @@
 html, body {
     margin: 0;
     padding: 0;
-}
-
-html.smoothed{
-    visibility: visible !important;
-    scroll-behavior: smooth !important;
-}
-
-body{
     font-family: 'Open Sans', serif;
-    overflow-x: hidden;
+    height: 100%;
 }
+
+
 
 #fondo{
     z-index: 0;
     height: 100vh;
     width: 100%;
     position: fixed;
-    background-color: #202020;
+    background: linear-gradient(to bottom right, #333333, black);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#fondo
 
 main{
-    height: 100vh;
-    position: relative;
+    height: 300vh;
+    overflow-y: hidden;
 }
 
 
 
-/*PAG-CONTACTO*/
-
-#pag-contacto{
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
-    display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#formulario{
-    height: 400px;
-    width: 600px;
-    background-color: palegreen;
-}
 
 
 /*PAG-INICIO*/
@@ -62,28 +45,40 @@ main{
 
 #pag-inicio #titular{
     width: 100%;
+    gap: 200px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 250px;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
 }
 
 #pag-inicio #titulo {
     font-size: 90px;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
     text-shadow: 0 0 30px black;
 }
 
+
+
 #pag-inicio #titulo #titulo-destacado{
     font-size: 100px;
+    font-weight: bold;
 }
 
 
-
+#portfolio{
+    width: 100%;
+    background-color: palegreen;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    cursor: pointer;
+}
 
 
 
@@ -121,101 +116,126 @@ main{
 
 /*PAG-PORTFOLIO*/
 
-#scrollportfolio{
-    position: absolute;
-    filter: brightness(var(--brillo));
-    --brillo: 100%;
-    transform: translate(-50%, -50%) rotate(var(--rotate));
-    --rotate: 0deg;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: lightsalmon;
-    width: var(--ancho);
-    height: var(--alto);
-    --ancho: 250px;
-    --alto: 250px;
-    z-index: 1;
-    white-space: pre;
-    border-radius: 20% 20% 80% 80% / 20% 20% 90% 90%;
-}
 
-#scrollportfolio.fixedscroll{
-    position: fixed !important;
-}
 
-#scrollportfolio-titulo{
-    position: relative;
-    font-size: var(--fontsize);
-    --fontsize: 25px;
-    opacity: var(--opacity);
-    --opacity: 1;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    z-index: 0;
-    
 
-}
+
+
 
 
 #pag-portfolio {
-    position: relative;
     width: 100%;
-    color: #202020;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
 }
 
-#pag-portfolio #miswebs{
-    position: absolute;
-    top: 50%;
+
+
+ #miswebs{
     width: 100%;
-    padding: 180px;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 70px;
-    z-index: 30px;
+    gap: 200px;
+    padding: 200px;
 }
 
 
 
-#pag-portfolio .web{
-    width: 100%;
-    height: 500px;
-    margin: 0 auto;
-    cursor: pointer;
+.web{
+    width: 1200px;
+    height: 600px;
+    position: relative;
     display: flex;
-    gap: 40px;
-    
+    gap: 50px;
+}
+
+.webleft{
+    flex-direction: row-reverse;
+}
+
+.webright{
+    flex-direction: row;
 }
 
 
-#pag-portfolio .web-img{
-    width: 50%;
-    background-image: url(../images/computer.jpeg);
+ .web-img{
+    width: 40%;
     border-radius: 30px;
-    box-shadow: 0 0 10px 5px lightsalmon;
-}
-
-#pag-portfolio .web-texto{
-    width: 50%;
-    background-color: black;
-    border-radius: 30px;
-    box-shadow: 0 0 10px 5px lightsalmon;
+    box-shadow:  0 0 10px 5px black;
+    background-size: cover;
+    transition: box-shadow 0.5s;
 }
 
 
+.web-texto{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 60%;
+    color: white;
+    text-align: left;
+}
 
+.web-texto h1{
+    font-size: 40px;
+}
+
+.web-texto h2{
+    font-weight: normal;
+    color: silver;
+}
+
+.viewdemo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: palegreen;
+    cursor: pointer;
+    box-shadow:  0 0 10px 5px black;
+    transition: filter 0.5s;
+}
+
+.viewdemo:hover{
+    filter: brightness(70%);
+}
+
+/*PAG-PORTFOLIO: WEB IDs*/
+
+#webMision .web-img{
+    background-image: url(../images/proyecto1.png);
+    background-position: center;
+}
+
+#webCedre .web-img{
+    background-image: url(../images/proyecto2.png);
+    background-position: center;
+}
+
+/*PAG-CONTACTO*/
+
+#pag-contacto{
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#formulario{
+    height: 400px;
+    width: 600px;
+    background-color: palegreen;
+}
 
 
 
