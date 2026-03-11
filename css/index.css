@@ -75,10 +75,10 @@ main{
     flex-direction: column;
     font-size: 25px;
     gap: 30px;
-    background-color: palegreen;
+    color: palegreen;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 7px rgba(152, 251, 152, 0.5);
+    border-top: 5px solid rgba(152, 251, 152, 0.5);
+    border-bottom: 5px solid rgba(152, 251, 152, 0.5);
     cursor: pointer;
 }
 
