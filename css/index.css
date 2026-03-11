@@ -75,14 +75,23 @@ main{
     flex-direction: column;
     font-size: 25px;
     gap: 30px;
-    color: palegreen;
     padding: 20px;
-    border-top: 5px solid rgba(152, 251, 152, 0.5);
-    border-bottom: 5px solid rgba(152, 251, 152, 0.5);
+    background-color: palegreen;
     cursor: pointer;
+    transition: border-radius 0.5s;
+    animation: radius 3s ease-in-out infinite;
+    will-change: border-radius;
+    overflow: hidden;
 }
 
 
+@keyframes radius{
+    0% {border-radius: 30% 70% 70% 30%;}
+    25% {border-radius: 60% 40% 30% 70%;}
+    50% {border-radius: 70% 30% 60% 40%;}
+    75% {border-radius: 40% 60% 70% 30%;}
+    100% {border-radius: 30% 70% 70% 30%;}
+}
 
 
 /*PAG-INICIO MOVIL*/
