@@ -7,10 +7,12 @@ html, body {
     height: 100%;
 }
 
-
+body{
+    overflow-x: hidden;
+}
 
 #fondo{
-    z-index: 0;
+    z-index: -2;
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -21,7 +23,53 @@ html, body {
     align-items: center;
 }
 
-#fondo
+/*DROPLETS*/
+
+#paintscreen{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 700px;
+    position: absolute;
+}
+
+.paintdrops{
+    display: flex;
+    gap: 20px;
+    opacity: 0.2;
+    margin-top: -60px;
+    transition: opacity 0.5s;
+}
+
+.paintdrops.hide{
+    opacity: 0;
+}
+
+.drop{
+    z-index: -1;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 70px;
+}
+
+.trail{
+    width: 20px;
+    height: 100%;
+    background-color: gray;
+    transition: width 4s;
+}
+
+.droplet{
+    color: gray;
+    margin-top: -10px;
+    transform: scaleY(1);
+    transition: transform 2s;
+}
+
+/*MAIN*/
 
 main{
     height: 300vh;
@@ -45,17 +93,17 @@ main{
 
 #pag-inicio #titular{
     width: 100%;
-    gap: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    gap: 200px;
 }
 
 #pag-inicio #titulo {
     font-size: 90px;
-    color: white;
+    color: gray;
     text-align: center;
     text-shadow: 0 0 30px black;
 }
@@ -72,26 +120,20 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     font-size: 25px;
-    gap: 30px;
-    padding: 20px;
-    background-color: palegreen;
     cursor: pointer;
-    transition: border-radius 0.5s;
-    animation: radius 3s ease-in-out infinite;
-    will-change: border-radius;
-    overflow: hidden;
+    padding: 20px;
+    background-color: goldenrod;
+    font-weight: bold;
+    gap: 20px;
+    border-radius: 20px;
 }
 
 
-@keyframes radius{
-    0% {border-radius: 30% 70% 70% 30%;}
-    25% {border-radius: 60% 40% 30% 70%;}
-    50% {border-radius: 70% 30% 60% 40%;}
-    75% {border-radius: 40% 60% 70% 30%;}
-    100% {border-radius: 30% 70% 70% 30%;}
-}
+
+
+
+
 
 
 /*PAG-INICIO MOVIL*/

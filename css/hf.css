@@ -36,7 +36,7 @@ button{
     font-size: 20px;
     transform: scale(1.5);
     font-family: 'Asimovian', serif;
-    color: white;
+    color: gray;
     margin-right: 300px;
     font-weight: lighter;
     cursor: pointer;
@@ -55,7 +55,7 @@ button{
     cursor: pointer;
     font-size: 20px;
     transition: color 0.5s;
-    color: white;
+    color: gray;
     font-weight: bold;
 }
 
@@ -64,7 +64,6 @@ button{
     font-size: 30px;
     cursor: pointer;
     display: none;
-    color: white;
 }
 
 
