@@ -5,43 +5,47 @@ fallingDroplet();
 
 
 
-function fallingDroplet(){
-  const Paintdrops=document.querySelectorAll('.paintdrops');
+function cloneDroplet(){
+  
+}
 
-  Paintdrops.forEach((paintdrop, paintdropIndex)=>{
-    const Drops=paintdrop.querySelectorAll('.drop');
-    const retraso=paintdropIndex * 500;
 
-    setTimeout(()=>{
-      Drops.forEach((drop)=>{
 
-        paintdrop.style.opacity='0.2';
-        paintdrop.style.transition='opacity 0.5s';
+function fallingDroplet() {
+  const Paintdrops = document.querySelectorAll('.paintdrops');
 
-        const randomHeight=Math.floor(Math.random()*600)+200;
+  Paintdrops.forEach((paintdrop) => {
+    const Drops = paintdrop.querySelectorAll('.drop');
+
+    function loop() {
+      paintdrop.classList.remove('escondido');
+
+      Drops.forEach(drop => {
+        const randomHeight = Math.floor(Math.random() * 600) + 200;
         const randomDuration = Math.random() * 3 + 1;
-        drop.style.height= randomHeight + 'px';
-        drop.style.transition=` height ${randomDuration}s`;
+
+        drop.style.height = randomHeight + 'px';
+        drop.style.transition = `height ${randomDuration}s`;
       });
 
-    },retraso);
+      setTimeout(() => {
+        paintdrop.classList.add('escondido');
 
-    setTimeout(()=>{
-      paintdrop.style.opacity= '0';
-    },retraso + 1000)
+        setTimeout(() => {
+          Drops.forEach(drop => {
+            drop.style.height = '0';
+            drop.style.transition = 'none';
+          });
 
-    setTimeout(()=>{
-      Drops.forEach((drop)=>{
-        drop.style.height= '0';
-      })
-      if (paintdropIndex==Paintdrops.length - 1) {
-        fallingDroplet();
-      }
-    },retraso + 1200)
+          setTimeout(loop, 20) 
 
+        }, 200);
+
+      }, 1500);
+    }
+
+    setTimeout(loop, Math.random() * 2000) 
   });
-
-
 }
 
 

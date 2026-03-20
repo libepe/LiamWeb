@@ -29,7 +29,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 700px;
+    gap: 300px;
     position: absolute;
 }
 
@@ -41,7 +41,7 @@ body{
     transition: opacity 0.5s;
 }
 
-.paintdrops.hide{
+.paintdrops.escondido{
     opacity: 0;
 }
 
@@ -52,7 +52,11 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: 70px;
+}
+
+.drop.escondido{
+    height: 0;
+    transition: none;
 }
 
 .trail{
@@ -63,10 +67,25 @@ body{
 }
 
 .droplet{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+
+.frontdroplet{
+    position: absolute;
     color: gray;
     margin-top: -10px;
-    transform: scaleY(1);
-    transition: transform 2s;
+    z-index: 1;
+}
+
+.backdroplet{
+    position: absolute;
+    color: white;
+    margin-top: -10px;
+    transform: rotateY(140deg);
 }
 
 /*MAIN*/
@@ -122,14 +141,17 @@ main{
     align-items: center;
     font-size: 25px;
     cursor: pointer;
-    padding: 20px;
+    padding: 15px;
     background-color: goldenrod;
     font-weight: bold;
     gap: 20px;
     border-radius: 20px;
+    transition: background-color 0.5s;
 }
 
-
+#toportfolio:hover{
+    background-color: rgba(218, 165, 32, 0.9);
+}
 
 
 
@@ -167,14 +189,25 @@ main{
 }
 
 
+
+
+/*PAG-CONTACTO*/
+
+#pag-contacto{
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    border: 3px solid goldenrod;
+}
+
+#pagcontacto-titulo{
+    font-size: 50px;
+    color: gray;
+
+}
+
+
 /*PAG-PORTFOLIO*/
-
-
-
-
-
-
-
 
 #pag-portfolio {
     width: 100%;
@@ -273,22 +306,7 @@ main{
     background-position: center;
 }
 
-/*PAG-CONTACTO*/
 
-#pag-contacto{
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
-    display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#formulario{
-    height: 400px;
-    width: 600px;
-    background-color: palegreen;
-}
 
 
 
