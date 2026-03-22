@@ -5,11 +5,6 @@ fallingDroplet();
 
 
 
-function cloneDroplet(){
-  
-}
-
-
 
 function fallingDroplet() {
   const Paintdrops = document.querySelectorAll('.paintdrops');
