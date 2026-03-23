@@ -1,7 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+    clonedPaintdrops();
 fallingDroplet();
 });
+
+
+function clonedPaintdrops(){
+  const paintdrops = document.querySelector('.paintdrops');
+
+  for (let i = 0; i < 1; i++) {
+    const clone = paintdrops.cloneNode(true);
+    paintdrops.parentNode.appendChild(clone);
+  }
+}
 
 
 
