@@ -34,12 +34,12 @@ function fallingDroplet() {
       });
 
       setTimeout(() => {
-        paintdrop.classList.add('escondido');
+        //paintdrop.classList.add('escondido');
 
         setTimeout(() => {
           Drops.forEach(drop => {
-            drop.style.height = '0';
-            drop.style.transition = 'none';
+            //drop.style.height = '0';
+            //drop.style.transition = 'none';
           });
 
           setTimeout(loop, 20) 
