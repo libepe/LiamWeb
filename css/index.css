@@ -1,19 +1,21 @@
 /*PARA TODAS LAS PAG*/
 
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', serif;
-    height: 100%;
 }
 
-* {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+input{
+    all: unset;
 }
 
 body{
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    outline: 3px solid blue;
 }
 
 #fondo{
@@ -37,7 +39,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 600px;
+    gap: 700px;
     z-index: -1;
     opacity: 0.2;
     position: absolute;
@@ -100,12 +102,6 @@ body{
     transform: scaleX(-1) scale(0.9);
 }
 
-/*MAIN*/
-
-main{
-    height: 300vh;
-    overflow-y: hidden;
-}
 
 
 
@@ -153,16 +149,14 @@ main{
     font-size: 25px;
     cursor: pointer;
     padding: 15px;
-    background-color: goldenrod;
+    background-color: gold;
     font-weight: bold;
     gap: 20px;
     border-radius: 20px;
     transition: background-color 0.5s;
 }
 
-#toportfolio:hover{
-    background-color: rgba(218, 165, 32, 0.9);
-}
+
 
 
 
@@ -206,116 +200,59 @@ main{
 
 #pag-contacto{
     width: 100%;
-    height: 100vh;
     padding: 100px;
-    border: 3px solid goldenrod;
+    display: flex;
+    gap: 70px;
+    flex-direction: column;
 }
 
 #pagcontacto-titulo{
     font-size: 50px;
     color: gray;
-
 }
 
-
-/*PAG-PORTFOLIO*/
-
-#pag-portfolio {
-    width: 100%;
+#pagcontacto-mensaje{
+    width: 800px;
+    height: 70px;
+    border: 2px solid gray;
+    border-radius: 40px;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 50px black;
 }
 
-
-
- #miswebs{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 200px;
-    padding: 200px;
-}
-
-
-
-.web{
-    width: 1200px;
-    height: 600px;
-    position: relative;
-    display: flex;
-    gap: 50px;
-}
-
-.webleft{
-    flex-direction: row-reverse;
-}
-
-.webright{
-    flex-direction: row;
-}
-
-
- .web-img{
-    width: 40%;
-    border-radius: 30px;
-    box-shadow:  0 0 10px 5px black;
-    background-size: cover;
-    transition: box-shadow 0.5s;
-}
-
-
-.web-texto{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 60%;
-    color: white;
-    text-align: left;
-}
-
-.web-texto h1{
-    font-size: 40px;
-}
-
-.web-texto h2{
-    font-weight: normal;
-    color: silver;
-}
-
-.viewdemo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    padding: 10px;
-    border-radius: 20px;
-    color: black;
+#pagcontacto-mensaje input{
+    font-size: 20px;
     font-weight: bold;
-    font-size: 25px;
-    background-color: palegreen;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    background-color: white;
+    border-right: 3px solid black;
+}
+
+#pagcontacto-mensaje button{
+    font-size: 20px;
+    font-weight: bold;
+    width: 30%;
+    height: 100%;
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    box-shadow:  0 0 10px 5px black;
-    transition: filter 0.5s;
 }
 
-.viewdemo:hover{
-    filter: brightness(70%);
+
+::placeholder{
+    color: black;
 }
 
-/*PAG-PORTFOLIO: WEB IDs*/
 
-#webMision .web-img{
-    background-image: url(../images/proyecto1.png);
-    background-position: center;
-}
 
-#webCedre .web-img{
-    background-image: url(../images/proyecto2.png);
-    background-position: center;
-}
 
 
 
