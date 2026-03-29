@@ -15,7 +15,6 @@ body{
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    outline: 3px solid blue;
 }
 
 #fondo{
@@ -31,7 +30,18 @@ body{
 }
 
 
+#ondas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
 
+.onda{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 50%;
+}
 
 /*DROPLETS*/
 
@@ -199,11 +209,13 @@ body{
 /*PAG-CONTACTO*/
 
 #pag-contacto{
+    position: relative;
     width: 100%;
     padding: 100px;
     display: flex;
     gap: 70px;
     flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.2);
 }
 
 #pagcontacto-titulo{
@@ -222,6 +234,7 @@ body{
     align-items: center;
     overflow: hidden;
     box-shadow: 0 0 50px black;
+    background-image: linear-gradient(to right,white 50%, gold 90%);
 }
 
 #pagcontacto-mensaje input{
@@ -230,8 +243,6 @@ body{
     width: 70%;
     height: 100%;
     padding: 20px;
-    background-color: white;
-    border-right: 3px solid black;
 }
 
 #pagcontacto-mensaje button{
@@ -239,7 +250,6 @@ body{
     font-weight: bold;
     width: 30%;
     height: 100%;
-    background-color: gold;
     display: flex;
     justify-content: center;
     align-items: center;
