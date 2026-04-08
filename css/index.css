@@ -30,18 +30,6 @@ body{
 }
 
 
-#ondas{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.onda{
-    height: 100px;
-    width: 100px;
-    background-color: red;
-    border-radius: 50%;
-}
 
 /*DROPLETS*/
 
@@ -53,6 +41,8 @@ body{
     z-index: -1;
     opacity: 0.2;
     position: absolute;
+    background-color: red;
+    top: 200px;
 }
 
 
@@ -61,12 +51,20 @@ body{
     z-index: 0;
     display: flex;
     gap: 20px;
-    margin-top: -60px;
     transition: opacity 0.5s;
+    margin-top: -100px;
 }
 
 .paintdrops.escondido{
     opacity: 0;
+}
+
+.fa-brush{
+    top: -100px;
+    transform: rotate(210deg);
+    color: gray;
+    font-size: 600px;
+    position: absolute;
 }
 
 .drop{
