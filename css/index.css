@@ -41,30 +41,49 @@ body{
     z-index: -1;
     opacity: 0.2;
     position: absolute;
-    background-color: red;
     top: 200px;
 }
 
 
 
 .paintdrops{
+    position: relative;
     z-index: 0;
     display: flex;
     gap: 20px;
     transition: opacity 0.5s;
-    margin-top: -100px;
+    margin-top: 10px;
 }
 
 .paintdrops.escondido{
     opacity: 0;
 }
 
-.fa-brush{
-    top: -100px;
-    transform: rotate(210deg);
+#brush{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0.2;
+}
+
+#paintbrush{
     color: gray;
-    font-size: 600px;
+    font-size: 500px;
+    z-index: 0;
     position: absolute;
+    transform: rotate(210deg);
+}
+
+#coverbrush{
+    position: absolute;
+    height: 400px;
+    width: 375px;
+    left: 50%;
+    transform: translateX(-50%) rotate(30deg);
+    background-color: sandybrown;
+    z-index: 1;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 80%, 0% 100%);
 }
 
 .drop{
