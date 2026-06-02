@@ -15,96 +15,63 @@ body{
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
 
 #fondo{
-    z-index: -2;
+    z-index: -1;
     height: 100vh;
     width: 100%;
     position: fixed;
     background: linear-gradient(to bottom right, #333333, black);
     overflow: hidden;
-    display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 }
 
 
 
 /*DROPLETS*/
 
-#paintscreen{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 700px;
-    z-index: -1;
-    opacity: 0.2;
-    position: absolute;
-    top: 200px;
-}
-
-
 
 .paintdrops{
     position: relative;
-    z-index: 0;
     display: flex;
-    gap: 20px;
     transition: opacity 0.5s;
-    margin-top: 10px;
-}
-
-.paintdrops.escondido{
-    opacity: 0;
-}
-
-#brush{
-    display: flex;
+    cursor: pointer;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: relative;
-    opacity: 0.2;
 }
 
-#paintbrush{
-    color: gray;
-    font-size: 500px;
-    z-index: 0;
-    position: absolute;
-    transform: rotate(210deg);
-}
 
-#coverbrush{
+
+
+
+#drops{
+    display: flex;
     position: absolute;
-    height: 400px;
-    width: 375px;
-    left: 50%;
-    transform: translateX(-50%) rotate(30deg);
-    background-color: sandybrown;
-    z-index: 1;
-    clip-path: polygon(20% 0%, 80% 0%, 100% 80%, 0% 100%);
+    gap: 100px;
+    
+    
 }
 
 .drop{
     z-index: -1;
-    width: 0;
-    height: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: gold;
+
 }
 
-.drop.escondido{
-    height: 0;
-    transition: none;
-}
 
 .trail{
     width: 20px;
     height: 100%;
-    background-color: gray;
     transition: width 4s;
+    background-color: gold;
 }
 
 .droplet{
@@ -112,24 +79,22 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 70px;
+    font-size: 40px;
 }
 
 .frontdroplet{
     position: absolute;
-    color: gray;
+    color: gold;
     margin-top: -10px;
     z-index: 1;
 }
 
 .backdroplet{
     position: absolute;
-    color: white;
+    color: black;
     margin-top: -10px;
     transform: scaleX(-1) scale(0.9);
 }
-
-
 
 
 
@@ -139,32 +104,28 @@ body{
 #pag-inicio {
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 100vh;
-    position: relative;
     z-index: 0;
 }
 
-#pag-inicio #titular{
-    width: 100%;
+#pag-inicio #titular {
+    padding: 200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     gap: 200px;
 }
 
 #pag-inicio #titulo {
-    font-size: 90px;
-    color: gray;
+    font-size: 70px;
+    color: white;
     text-align: center;
 }
 
-
-
 #pag-inicio #titulo #titulo-destacado{
-    font-size: 100px;
+    font-size: 80px;
     font-weight: bold;
 }
 
@@ -173,14 +134,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
-    cursor: pointer;
-    padding: 15px;
+    width: 400px;
     background-color: gold;
+    font-size: 20px;
     font-weight: bold;
-    gap: 20px;
-    border-radius: 20px;
-    transition: background-color 0.5s;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 40;
 }
 
 
@@ -220,8 +181,27 @@ body{
 
 }
 
+/*PAG-PORTFOLIO*/
 
+#pag-portfolio{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #e6c200, #fff1a8);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 30px;
+}
 
+.pro{
+    height: 500px;
+    width: 400px;
+    box-shadow: 0 0 10px 1px;
+    border-radius: 30px;
+    background-color: white;
+}
 
 /*PAG-CONTACTO*/
 
@@ -232,34 +212,31 @@ body{
     display: flex;
     gap: 70px;
     flex-direction: column;
-    background-color: rgba(128, 128, 128, 0.2);
+    background: linear-gradient(to top right, white, #cccccc);
+    opacity: 0;
 }
 
 #pagcontacto-titulo{
     font-size: 50px;
-    color: gray;
+    color: black;
 }
 
 #pagcontacto-mensaje{
-    width: 800px;
-    height: 70px;
-    border: 2px solid gray;
-    border-radius: 40px;
-    box-sizing: border-box;
+    gap: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 0 50px black;
-    background-image: linear-gradient(to right,white 50%, gold 90%);
 }
 
 #pagcontacto-mensaje input{
+    width: 800px;
+    height: 60px;
     font-size: 20px;
     font-weight: bold;
-    width: 70%;
-    height: 100%;
     padding: 20px;
+    border-radius: 40px;
+    box-sizing: border-box;
+    background-color: white;
 }
 
 #pagcontacto-mensaje button{
@@ -271,6 +248,9 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: white;
+    background-color: red;
+    animation: paintcolor 20s linear infinite;
 }
 
 

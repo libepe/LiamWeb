@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //clonedPaintdrops();
+  clonedDrops();
 fallingDroplet();
 });
 
 
-function clonedPaintdrops(){
-  const paintdrops = document.querySelector('.paintdrops');
 
-  for (let i = 0; i < 1; i++) {
-    const clone = paintdrops.cloneNode(true);
-    paintdrops.parentNode.appendChild(clone);
+
+function clonedDrops(){
+  const Drops = document.querySelector('.drop');
+
+  for (let i = 0; i < 2; i++) {
+    const clone = Drops.cloneNode(true);
+    Drops.parentNode.appendChild(clone);
   }
 }
 
@@ -17,40 +19,40 @@ function clonedPaintdrops(){
 
 
 function fallingDroplet() {
-  const Paintdrops = document.querySelectorAll('.paintdrops');
+  const drops = document.querySelectorAll('.drop');
+  const start = performance.now();
 
-  Paintdrops.forEach((paintdrop) => {
-    const Drops = paintdrop.querySelectorAll('.drop');
+  const SPEED = 0.002; 
 
-    function loop() {
-      paintdrop.classList.remove('escondido');
+  const configs = [...drops].map(() => ({
+    phase: Math.random() * Math.PI * 2,
+    amp: Math.random() * 20 + 30,
+    base: Math.random() * 10 + 90,
 
-      Drops.forEach(drop => {
-        const randomHeight = Math.floor(Math.random() * 600) + 200;
-        const randomDuration = Math.random() * 3 + 1;
+    // slow variation to break repetition
+    driftPhase: Math.random() * Math.PI * 2,
+    driftSpeed: Math.random() * 0.0003 + 0.0001,
+    driftAmp: Math.random() * 6 + 3
+  }));
 
-        drop.style.height = randomHeight + 'px';
-        drop.style.transition = `height ${randomDuration}s`;
-      });
+  function animate(now) {
+    const t = now - start;
 
-      setTimeout(() => {
-        paintdrop.classList.add('escondido');
+    for (let i = 0; i < drops.length; i++) {
+      const d = configs[i];
 
-        setTimeout(() => {
-          Drops.forEach(drop => {
-            drop.style.height = '0';
-            drop.style.transition = 'none';
-          });
+      const main = Math.sin(t * SPEED + d.phase);
+      const drift = Math.sin(t * d.driftSpeed + d.driftPhase);
 
-          setTimeout(loop, 20) 
+      const h = d.base + main * d.amp + drift * d.driftAmp;
 
-        }, 200);
-
-      }, 1500);
+      drops[i].style.height = h + 'px';
     }
 
-    setTimeout(loop, Math.random() * 2000) 
-  });
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
 }
 
 
@@ -66,7 +68,7 @@ function slowScrollTo(topag, pag) {
     window.scrollTo({ top: arriba + 10, behavior: 'smooth' });
   });
 }
-//slowScrollTo('toportfolio', 'pag-portfolio');
+slowScrollTo('toportfolio', 'pag-portfolio');
 //slowScrollTo('toinicio', 'pag-inicio');
 //slowScrollTo('tocontacto', 'pag-contacto');
 
